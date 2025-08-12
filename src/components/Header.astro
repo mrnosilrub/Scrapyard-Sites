@@ -5,7 +5,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
 ---
 <header class="sticky top-0 z-40 bg-white shadow-header">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
-  <div class="mx-auto max-w-7xl px-4">
+  <div class="mx-auto max-w-7xl px-6 md:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href={withBase('/')} class="flex items-center gap-3">
         <img src={logoUrl.src ?? logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
@@ -38,7 +38,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
 
       <div class="fixed inset-0 z-50 hidden bg-white peer-checked:block">
     <div class="flex h-full flex-col">
-      <div class="flex items-center justify-between px-4 h-16 shadow-header">
+      <div class="flex items-center justify-between px-6 md:px-8 h-16 shadow-header">
         <a href={withBase('/')} class="flex items-center gap-3">
           <img src={logoUrl.src ?? logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
           <span class="text-lg font-semibold tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>

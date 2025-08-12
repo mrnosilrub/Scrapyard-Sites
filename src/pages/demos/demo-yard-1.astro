@@ -1,10 +1,10 @@
 ---
-import Base from "../../layouts/Base.astro";
+import Demo from "../../layouts/Demo.astro";
 import Hero from "../../components/Hero.astro";
 const base = import.meta.env.BASE_URL;
 const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
-<Base title="Demo Yard 1 — Scrapyard Sites">
+<Demo>
   <section class="bg-brand-orange/10">
     <div class="mx-auto max-w-7xl px-4 py-3 text-sm"><a href={withBase('/demos/')} class="font-medium text-brand-orange">← Back to demos</a></div>
   </section>
@@ -17,7 +17,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     secondaryLabel="What We Buy"
   />
 
-  <section class="mx-auto max-w-7xl px-4 py-12">
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
     <h2 class="text-2xl font-bold tracking-tight">How It Works</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-3">
       <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Check Your Material</h3></div>
@@ -26,7 +26,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12" id="materials">
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12" id="materials">
     <h2 class="text-2xl font-bold tracking-tight">Materials We Buy</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div class="rounded-lg border border-zinc-200 p-5">Copper & Brass</div>
@@ -38,7 +38,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12" id="quote">
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12" id="quote">
     <h2 class="text-2xl font-bold tracking-tight">Get a Fast Quote</h2>
     <form class="mt-6 grid gap-4 sm:grid-cols-2">
       <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
@@ -49,10 +49,10 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     </form>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12">
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
     <h2 class="text-2xl font-bold tracking-tight">Visit Our Yard</h2>
     <div class="mt-4 h-64 w-full rounded-lg border border-zinc-200 bg-zinc-100"></div>
     <p class="mt-2 text-sm text-zinc-600">Hours, address, phone link.</p>
   </section>
-</Base>
+</Demo>
 
