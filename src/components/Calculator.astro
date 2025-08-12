@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <section class="mx-auto max-w-3xl rounded-lg border border-zinc-200 p-6 sm:p-8">
   <h2 class="text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
@@ -24,7 +26,7 @@
     <p class="text-lg font-semibold">You’re Leaking <span id="leak" class="text-brand-orange"></span>/year</p>
     <p class="mt-1 text-sm text-zinc-600">A Standard Launch pays for itself in <span id="roiDays"></span> days.</p>
     <div class="mt-4">
-      <a href="/contact/" class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Book a Discovery Call</a>
+      <a href={withBase('/contact/')} class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Book a Discovery Call</a>
     </div>
   </div>
   <script is:inline>
