@@ -1,9 +1,11 @@
 ---
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <div class="w-full bg-brand-orange text-white text-sm">
   <div class="mx-auto max-w-7xl px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
     <span class="font-medium">Save 10% on your build — pay your deposit by Aug 30.</span>
-    <a href="/pricing/#deposit" class="underline underline-offset-4 hover:no-underline">
+    <a href={withBase('/pricing/#deposit')} class="underline underline-offset-4 hover:no-underline">
       50% today, balance at launch – 90-day warm lead guarantee
     </a>
   </div>

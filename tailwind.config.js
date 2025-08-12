@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         brand: {
-          orange: "#FF6A00"
+          orange: "#D75E02"
         }
       },
       boxShadow: {

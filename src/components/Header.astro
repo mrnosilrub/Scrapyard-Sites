@@ -1,5 +1,7 @@
 ---
 import logoUrl from "../assets/logo.svg";
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <header class="sticky top-0 z-40 bg-white shadow-header">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
@@ -13,17 +15,17 @@ import logoUrl from "../assets/logo.svg";
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="/services/" class="hover:text-brand-orange">Services</a>
-        <a href="/process/" class="hover:text-brand-orange">Process</a>
-        <a href="/demos/" class="hover:text-brand-orange">Demos</a>
-        <a href="/pricing/" class="hover:text-brand-orange">Pricing</a>
-        <a href="/calculator/" class="hover:text-brand-orange">Calculator</a>
-        <a href="/about/" class="hover:text-brand-orange">About</a>
-        <a href="/contact/" class="hover:text-brand-orange">Contact</a>
+        <a href={withBase('/services/')} class="hover:text-brand-orange">Services</a>
+        <a href={withBase('/process/')} class="hover:text-brand-orange">Process</a>
+        <a href={withBase('/demos/')} class="hover:text-brand-orange">Demos</a>
+        <a href={withBase('/pricing/')} class="hover:text-brand-orange">Pricing</a>
+        <a href={withBase('/calculator/')} class="hover:text-brand-orange">Calculator</a>
+        <a href={withBase('/about/')} class="hover:text-brand-orange">About</a>
+        <a href={withBase('/contact/')} class="hover:text-brand-orange">Contact</a>
       </nav>
 
       <div class="hidden md:flex">
-        <a href="/contact/" class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 text-white shadow hover:opacity-95">
+        <a href={withBase('/contact/')} class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 text-white shadow hover:opacity-95">
           Book a Discovery Call
         </a>
       </div>
@@ -34,10 +36,10 @@ import logoUrl from "../assets/logo.svg";
     </div>
   </div>
 
-  <div class="fixed inset-0 z-50 hidden bg-white peer-checked:block">
+      <div class="fixed inset-0 z-50 hidden bg-white peer-checked:block">
     <div class="flex h-full flex-col">
       <div class="flex items-center justify-between px-4 h-16 shadow-header">
-        <a href="/" class="flex items-center gap-3">
+        <a href={withBase('/')} class="flex items-center gap-3">
           <img src={logoUrl.src ?? logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
           <span class="text-lg font-semibold tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
         </a>
@@ -46,16 +48,16 @@ import logoUrl from "../assets/logo.svg";
         </label>
       </div>
       <nav class="flex-1 p-8 text-lg font-medium space-y-6">
-        <a href="/services/" class="block">Services</a>
-        <a href="/process/" class="block">Process</a>
-        <a href="/demos/" class="block">Demos</a>
-        <a href="/pricing/" class="block">Pricing</a>
-        <a href="/calculator/" class="block">Calculator</a>
-        <a href="/about/" class="block">About</a>
-        <a href="/contact/" class="block">Contact</a>
+        <a href={withBase('/services/')} class="block">Services</a>
+        <a href={withBase('/process/')} class="block">Process</a>
+        <a href={withBase('/demos/')} class="block">Demos</a>
+        <a href={withBase('/pricing/')} class="block">Pricing</a>
+        <a href={withBase('/calculator/')} class="block">Calculator</a>
+        <a href={withBase('/about/')} class="block">About</a>
+        <a href={withBase('/contact/')} class="block">Contact</a>
       </nav>
       <div class="p-8">
-        <a href="/contact/" class="inline-flex w-full items-center justify-center rounded-md bg-brand-orange px-4 py-3 text-white shadow">
+        <a href={withBase('/contact/')} class="inline-flex w-full items-center justify-center rounded-md bg-brand-orange px-4 py-3 text-white shadow">
           Book a Discovery Call
         </a>
       </div>

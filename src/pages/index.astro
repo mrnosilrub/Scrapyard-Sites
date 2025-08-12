@@ -3,6 +3,8 @@ import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import BetaInvite from "../components/BetaInvite.astro";
 import Calculator from "../components/Calculator.astro";
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <Base title="Scrapyard Sites — Your Reputation Is Your Edge">
   <Hero
@@ -44,28 +46,28 @@ import Calculator from "../components/Calculator.astro";
         </div>
       </div>
       <p class="mt-8 text-zinc-700">When your reputation is reinforced online, trust goes up and so do your profits. Engage visitors, collect quotes, and become the yard drivers choose every time.</p>
-      <div class="mt-6"><a href="/pricing/" class="text-brand-orange font-medium">See Pricing →</a></div>
+      <div class="mt-6"><a href={withBase('/pricing/')} class="text-brand-orange font-medium">See Pricing →</a></div>
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 py-12">
     <h2 class="text-2xl font-bold tracking-tight">Demo Yards</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <a href="/demos/demo-yard-1/" class="group overflow-hidden rounded-lg border border-zinc-200">
+      <a href={withBase('/demos/demo-yard-1/')} class="group overflow-hidden rounded-lg border border-zinc-200">
         <div class="h-40 bg-zinc-100"></div>
         <div class="p-4">
           <h3 class="font-semibold group-hover:text-brand-orange">Metro Yard Demo</h3>
           <p class="mt-1 text-sm text-zinc-600">Concept build showing credibility, qualification, visibility and reliability.</p>
         </div>
       </a>
-      <a href="/demos/demo-yard-2/" class="group overflow-hidden rounded-lg border border-zinc-200">
+      <a href={withBase('/demos/demo-yard-2/')} class="group overflow-hidden rounded-lg border border-zinc-200">
         <div class="h-40 bg-zinc-100"></div>
         <div class="p-4">
           <h3 class="font-semibold group-hover:text-brand-orange">Mobile‑Friendly Demo</h3>
           <p class="mt-1 text-sm text-zinc-600">Optimized for fast quotes and on‑the‑go sellers.</p>
         </div>
       </a>
-      <a href="/demos/demo-yard-3/" class="group overflow-hidden rounded-lg border border-zinc-200">
+      <a href={withBase('/demos/demo-yard-3/')} class="group overflow-hidden rounded-lg border border-zinc-200">
         <div class="h-40 bg-zinc-100"></div>
         <div class="p-4">
           <h3 class="font-semibold group-hover:text-brand-orange">Industrial Client Demo</h3>
@@ -128,7 +130,7 @@ import Calculator from "../components/Calculator.astro";
       </div>
     </div>
     <div class="mt-6">
-      <a href="/pricing/#deposit" class="inline-flex items-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white">Pay Deposit & Reserve My Build Week</a>
+      <a href={withBase('/pricing/#deposit')} class="inline-flex items-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white">Pay Deposit & Reserve My Build Week</a>
       <p class="mt-2 text-sm text-zinc-600">50% deposit now, balance at launch. 90‑day warm lead guarantee.</p>
     </div>
   </section>

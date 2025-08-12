@@ -1,5 +1,7 @@
 ---
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <footer class="mt-24 border-t border-zinc-200 bg-white">
   <div class="mx-auto max-w-7xl px-4 py-12">
@@ -7,15 +9,15 @@ const year = new Date().getFullYear();
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-700">Pages</h3>
         <ul class="mt-4 space-y-2 text-sm">
-          <li><a href="/" class="hover:text-brand-orange">Home</a></li>
-          <li><a href="/about/" class="hover:text-brand-orange">About</a></li>
-          <li><a href="/services/" class="hover:text-brand-orange">Services</a></li>
-          <li><a href="/process/" class="hover:text-brand-orange">Process</a></li>
-          <li><a href="/demos/" class="hover:text-brand-orange">Demos</a></li>
-          <li><a href="/pricing/" class="hover:text-brand-orange">Pricing</a></li>
-          <li><a href="/calculator/" class="hover:text-brand-orange">Calculator</a></li>
-          <li><a href="/contact/" class="hover:text-brand-orange">Contact</a></li>
-          <li><a href="/privacy/" class="hover:text-brand-orange">Privacy</a></li>
+          <li><a href={withBase('/')} class="hover:text-brand-orange">Home</a></li>
+          <li><a href={withBase('/about/')} class="hover:text-brand-orange">About</a></li>
+          <li><a href={withBase('/services/')} class="hover:text-brand-orange">Services</a></li>
+          <li><a href={withBase('/process/')} class="hover:text-brand-orange">Process</a></li>
+          <li><a href={withBase('/demos/')} class="hover:text-brand-orange">Demos</a></li>
+          <li><a href={withBase('/pricing/')} class="hover:text-brand-orange">Pricing</a></li>
+          <li><a href={withBase('/calculator/')} class="hover:text-brand-orange">Calculator</a></li>
+          <li><a href={withBase('/contact/')} class="hover:text-brand-orange">Contact</a></li>
+          <li><a href={withBase('/privacy/')} class="hover:text-brand-orange">Privacy</a></li>
         </ul>
       </div>
       <div class="lg:col-span-2">
