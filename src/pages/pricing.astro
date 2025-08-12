@@ -1,0 +1,92 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import BetaInvite from "../components/BetaInvite.astro";
+---
+<Base title="Pricing — Scrapyard Sites">
+  <Hero
+    title="Invest in Your Reputation"
+    body="Choose from two flat packages and a simple care plan—no hidden fees, no surprises. Each plan builds credibility, attracts qualified sellers and keeps you visible in local search."
+    primaryHref="#packages"
+    primaryLabel="Explore Packages"
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-16" id="packages">
+    <h2 class="text-2xl font-bold tracking-tight">Service Pricing</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      <div class="rounded-lg border border-zinc-200 p-6">
+        <h3 class="text-lg font-semibold">Standard Launch — $2,499</h3>
+        <p class="mt-1 text-sm text-zinc-600">Get trusted fast.</p>
+        <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700">
+          <li>One‑page site with professional copy and design</li>
+          <li>Contact form routed to your inbox</li>
+          <li>Google Maps Embed</li>
+          <li>30 days of updates post‑launch</li>
+          <li>Launch in 7 days</li>
+        </ul>
+      </div>
+      <div class="rounded-lg border border-zinc-200 p-6">
+        <h3 class="text-lg font-semibold">Premium Launch — $5,499</h3>
+        <p class="mt-1 text-sm text-zinc-600">Dominate your market.</p>
+        <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700">
+          <li>Multi‑page site with professional copy</li>
+          <li>Forms on every key page</li>
+          <li>Location pages with maps and SEO</li>
+          <li>60 days of updates post‑launch</li>
+          <li>Launch in 10 days</li>
+        </ul>
+      </div>
+      <div class="rounded-lg border border-zinc-200 p-6">
+        <h3 class="text-lg font-semibold">Care Plan — $99/mo</h3>
+        <p class="mt-1 text-sm text-zinc-600">Keep your site fresh and secure.</p>
+        <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700">
+          <li>Unlimited edits with 24‑hour turnaround</li>
+          <li>Security patches and backups</li>
+          <li>Uptime monitoring</li>
+          <li>Quarterly performance reports</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-6" id="deposit">
+      <a href="#" class="inline-flex items-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white">Pay Deposit & Reserve My Build Week</a>
+      <p class="mt-2 text-sm text-zinc-600">50% deposit now, balance at launch. 90‑day warm lead guarantee.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">How It Works & Extras</h2>
+    <div class="mt-4 grid gap-6 lg:grid-cols-2">
+      <div>
+        <h3 class="font-semibold">How It Works</h3>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-700">
+          <li>Book build week (50% deposit)</li>
+          <li>Launch (balance due)</li>
+          <li>Payment methods</li>
+          <li>90‑day warm lead guarantee</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold">Extras</h3>
+        <ul class="mt-2 list-disc pl-5 text-sm text-zinc-700">
+          <li>Extra pages – $350 each</li>
+          <li>On‑site photo/video (Lower 48) – from $750</li>
+          <li>Hand‑off to your server – $199</li>
+          <li><a href="/contact/" class="text-brand-orange">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">FAQ</h2>
+    <div class="mt-4 space-y-2">
+      <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">Timeline</summary><p class="mt-2 text-sm text-zinc-700">Standard in 7 days, Premium in 10.</p></details>
+      <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">Ownership</summary><p class="mt-2 text-sm text-zinc-700">You own your content and domain.</p></details>
+      <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">Deposits</summary><p class="mt-2 text-sm text-zinc-700">50% deposit reserves your build week.</p></details>
+      <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">Hosting</summary><p class="mt-2 text-sm text-zinc-700">We host or hand off to your server.</p></details>
+    </div>
+  </section>
+
+  <BetaInvite />
+</Base>
+

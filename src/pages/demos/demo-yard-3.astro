@@ -1,0 +1,47 @@
+---
+import Base from "../../layouts/Base.astro";
+import Hero from "../../components/Hero.astro";
+---
+<Base title="Demo Yard 3 — Scrapyard Sites">
+  <section class="bg-blue-600/10">
+    <div class="mx-auto max-w-7xl px-4 py-3 text-sm"><a href="/demos/" class="font-medium text-blue-700">← Back to demos</a></div>
+  </section>
+  <Hero
+    title="Top Dollar for Scrap Metal — Fast, Fair, & Reliable"
+    body="Serving the metro area with 24‑hour turnarounds and honest weights."
+    primaryHref="#quote"
+    primaryLabel="Request a Quote"
+    secondaryHref="#services"
+    secondaryLabel="Our Services ↓"
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12" id="services">
+    <h2 class="text-2xl font-bold tracking-tight">Our Core Services</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-3">
+      <div class="rounded-lg border border-zinc-200 p-5">Ferrous & Non‑Ferrous Buying</div>
+      <div class="rounded-lg border border-zinc-200 p-5">Industrial Container Service</div>
+      <div class="rounded-lg border border-zinc-200 p-5">Demolition & Clean‑Up</div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Stats</h2>
+    <div class="mt-4 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 p-6 text-white"><div class="text-xl font-bold">50+ Years</div><div class="text-sm">Combined Experience</div></div>
+      <div class="rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 p-6 text-white"><div class="text-xl font-bold">24h</div><div class="text-sm">Average Turnaround</div></div>
+      <div class="rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 p-6 text-white"><div class="text-xl font-bold">100%</div><div class="text-sm">Satisfaction Guarantee</div></div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12" id="quote">
+    <h2 class="text-2xl font-bold tracking-tight">Request a Quote</h2>
+    <form class="mt-6 grid gap-4 sm:grid-cols-2">
+      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Phone" />
+      <input class="rounded-md border border-zinc-300 px-3 py-2 sm:col-span-2" placeholder="Email" />
+      <textarea class="rounded-md border border-zinc-300 px-3 py-2 sm:col-span-2" rows="4" placeholder="Message"></textarea>
+      <button class="inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white sm:col-span-2">Send →</button>
+    </form>
+  </section>
+</Base>
+

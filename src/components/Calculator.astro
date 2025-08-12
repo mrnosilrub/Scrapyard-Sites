@@ -1,0 +1,54 @@
+---
+---
+<section class="mx-auto max-w-3xl rounded-lg border border-zinc-200 p-6 sm:p-8">
+  <h2 class="text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
+  <p class="mt-2 text-zinc-600">Every missed call is material on your competitor’s scale. Run the numbers—see what procrastination costs.</p>
+  <form id="risk-form" class="mt-6 grid gap-4 sm:grid-cols-2">
+    <div>
+      <label class="block text-sm font-medium text-zinc-700">Average tons per missed load (t)</label>
+      <input type="number" step="0.1" min="0" id="t" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 3" />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-zinc-700">Margin per ton ($) (m)</label>
+      <input type="number" step="0.01" min="0" id="m" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 65" />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-zinc-700">Missed loads per month (l)</label>
+      <input type="number" step="1" min="0" id="l" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 4" />
+    </div>
+    <div class="sm:col-span-2">
+      <button type="button" id="calc" class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Calculate</button>
+    </div>
+  </form>
+  <div id="result" class="mt-6 hidden rounded-md bg-zinc-50 p-4 ring-1 ring-inset ring-zinc-200">
+    <p class="text-lg font-semibold">You’re Leaking <span id="leak" class="text-brand-orange"></span>/year</p>
+    <p class="mt-1 text-sm text-zinc-600">A Standard Launch pays for itself in <span id="roiDays"></span> days.</p>
+    <div class="mt-4">
+      <a href="/contact/" class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Book a Discovery Call</a>
+    </div>
+  </div>
+  <script is:inline>
+    const fmt = (n) => n.toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    const btn = document.getElementById('calc');
+    const t = document.getElementById('t');
+    const m = document.getElementById('m');
+    const l = document.getElementById('l');
+    const box = document.getElementById('result');
+    const leak = document.getElementById('leak');
+    const roiDays = document.getElementById('roiDays');
+    btn?.addEventListener('click', () => {
+      const tv = parseFloat(t.value) || 0;
+      const mv = parseFloat(m.value) || 0;
+      const lv = parseInt(l.value) || 0;
+      const annualLeak = tv * mv * lv * 12; // t tons * $/ton * missed loads/month * 12
+      leak.textContent = fmt(annualLeak);
+      const standardCost = 2499;
+      const dailyLeak = annualLeak / 365;
+      const daysToROI = dailyLeak > 0 ? Math.max(1, Math.round(standardCost / dailyLeak)) : 0;
+      roiDays.textContent = daysToROI ? `${daysToROI}` : '—';
+      box.classList.remove('hidden');
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</section>
+

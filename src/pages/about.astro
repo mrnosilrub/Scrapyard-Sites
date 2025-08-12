@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import BetaInvite from "../components/BetaInvite.astro";
+import founderUrl from "../assets/founder.jpg";
+---
+<Base title="About — Scrapyard Sites">
+  <Hero
+    title="From the Sample Desk to the Keyboard"
+    body="I’m a scrap‑industry R&D analyst who builds websites for scrapyards. When suppliers can’t load your site, you lose the foot‑tons they’re ready to drop—so I created Scrapyard Sites to fix that gap with the same methodical approach I use on the production floor: measure, improve, and lock‑in."
+    primaryHref="/contact/"
+    primaryLabel="Book a Discovery Call"
+    image={founderUrl}
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-16">
+    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <img src={founderUrl} alt="Founder" class="aspect-video w-full rounded-lg object-cover" />
+      <div class="prose prose-zinc max-w-none">
+        <h2>Our Story</h2>
+        <p>
+          We bring ISO‑9001 discipline and real‑world scrap operations experience (LIBS, data/ops) to web, applying a
+          simple loop: measure, improve, lock‑in. That means faster, more credible websites that convert browsers into
+          booked loads.
+        </p>
+        <p>
+          We obsess over the details that build trust: uptime, SSL, schema, fast forms and performance budgets that keep
+          pages light and responsive on the yard’s Wi‑Fi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Our Reputation Shields</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Credibility</h3><p class="mt-1 text-sm text-zinc-600">Sub‑2‑second load times, SSL, and real yard photos build instant trust.</p></div>
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Qualification</h3><p class="mt-1 text-sm text-zinc-600">Copy is written around the questions sellers actually ask—grades, pricing cadence, pick‑up radius.</p></div>
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Visibility</h3><p class="mt-1 text-sm text-zinc-600">Local SEO schema and keyword research help you appear above chain recyclers in the map pack.</p></div>
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Reliability</h3><p class="mt-1 text-sm text-zinc-600">Care plans with monitoring, backups and edits ensure your site never rusts.</p></div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Our Core Values</h2>
+    <ul class="mt-4 grid gap-4 sm:grid-cols-3 text-sm text-zinc-700">
+      <li><span class="font-semibold">Honesty</span> — say what we’ll do, do what we say.</li>
+      <li><span class="font-semibold">Accountability</span> — decisions backed by data.</li>
+      <li><span class="font-semibold">Continuous Improvement</span> — we ship, we learn, we improve.</li>
+    </ul>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Why Choose Scrapyard Sites?</h2>
+    <ul class="mt-4 list-disc pl-6 text-zinc-700">
+      <li>Industry Expertise</li>
+      <li>Proven Process</li>
+      <li>Reputation‑First Design</li>
+      <li>90‑day warm lead guarantee</li>
+    </ul>
+  </section>
+
+  <BetaInvite />
+</Base>
+

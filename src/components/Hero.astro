@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  body?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  image?: string;
+}
+
+const {
+  title,
+  body = "",
+  primaryHref = "/contact/",
+  primaryLabel = "Book a Discovery Call",
+  secondaryHref,
+  secondaryLabel,
+  image
+} = Astro.props as Props;
+
+import heroUrl from "../assets/hero.jpg";
+const bg = image ?? heroUrl;
+---
+<section class="relative isolate">
+  <div
+    class="relative h-[70vh] min-h-[480px] w-full bg-cover bg-center"
+    style={`background-image: url(${bg});`}
+    aria-hidden="true"
+  >
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 mx-auto max-w-5xl px-4 py-24 flex h-full items-center">
+      <div class="text-white">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">{title}</h1>
+        {body && <p class="mt-4 max-w-3xl text-lg text-zinc-100">{body}</p>}
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href={primaryHref} class="inline-flex items-center justify-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white shadow">
+            {primaryLabel}
+          </a>
+          {secondaryHref && secondaryLabel && (
+            <a href={secondaryHref} class="inline-flex items-center justify-center rounded-md bg-white/10 px-5 py-3 font-medium text-white ring-1 ring-inset ring-white/40 hover:bg-white/20">
+              {secondaryLabel}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

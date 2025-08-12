@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import BetaInvite from "../components/BetaInvite.astro";
+---
+<Base title="Services — Scrapyard Sites">
+  <Hero
+    title="Build Your Reputation Engine"
+    body="Launch a high‑performing scrapyard website in just seven days. Designed to grow trust, visibility and bookings from day one."
+    primaryHref="/contact/"
+    primaryLabel="Book a Discovery Call"
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-16">
+    <h2 class="text-2xl font-bold tracking-tight">Our Reputation‑First Approach</h2>
+    <p class="mt-3 text-zinc-700">We focus on the four pillars that matter most for scrapyards.</p>
+    <ul class="mt-4 grid gap-4 sm:grid-cols-2 text-zinc-700">
+      <li><span class="font-semibold">Instant credibility</span> — fast, modern, trustworthy.</li>
+      <li><span class="font-semibold">Pre‑qualifying forms</span> — filter serious sellers.</li>
+      <li><span class="font-semibold">Local visibility</span> — show up where it counts.</li>
+      <li><span class="font-semibold">Rock‑solid reliability</span> — care plans and monitoring.</li>
+    </ul>
+    <div class="mt-6"><a href="/contact/" class="text-brand-orange font-medium">Book a Discovery Call</a></div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Four Pillars</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="/process/#credibility" class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Credibility</h3><p class="mt-1 text-sm text-zinc-600">Make the right first impression.</p></a>
+      <a href="/process/#qualification" class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Qualification</h3><p class="mt-1 text-sm text-zinc-600">Spend time with serious sellers.</p></a>
+      <a href="/process/#visibility" class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Visibility</h3><p class="mt-1 text-sm text-zinc-600">Be found in local search.</p></a>
+      <a href="/process/#reliability" class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Reliability</h3><p class="mt-1 text-sm text-zinc-600">Stay fast and secure.</p></a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Service Packages</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-3">
+      <div class="rounded-lg border border-zinc-200 p-6">
+        <h3 class="text-lg font-semibold">Standard</h3>
+        <p class="mt-1 text-sm text-zinc-600">Get trusted fast.</p>
+        <a href="/pricing/" class="mt-3 inline-block text-brand-orange">View Pricing</a>
+      </div>
+      <div class="rounded-lg border border-zinc-200 p-6">
+        <h3 class="text-lg font-semibold">Premium</h3>
+        <p class="mt-1 text-sm text-zinc-600">Dominate your market.</p>
+        <a href="/pricing/" class="mt-3 inline-block text-brand-orange">View Pricing</a>
+      </div>
+      <div class="rounded-lg border border-zinc-200 p-6">
+        <h3 class="text-lg font-semibold">Care Plan</h3>
+        <p class="mt-1 text-sm text-zinc-600">Keep your site fresh and secure.</p>
+        <a href="/pricing/" class="mt-3 inline-block text-brand-orange">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">See It in Action</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/demos/demo-yard-1/" class="group overflow-hidden rounded-lg border border-zinc-200"><div class="h-40 bg-zinc-100"></div><div class="p-4"><h3 class="font-semibold group-hover:text-brand-orange">Metro Yard Demo</h3></div></a>
+      <a href="/demos/demo-yard-2/" class="group overflow-hidden rounded-lg border border-zinc-200"><div class="h-40 bg-zinc-100"></div><div class="p-4"><h3 class="font-semibold group-hover:text-brand-orange">Mobile‑Friendly Demo</h3></div></a>
+      <a href="/demos/demo-yard-3/" class="group overflow-hidden rounded-lg border border-zinc-200"><div class="h-40 bg-zinc-100"></div><div class="p-4"><h3 class="font-semibold group-hover:text-brand-orange">Industrial Client Demo</h3></div></a>
+    </div>
+  </section>
+
+  <BetaInvite />
+</Base>
+

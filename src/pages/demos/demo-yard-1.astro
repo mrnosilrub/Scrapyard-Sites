@@ -1,0 +1,56 @@
+---
+import Base from "../../layouts/Base.astro";
+import Hero from "../../components/Hero.astro";
+---
+<Base title="Demo Yard 1 — Scrapyard Sites">
+  <section class="bg-brand-orange/10">
+    <div class="mx-auto max-w-7xl px-4 py-3 text-sm"><a href="/demos/" class="font-medium text-brand-orange">← Back to demos</a></div>
+  </section>
+  <Hero
+    title="Top Dollar for Scrap Metal"
+    body="Fast, fair, and reliable service in Demo City."
+    primaryHref="#quote"
+    primaryLabel="Request a Quote"
+    secondaryHref="#materials"
+    secondaryLabel="What We Buy"
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">How It Works</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-3">
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Check Your Material</h3></div>
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Drive On & Unload</h3></div>
+      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Get Paid</h3></div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12" id="materials">
+    <h2 class="text-2xl font-bold tracking-tight">Materials We Buy</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-lg border border-zinc-200 p-5">Copper & Brass</div>
+      <div class="rounded-lg border border-zinc-200 p-5">Aluminum</div>
+      <div class="rounded-lg border border-zinc-200 p-5">Steel & Iron</div>
+      <div class="rounded-lg border border-zinc-200 p-5">Stainless & High Temp</div>
+      <div class="rounded-lg border border-zinc-200 p-5">Catalytic Converters</div>
+      <div class="rounded-lg border border-zinc-200 p-5">E‑Scrap & Batteries</div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12" id="quote">
+    <h2 class="text-2xl font-bold tracking-tight">Get a Fast Quote</h2>
+    <form class="mt-6 grid gap-4 sm:grid-cols-2">
+      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Phone" />
+      <input class="rounded-md border border-zinc-300 px-3 py-2 sm:col-span-2" placeholder="Email" />
+      <textarea class="rounded-md border border-zinc-300 px-3 py-2 sm:col-span-2" rows="4" placeholder="Message"></textarea>
+      <button class="inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white sm:col-span-2">Send →</button>
+    </form>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="text-2xl font-bold tracking-tight">Visit Our Yard</h2>
+    <div class="mt-4 h-64 w-full rounded-lg border border-zinc-200 bg-zinc-100"></div>
+    <p class="mt-2 text-sm text-zinc-600">Hours, address, phone link.</p>
+  </section>
+</Base>
+
