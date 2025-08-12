@@ -7,7 +7,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
   <div class="mx-auto max-w-7xl px-4">
     <div class="flex h-16 items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
+      <a href={withBase('/')} class="flex items-center gap-3">
         <img src={logoUrl.src ?? logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
         <span class="text-lg font-semibold tracking-tight">
           <span class="text-brand-orange">Scrapyard</span> Sites

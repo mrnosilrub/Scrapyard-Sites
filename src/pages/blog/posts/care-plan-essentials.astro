@@ -1,9 +1,10 @@
----
 import Base from "../../../layouts/Base.astro";
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <Base title="Care Plan Essentials — Scrapyard Sites">
   <main class="mx-auto max-w-3xl px-4 py-16">
-    <a href="/blog/" class="text-brand-orange">← Back to blog</a>
+    <a href={withBase('/blog/')} class="text-brand-orange">← Back to blog</a>
     <div class="mt-6 text-xs font-semibold uppercase text-zinc-500">Reliability</div>
     <h1 class="mt-1 text-3xl font-bold tracking-tight">Care Plan Essentials</h1>
     <div class="mt-1 text-sm text-zinc-600">By Scrapyard Sites | January 3, 2024</div>
