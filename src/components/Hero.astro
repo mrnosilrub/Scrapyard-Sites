@@ -6,7 +6,7 @@ interface Props {
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
-  image?: string;
+  image?: any;
 }
 
 const {
@@ -19,13 +19,14 @@ const {
   image
 } = Astro.props as Props;
 
-import heroUrl from "../assets/hero.jpg";
-const bg = image ?? heroUrl;
+import heroAsset from "../assets/hero.jpg";
+const bg = image ?? heroAsset;
+const bgSrc = typeof bg === 'string' ? bg : (bg?.src ?? '');
 ---
 <section class="relative isolate">
   <div
     class="relative h-[70vh] min-h-[480px] w-full bg-cover bg-center"
-    style={`background-image: url(${bg});`}
+    style={`background-image: url(${bgSrc});`}
     aria-hidden="true"
   >
     <div class="absolute inset-0 bg-black/50"></div>

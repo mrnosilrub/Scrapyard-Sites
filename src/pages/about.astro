@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import BetaInvite from "../components/BetaInvite.astro";
-import founderUrl from "../assets/founder.jpg";
+import founderAsset from "../assets/founder.jpg";
 ---
 <Base title="About — Scrapyard Sites">
   <Hero
@@ -10,12 +10,12 @@ import founderUrl from "../assets/founder.jpg";
     body="I’m a scrap‑industry R&D analyst who builds websites for scrapyards. When suppliers can’t load your site, you lose the foot‑tons they’re ready to drop—so I created Scrapyard Sites to fix that gap with the same methodical approach I use on the production floor: measure, improve, and lock‑in."
     primaryHref="/contact/"
     primaryLabel="Book a Discovery Call"
-    image={founderUrl}
+    image={founderAsset}
   />
 
   <section class="mx-auto max-w-7xl px-4 py-16">
     <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-      <img src={founderUrl} alt="Founder" class="aspect-video w-full rounded-lg object-cover" />
+      <img src={founderAsset.src ?? founderAsset} alt="Founder" class="aspect-video w-full rounded-lg object-cover" />
       <div class="prose prose-zinc max-w-none">
         <h2>Our Story</h2>
         <p>
