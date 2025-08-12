@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/Scrapyard-Sites",
   trailingSlash: "always",
   integrations: [tailwind(), mdx()],
-  build: { inlineStylesheets: "auto", assetsPrefix: "./" }
+  build: { inlineStylesheets: "auto" }
 });
 
 
