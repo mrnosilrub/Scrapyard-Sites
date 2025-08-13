@@ -1,5 +1,6 @@
----
 import "../styles/globals.css";
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, ""));
 ---
 <html lang="en">
   <head>
@@ -9,6 +10,11 @@ import "../styles/globals.css";
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900">
     <slot />
+    <style>
+      [data-aos] { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+      .aos-in { opacity: 1 !important; transform: none !important; }
+    </style>
+    <script src={withBase('/demos/demo-yard-3/script.js')}></script>
   </body>
   </html>
 

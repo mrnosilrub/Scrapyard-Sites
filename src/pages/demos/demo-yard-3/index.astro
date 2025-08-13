@@ -1,0 +1,261 @@
+---
+import Demo from "../../../layouts/Demo.astro";
+import hero from "../../../assets/hero.jpg";
+import logo from "../../../assets/logo.svg";
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+---
+<Demo>
+  <style>
+    :root { --brand-orange: #4169e1; --brand-steel: #5E6367; --brand-charcoal: #2B2B2B; }
+  </style>
+  <link rel="icon" href={withBase('/assets/logo.svg')} />
+  <link rel="icon" type="image/png" href={withBase('/assets/logo.png')} />
+  <meta property="og:image" content={withBase('/assets/hero.jpg')} />
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Demo Yard",
+    description: "Scrap metal recycling services in the Metropolis area.",
+    url: "https://www.demoyard.com",
+    telephone: "+1-555-0100",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1234 Industrial Dr.",
+      addressLocality: "Metropolis",
+      addressRegion: "TX",
+      postalCode: "77000",
+      addressCountry: "US"
+    }
+  })}</script>
+
+  <div class="w-full bg-[var(--brand-orange)] text-white text-sm">
+    <div class="mx-auto max-w-7xl px-6 md:px-8 py-2 text-center">
+      <a href={withBase('/')} class="underline underline-offset-4">Return to ScrapyardSites.com</a>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-white shadow-header">
+    <input id="demo-nav-toggle" type="checkbox" class="peer sr-only" />
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href={withBase('/demos/demo-yard-3/')} class="flex items-center gap-3">
+          <img src={withBase('/assets/logo.svg')} alt="Premium Demo" class="h-8 w-8" />
+          <span class="text-lg font-semibold tracking-tight">Premium Demo</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href={withBase('/demos/demo-yard-3/services.html')} class="hover:text-[var(--brand-orange)]">Services</a>
+          <a href={withBase('/demos/demo-yard-3/process.html')} class="hover:text-[var(--brand-orange)]">Process</a>
+          <a href={withBase('/demos/demo-yard-3/accepted-materials.html')} class="hover:text-[var(--brand-orange)]">Materials</a>
+          <a href={withBase('/demos/demo-yard-3/about.html')} class="hover:text-[var(--brand-orange)]">About Us</a>
+          <a href={withBase('/demos/demo-yard-3/our-team.html')} class="hover:text-[var(--brand-orange)]">Our Team</a>
+          <a href={withBase('/demos/demo-yard-3/contact.html')} class="hover:text-[var(--brand-orange)]">Contact</a>
+          <a href={withBase('/demos/demo-yard-3/faq.html')} class="hover:text-[var(--brand-orange)]">FAQ</a>
+        </nav>
+        <div class="hidden md:flex">
+          <a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
+        </div>
+        <label for="demo-nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </label>
+      </div>
+    </div>
+    <div class="fixed inset-0 z-50 hidden bg-white peer-checked:block">
+      <div class="flex h-full flex-col">
+        <div class="flex items-center justify-between px-6 md:px-8 h-16 shadow-header">
+          <a href={withBase('/demos/demo-yard-3/')} class="flex items-center gap-3">
+            <img src={withBase('/assets/logo.svg')} alt="Premium Demo" class="h-8 w-8" />
+            <span class="text-lg font-semibold tracking-tight">Premium Demo</span>
+          </a>
+          <label for="demo-nav-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Close Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </label>
+        </div>
+        <nav class="flex-1 p-8 text-lg font-medium space-y-6">
+          <a href={withBase('/demos/demo-yard-3/services.html')} class="block">Services</a>
+          <a href={withBase('/demos/demo-yard-3/process.html')} class="block">Process</a>
+          <a href={withBase('/demos/demo-yard-3/accepted-materials.html')} class="block">Materials</a>
+          <a href={withBase('/demos/demo-yard-3/about.html')} class="block">About Us</a>
+          <a href={withBase('/demos/demo-yard-3/our-team.html')} class="block">Our Team</a>
+          <a href={withBase('/demos/demo-yard-3/contact.html')} class="block">Contact</a>
+          <a href={withBase('/demos/demo-yard-3/faq.html')} class="block">FAQ</a>
+        </nav>
+        <div class="p-8">
+          <a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex w-full items-center justify-center rounded-md bg-[var(--brand-orange)] px-4 py-3 text-white shadow">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="top" class="relative isolate">
+    <div class="relative h-[60vh] min-h-[420px] w-full bg-cover bg-center" style={`background-image: url(${withBase('/assets/hero.jpg')});`} aria-hidden="true">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative z-10 mx-auto max-w-5xl px-6 md:px-8 py-24 flex h-full items-center">
+        <div class="text-white">
+          <h1 class="text-5xl font-bold tracking-tight leading-tight">
+            <span class="block">Top Dollar for</span>
+            <span class="block">Scrap Metal</span>
+            <span class="block">Fast, Fair, & Reliable</span>
+          </h1>
+          <p class="mt-4 max-w-3xl text-lg text-zinc-100">Serving the metro area with 24‑hour turnarounds and honest weights.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex items-center justify-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white shadow">Request a Quote</a>
+            <a href="#services" class="inline-flex items-center justify-center rounded-md bg-white/10 px-5 py-3 font-medium text-white ring-1 ring-inset ring-white/40 hover:bg-white/20">Our Services ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+    <h2 class="text-2xl font-bold tracking-tight">Our Core Services</h2>
+    <p class="mt-2 text-zinc-700">Comprehensive scrap buying, container rental, and on-site demolition.</p>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <a href={withBase('/demos/demo-yard-3/services.html#buying')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Ferrous & Non‑Ferrous Buying</h3><p class="mt-1 text-sm text-zinc-600">Competitive pricing on steel, aluminum, copper, brass, and more.</p></a>
+      <a href={withBase('/demos/demo-yard-3/services.html#containers')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Industrial Container Service</h3><p class="mt-1 text-sm text-zinc-600">Scheduled roll‑off swaps to keep your operation moving.</p></a>
+      <a href={withBase('/demos/demo-yard-3/services.html#demo')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Demolition & Clean‑Up</h3><p class="mt-1 text-sm text-zinc-600">Safe, insured crews for on‑site dismantling and hauling.</p></a>
+    </div>
+    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/services.html')} class="text-[var(--brand-orange)] font-medium">View All</a></div>
+  </section>
+
+  <section id="client-band" class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+    <div class="rounded-lg bg-zinc-50 ring-1 ring-zinc-200 p-6 text-center">
+      <div>★★★★★ 4.8 Google rating</div>
+      <div class="mt-1 text-sm text-zinc-600">City of Houston · XYZ Construction · Acme Manufacturing · MegaCorp</div>
+      <div class="mt-1 text-sm text-zinc-600">As seen in Recycling Today</div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+    <div class="grid gap-4 sm:grid-cols-3">
+      <div class="rounded-lg bg-gradient-to-br from-[var(--brand-orange)] to-blue-400 p-6 text-white"><div class="text-xl font-bold stat-number" data-target="50">0+</div><div class="text-sm">Years Combined Experience</div></div>
+      <div class="rounded-lg bg-gradient-to-br from-[var(--brand-orange)] to-blue-400 p-6 text-white"><div class="text-xl font-bold stat-number" data-target="24">0h</div><div class="text-sm">Average Turnaround</div></div>
+      <div class="rounded-lg bg-gradient-to-br from-[var(--brand-orange)] to-blue-400 p-6 text-white"><div class="text-xl font-bold stat-number" data-target="100">0%</div><div class="text-sm">Satisfaction Guarantee</div></div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold tracking-tight">Sell Your Scrap in 3 Easy Steps</h2>
+      <p class="mt-1 text-zinc-700">(Total yard time: ~10 minutes—no appointment, no hassle.)</p>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-3">
+      <div class="rounded-lg border border-zinc-200 p-5">
+        <h3 class="font-semibold">1 — Check Your Material</h3>
+        <p class="mt-1 text-sm text-zinc-600">We accept Copper, Brass, Aluminum (sheet, cast & cans), Steel, Iron, Stainless Steel & High Temp, Catalytic Converters, Switch Gear, E-Scrap, Batteries, & more!</p>
+        <a href="#materials" class="mt-2 inline-block text-[var(--brand-orange)]">Accepted Materials ↓</a>
+      </div>
+      <div class="rounded-lg border border-zinc-200 p-5">
+        <h3 class="font-semibold">2 — Drive On & Unload</h3>
+        <p class="mt-1 text-sm text-zinc-600">Roll onto our calibrated truck scale, grab a yard pass, and follow the clearly-marked lanes. Our crew will grade, sort, and unload for you—so you’re back on the road fast.</p>
+      </div>
+      <div class="rounded-lg border border-zinc-200 p-5">
+        <h3 class="font-semibold">3 — Get Paid—Instantly</h3>
+        <p class="mt-1 text-sm text-zinc-600">Watch your weight ticket print, then choose Cash, ACH, or Check on the spot. A live price ticker shows today’s top three metals while you wait.</p>
+      </div>
+    </div>
+    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white">Request a Quote</a></div>
+  </section>
+
+  <section id="containers" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Need a Roll-Off Tomorrow?</h2>
+        <p class="mt-2 text-zinc-700">Same-day drops, 20-60 yd³ bins, and GPS-tracked drivers who swap your box before your scrap bay backs up.</p>
+        <ul class="mt-3 list-disc pl-5 text-zinc-700 space-y-1">
+          <li>4-hour average response inside 50 mi radius</li>
+          <li>No rental fees; freight only—metal value offsets the rest</li>
+          <li>E-mailed tonnage report before the truck leaves your dock</li>
+        </ul>
+        <div class="mt-4 flex gap-3">
+          <a href="#quote" class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white">Book a Container</a>
+          <a href="tel:555123SCRAP" class="inline-flex items-center rounded-md bg-zinc-900 px-5 py-3 font-medium text-white">Call Dispatch</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img src={withBase('/assets/rolloff.jpg')} alt="Roll-off" class="h-36 w-full rounded-lg object-cover" />
+        <img src={withBase('/assets/bin20.jpg')} alt="20yd bin" class="h-36 w-full rounded-lg object-cover" />
+        <img src={withBase('/assets/bin30.jpg')} alt="30yd bin" class="h-36 w-full rounded-lg object-cover" />
+        <img src={withBase('/assets/bin60.jpg')} alt="60yd bin" class="h-36 w-full rounded-lg object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section id="materials" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+    <h2 class="text-2xl font-bold tracking-tight">Accepted Materials</h2>
+    <p class="mt-1 text-zinc-700">These common items bring the best rates.</p>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        { t: 'Copper & Brass', s: 'Highest copper prices in county', img: 'copper.jpg' },
+        { t: 'Aluminum', s: 'Clean extrusion & sheet', img: 'aluminum.jpg' },
+        { t: 'Steel & Iron', s: 'HMS, prepared plate & tin', img: 'steel.jpg' },
+        { t: 'Stainless Steel & High Temp', s: '304/316 solids', img: 'stainless.jpg' },
+        { t: 'Catalytic Converters', s: 'OEM units', img: 'catalytic.jpg' },
+        { t: 'E‑Scrap & Batteries', s: 'Boards and lead‑acid', img: 'batteries.jpg' }
+      ].map((c) => (
+        <a href={withBase(`/demos/demo-yard-3/accepted-materials.html#${c.t.toLowerCase().split(' ')[0].replace(/[^a-z]/g,'')}`)} class="group overflow-hidden rounded-lg border border-zinc-200">
+          <img src={withBase(`/assets/${c.img}`)} alt={c.t} class="h-40 w-full object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold group-hover:text-[var(--brand-orange)]">{c.t}</h3>
+            <p class="mt-1 text-sm text-zinc-600">{c.s}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/accepted-materials.html')} class="text-[var(--brand-orange)] font-medium">View All</a></div>
+  </section>
+
+  <section id="cta-final" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight">Ready to turn scrap into cash?</h2>
+        <p class="mt-1 text-zinc-700">Pull in today—or lock a roll-off for tomorrow—and leave with money in your pocket in minutes.</p>
+        <p class="mt-1 text-sm text-zinc-600">Phones answered 7 a – 6 p · Monday – Saturday</p>
+        <div class="mt-4 flex gap-3">
+          <a href="#quote" class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white">Request a Quote</a>
+          <a href="tel:555123SCRAP" class="inline-flex items-center rounded-md bg-zinc-900 px-5 py-3 font-medium text-white">Call (555) 123-SCRAP</a>
+        </div>
+      </div>
+      <img src={withBase('/assets/hero.jpg')} alt="Demo" class="h-56 w-full rounded-lg object-cover" />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+    <div class="rounded-lg bg-zinc-50 p-6 ring-1 ring-zinc-200">
+      <iframe class="h-64 w-full rounded" src="https://maps.google.com/maps?q=Houston&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>
+      <dl class="mt-4 grid gap-2 text-sm text-zinc-700 sm:grid-cols-2">
+        <div><dt class="font-semibold">Hours</dt><dd>Mon–Fri 8am–5pm</dd></div>
+        <div><dt class="font-semibold">Address</dt><dd>123 Demo Road, Demo City, NY 12345</dd></div>
+        <div><dt class="font-semibold">Phone</dt><dd><a class="text-[var(--brand-orange)]" href="tel:5551234567">555-123-4567</a></dd></div>
+        <div><dt class="font-semibold">Email</dt><dd><a class="text-[var(--brand-orange)]" href="mailto:info@demoyard.com">info@demoyard.com</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <footer class="mt-24 border-t border-zinc-200 bg-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+      <p class="text-sm text-zinc-600">© {new Date().getFullYear()} Scrapyard Sites — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script is:inline>
+    const path = location.pathname;
+    document.querySelectorAll('nav a').forEach(a => { if (a.getAttribute('href') && path.endsWith(a.getAttribute('href')!.split('/').pop()!)) a.classList.add('text-[var(--brand-orange)]'); });
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const el = e.target as HTMLElement;
+            const target = parseInt(el.dataset.target || '0', 10);
+            let n = 0; const step = Math.max(1, Math.floor(target/50));
+            const id = setInterval(() => { n += step; if (n >= target) { n = target; clearInterval(id); } el.textContent = (el.textContent?.includes('%')? n+'%': el.textContent?.includes('h')? n+'h': n + (el.textContent?.includes('+')?'+':'')); }, 30);
+            io.unobserve(el);
+          }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.stat-number').forEach(el => io.observe(el));
+    }
+  </script>
+</Demo>
+
