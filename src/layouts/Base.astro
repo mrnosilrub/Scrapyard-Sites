@@ -7,8 +7,8 @@ import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import PromoBanner from "../components/PromoBanner.astro"
 import "../styles/globals.css"
-import faviconUrl from "../assets/favicon.svg"
-import heroUrl from "../assets/hero.jpg"
+import faviconUrl from "../assets/favicon.svg?url"
+import heroUrl from "../assets/hero.jpg?url"
 import { withBase } from "../lib/paths"
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
 ---
@@ -23,10 +23,10 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Scrapyard Sites" />
-    <meta property="og:image" content={heroUrl.src ?? heroUrl} />
+    <meta property="og:image" content={heroUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={heroUrl.src ?? heroUrl} />
-    <link rel="icon" href={faviconUrl.src ?? faviconUrl} />
+    <meta name="twitter:image" content={heroUrl} />
+    <link rel="icon" href={faviconUrl} />
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900">
     <a href="#main-content" class="absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0">Skip to content</a>

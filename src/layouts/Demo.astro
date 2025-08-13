@@ -1,7 +1,7 @@
 ---
 import "../styles/globals.css"
-import heroImg from "../assets/hero.jpg"
-import logoSvg from "../assets/logo.svg"
+import heroImg from "../assets/hero.jpg?url"
+import logoSvg from "../assets/logo.svg?url"
 import { withBase } from "../lib/paths"
 const {
   title = "",
@@ -17,9 +17,9 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title ? `${title} — Demo` : "Demo"}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="icon" href={logoSvg.src ?? logoSvg} />
+    <link rel="icon" href={logoSvg} />
     <link rel="canonical" href={canonical} />
-    <meta property="og:image" content={heroImg.src ?? heroImg} />
+    <meta property="og:image" content={heroImg} />
     <meta property="og:site_name" content="Scrapyard Sites" />
     <slot name="head" />
   </head>
@@ -81,7 +81,7 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
       [data-aos] { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
       .aos-in { opacity: 1; transform: none; }
     </style>
-    <script src={withBase('/demos/demo-yard-3/script.js')}></script>
+    <script is:inline src="/Scrapyard-Sites/demos/demo-yard-3/script.js"></script>
   </body>
   </html>
 

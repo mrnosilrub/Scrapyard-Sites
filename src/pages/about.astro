@@ -1,5 +1,5 @@
 ---
-import founderAsset from "../assets/founder.jpg"
+import founderAsset from "../assets/founder.jpg?url"
 import BetaInvite from "../components/BetaInvite.astro"
 import Hero from "../components/Hero.astro"
 import Base from "../layouts/Base.astro"
@@ -15,7 +15,7 @@ import Base from "../layouts/Base.astro"
 
   <section class="mx-auto max-w-7xl px-6 md:px-8 py-16">
     <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-      <img src={founderAsset.src ?? founderAsset} alt="Founder" class="aspect-video w-full rounded-lg object-cover" />
+      <img src={founderAsset} alt="Founder" class="aspect-video w-full rounded-lg object-cover" />
       <div class="prose prose-zinc max-w-none">
         <h2>Our Story</h2>
         <p>
