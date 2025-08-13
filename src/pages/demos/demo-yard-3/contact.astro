@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL
 const withBase = (p: string) =>
 	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
-<Demo>
+<Demo renderDefaultHeader={false} renderDefaultFooter={false}>
   <Fragment slot="head">
     <meta name="description" content="Get in touch with Demo Yard for scrap metal recycling services, quotes, or general inquiries." />
     <meta property="og:title" content="Contact | Demo Yard" />
