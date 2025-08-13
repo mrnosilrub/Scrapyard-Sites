@@ -1,6 +1,7 @@
 ---
 import BetaInvite from "../components/BetaInvite.astro"
 import Hero from "../components/Hero.astro"
+import Calculator from "../components/Calculator.astro"
 import Base from "../layouts/Base.astro"
 import { withBase } from "../lib/paths"
 ---
@@ -35,7 +36,7 @@ import { withBase } from "../lib/paths"
   <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
     <h2 class="text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
     <div class="mt-6">
-      <iframe src={withBase('/calculator/')} class="h-[640px] w-full rounded-lg border border-zinc-200"></iframe>
+      <Calculator />
     </div>
   </section>
 
