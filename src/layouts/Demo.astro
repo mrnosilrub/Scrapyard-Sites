@@ -8,13 +8,18 @@ const withBase = (p: string) => (p.startsWith("http") || p.startsWith("#") ? p :
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><slot name="title" /> — Demo</title>
-  </head>
-  <body class="min-h-screen antialiased bg-white text-zinc-900">
-    <slot />
     <style>
+      :root { --brand-orange: #4169e1; --brand-steel: #5E6367; --brand-charcoal: #2B2B2B; }
       [data-aos] { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
       .aos-in { opacity: 1 !important; transform: none !important; }
     </style>
+    <link rel="icon" href={withBase('/assets/logo.svg')} />
+    <link rel="icon" type="image/png" href={withBase('/assets/logo.png')} />
+    <meta property="og:image" content={withBase('/assets/hero.jpg')} />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen antialiased bg-white text-zinc-900">
+    <slot />
     <script src={withBase('/demos/demo-yard-3/script.js')}></script>
   </body>
   </html>

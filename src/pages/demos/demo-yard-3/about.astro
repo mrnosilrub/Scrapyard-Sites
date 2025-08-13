@@ -1,0 +1,69 @@
+---
+import Demo from "../../../layouts/Demo.astro";
+const base = import.meta.env.BASE_URL;
+const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+---
+<Demo>
+  <Fragment slot="head">
+    <meta name="description" content="Learn about Demo Yard's commitment to fair pricing, quick turnarounds, and exceptional service." />
+    <meta property="og:title" content="About | Demo Yard" />
+  </Fragment>
+  <div id="demo-top-banner" class="w-full bg-[var(--brand-orange)] text-white text-sm">
+    <div class="mx-auto max-w-7xl px-6 md:px-8 py-2 text-center">
+      <a href={withBase('/')} class="underline underline-offset-4">Return to ScrapyardSites.com</a>
+    </div>
+  </div>
+  <header class="sticky top-0 z-40 bg-white shadow-header">
+    <input id="demo-nav-toggle" type="checkbox" class="peer sr-only" />
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href={withBase('/demos/demo-yard-3/')} class="text-lg font-semibold">Premium Demo</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href={withBase('/demos/demo-yard-3/services/')} class="hover:text-[var(--brand-orange)]">Services</a>
+          <a href={withBase('/demos/demo-yard-3/process/')} class="hover:text-[var(--brand-orange)]">Process</a>
+          <a href={withBase('/demos/demo-yard-3/accepted-materials/')} class="hover:text-[var(--brand-orange)]">Materials</a>
+          <a href={withBase('/demos/demo-yard-3/about/')} class="hover:text-[var(--brand-orange)]">About Us</a>
+          <a href={withBase('/demos/demo-yard-3/our-team/')} class="hover:text-[var(--brand-orange)]">Our Team</a>
+          <a href={withBase('/demos/demo-yard-3/contact/')} class="hover:text-[var(--brand-orange)]">Contact</a>
+          <a href={withBase('/demos/demo-yard-3/faq/')} class="hover:text-[var(--brand-orange)]">FAQ</a>
+        </nav>
+        <div class="hidden md:flex">
+          <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="mission" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
+      <h1 class="text-3xl font-bold tracking-tight">Built on Metal, Powered by Integrity</h1>
+      <p class="mt-2 text-zinc-700">Two decades, one promise—fair pay, full respect, zero shortcuts.</p>
+      <a href="#timeline" class="mt-4 inline-block rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white">Our Story ↓</a>
+    </section>
+    <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">24-Hour Turnarounds</h3><p class="mt-1 text-sm text-zinc-700">Digital tickets + payment before you hit the gate.</p></div>
+        <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Certified Accuracy</h3><p class="mt-1 text-sm text-zinc-700">State scales, ISO SOPs, transparent weight sheets.</p></div>
+        <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Environmental Stewardship</h3><p class="mt-1 text-sm text-zinc-700">Zero-landfill flow & storm-water filtration.</p></div>
+        <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Relationship-Driven</h3><p class="mt-1 text-sm text-zinc-700">Long-term partners, not one-time vendors.</p></div>
+      </div>
+    </section>
+    <section id="timeline" class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+      <div class="space-y-4">
+        <div><div class="font-semibold">2003 — Bootstrap Beginnings</div><div class="text-sm text-zinc-700">Two brothers, one torch, and a half-acre dirt lot...</div></div>
+        <div><div class="font-semibold">2008 — Growing With Our Customers</div><div class="text-sm text-zinc-700">Contractors asked for on-site boxes...</div></div>
+        <div><div class="font-semibold">2015 — Tech That Pays You More</div><div class="text-sm text-zinc-700">Installed shredder, XRT, calibrated scales...</div></div>
+        <div><div class="font-semibold">2025 — 24 Acres, Zero-Landfill Goal</div><div class="text-sm text-zinc-700">97% recovery, promise unchanged...</div></div>
+      </div>
+    </section>
+    <section id="people" class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+      <blockquote class="rounded-lg bg-zinc-50 p-6 ring-1 ring-zinc-200">“Whether it’s a bucket of cans or a 40-yard box, the respect stays the same.”</blockquote>
+      <div class="mt-4 text-sm text-zinc-600">97% repeat industrial clients · 4.8 ★ Google rating</div>
+    </section>
+  </main>
+  <footer class="mt-24 border-t border-zinc-200 bg-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+      <p class="text-sm text-zinc-600">© {new Date().getFullYear()} Scrapyard Sites — All rights reserved.</p>
+    </div>
+  </footer>
+</Demo>
+

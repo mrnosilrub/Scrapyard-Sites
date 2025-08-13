@@ -29,7 +29,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     }
   })}</script>
 
-  <div class="w-full bg-[var(--brand-orange)] text-white text-sm">
+  <div id="demo-top-banner" class="w-full bg-[var(--brand-orange)] text-white text-sm">
     <div class="mx-auto max-w-7xl px-6 md:px-8 py-2 text-center">
       <a href={withBase('/')} class="underline underline-offset-4">Return to ScrapyardSites.com</a>
     </div>
@@ -44,16 +44,16 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
           <span class="text-lg font-semibold tracking-tight">Premium Demo</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href={withBase('/demos/demo-yard-3/services.html')} class="hover:text-[var(--brand-orange)]">Services</a>
-          <a href={withBase('/demos/demo-yard-3/process.html')} class="hover:text-[var(--brand-orange)]">Process</a>
-          <a href={withBase('/demos/demo-yard-3/accepted-materials.html')} class="hover:text-[var(--brand-orange)]">Materials</a>
-          <a href={withBase('/demos/demo-yard-3/about.html')} class="hover:text-[var(--brand-orange)]">About Us</a>
-          <a href={withBase('/demos/demo-yard-3/our-team.html')} class="hover:text-[var(--brand-orange)]">Our Team</a>
-          <a href={withBase('/demos/demo-yard-3/contact.html')} class="hover:text-[var(--brand-orange)]">Contact</a>
-          <a href={withBase('/demos/demo-yard-3/faq.html')} class="hover:text-[var(--brand-orange)]">FAQ</a>
+          <a href={withBase('/demos/demo-yard-3/services/')} class="hover:text-[var(--brand-orange)]">Services</a>
+          <a href={withBase('/demos/demo-yard-3/process/')} class="hover:text-[var(--brand-orange)]">Process</a>
+          <a href={withBase('/demos/demo-yard-3/accepted-materials/')} class="hover:text-[var(--brand-orange)]">Materials</a>
+          <a href={withBase('/demos/demo-yard-3/about/')} class="hover:text-[var(--brand-orange)]">About Us</a>
+          <a href={withBase('/demos/demo-yard-3/our-team/')} class="hover:text-[var(--brand-orange)]">Our Team</a>
+          <a href={withBase('/demos/demo-yard-3/contact/')} class="hover:text-[var(--brand-orange)]">Contact</a>
+          <a href={withBase('/demos/demo-yard-3/faq/')} class="hover:text-[var(--brand-orange)]">FAQ</a>
         </nav>
         <div class="hidden md:flex">
-          <a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
+          <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
         </div>
         <label for="demo-nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Open Menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -72,16 +72,16 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
           </label>
         </div>
         <nav class="flex-1 p-8 text-lg font-medium space-y-6">
-          <a href={withBase('/demos/demo-yard-3/services.html')} class="block">Services</a>
-          <a href={withBase('/demos/demo-yard-3/process.html')} class="block">Process</a>
-          <a href={withBase('/demos/demo-yard-3/accepted-materials.html')} class="block">Materials</a>
-          <a href={withBase('/demos/demo-yard-3/about.html')} class="block">About Us</a>
-          <a href={withBase('/demos/demo-yard-3/our-team.html')} class="block">Our Team</a>
-          <a href={withBase('/demos/demo-yard-3/contact.html')} class="block">Contact</a>
-          <a href={withBase('/demos/demo-yard-3/faq.html')} class="block">FAQ</a>
+          <a href={withBase('/demos/demo-yard-3/services/')} class="block">Services</a>
+          <a href={withBase('/demos/demo-yard-3/process/')} class="block">Process</a>
+          <a href={withBase('/demos/demo-yard-3/accepted-materials/')} class="block">Materials</a>
+          <a href={withBase('/demos/demo-yard-3/about/')} class="block">About Us</a>
+          <a href={withBase('/demos/demo-yard-3/our-team/')} class="block">Our Team</a>
+          <a href={withBase('/demos/demo-yard-3/contact/')} class="block">Contact</a>
+          <a href={withBase('/demos/demo-yard-3/faq/')} class="block">FAQ</a>
         </nav>
         <div class="p-8">
-          <a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex w-full items-center justify-center rounded-md bg-[var(--brand-orange)] px-4 py-3 text-white shadow">Request a Quote</a>
+          <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex w-full items-center justify-center rounded-md bg-[var(--brand-orange)] px-4 py-3 text-white shadow">Request a Quote</a>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
           </h1>
           <p class="mt-4 max-w-3xl text-lg text-zinc-100">Serving the metro area with 24‑hour turnarounds and honest weights.</p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex items-center justify-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white shadow">Request a Quote</a>
+            <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex items-center justify-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white shadow">Request a Quote</a>
             <a href="#services" class="inline-flex items-center justify-center rounded-md bg-white/10 px-5 py-3 font-medium text-white ring-1 ring-inset ring-white/40 hover:bg-white/20">Our Services ↓</a>
           </div>
         </div>
@@ -111,11 +111,11 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     <h2 class="text-2xl font-bold tracking-tight">Our Core Services</h2>
     <p class="mt-2 text-zinc-700">Comprehensive scrap buying, container rental, and on-site demolition.</p>
     <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <a href={withBase('/demos/demo-yard-3/services.html#buying')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Ferrous & Non‑Ferrous Buying</h3><p class="mt-1 text-sm text-zinc-600">Competitive pricing on steel, aluminum, copper, brass, and more.</p></a>
-      <a href={withBase('/demos/demo-yard-3/services.html#containers')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Industrial Container Service</h3><p class="mt-1 text-sm text-zinc-600">Scheduled roll‑off swaps to keep your operation moving.</p></a>
-      <a href={withBase('/demos/demo-yard-3/services.html#demo')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Demolition & Clean‑Up</h3><p class="mt-1 text-sm text-zinc-600">Safe, insured crews for on‑site dismantling and hauling.</p></a>
+      <a href={withBase('/demos/demo-yard-3/services/#buying')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Ferrous & Non‑Ferrous Buying</h3><p class="mt-1 text-sm text-zinc-600">Competitive pricing on steel, aluminum, copper, brass, and more.</p></a>
+      <a href={withBase('/demos/demo-yard-3/services/#containers')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Industrial Container Service</h3><p class="mt-1 text-sm text-zinc-600">Scheduled roll‑off swaps to keep your operation moving.</p></a>
+      <a href={withBase('/demos/demo-yard-3/services/#demo')} class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Demolition & Clean‑Up</h3><p class="mt-1 text-sm text-zinc-600">Safe, insured crews for on‑site dismantling and hauling.</p></a>
     </div>
-    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/services.html')} class="text-[var(--brand-orange)] font-medium">View All</a></div>
+    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/services/')} class="text-[var(--brand-orange)] font-medium">View All</a></div>
   </section>
 
   <section id="client-band" class="mx-auto max-w-7xl px-6 md:px-8 py-12">
@@ -193,7 +193,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
         { t: 'Catalytic Converters', s: 'OEM units', img: 'catalytic.jpg' },
         { t: 'E‑Scrap & Batteries', s: 'Boards and lead‑acid', img: 'batteries.jpg' }
       ].map((c) => (
-        <a href={withBase(`/demos/demo-yard-3/accepted-materials.html#${c.t.toLowerCase().split(' ')[0].replace(/[^a-z]/g,'')}`)} class="group overflow-hidden rounded-lg border border-zinc-200">
+        <a href={withBase(`/demos/demo-yard-3/accepted-materials/#${c.t.toLowerCase().split(' ')[0].replace(/[^a-z]/g,'')}`)} class="group overflow-hidden rounded-lg border border-zinc-200">
           <img src={withBase(`/assets/${c.img}`)} alt={c.t} class="h-40 w-full object-cover" />
           <div class="p-4">
             <h3 class="font-semibold group-hover:text-[var(--brand-orange)]">{c.t}</h3>
@@ -202,7 +202,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
         </a>
       ))}
     </div>
-    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/accepted-materials.html')} class="text-[var(--brand-orange)] font-medium">View All</a></div>
+    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/accepted-materials/')} class="text-[var(--brand-orange)] font-medium">View All</a></div>
   </section>
 
   <section id="cta-final" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
