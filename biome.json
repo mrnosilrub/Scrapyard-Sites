@@ -1,8 +1,25 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
-  "formatter": { "enabled": true },
-  "linter": { "enabled": true },
-  "javascript": { "formatter": { "semicolons": "asNeeded" } }
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"files": {
+		"ignore": ["**/.astro/**"]
+	},
+	"formatter": { "enabled": true },
+	"linter": { "enabled": true },
+	"javascript": { "formatter": { "semicolons": "asNeeded" } },
+	"overrides": [
+		{
+			"files": { "include": ["public/**/*.js"] },
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noForEach": "off",
+						"useOptionalChain": "off",
+						"useNumberNamespace": "off"
+					},
+					"style": { "useSingleVarDeclarator": "off" },
+					"suspicious": { "noAssignInExpressions": "off" }
+				}
+			}
+		}
+	]
 }
-
-

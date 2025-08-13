@@ -1,9 +1,13 @@
 ---
-import Base from "../layouts/Base.astro";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import Base from "../layouts/Base.astro"
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
 <Base title="Terms of Service — Scrapyard Sites">
+  <Fragment slot="head">
+    <meta name="description" content="Terms governing the use of Scrapyard Sites services." />
+  </Fragment>
   <section class="mx-auto max-w-3xl px-4 py-16">
     <h1 class="text-3xl font-bold tracking-tight">Terms of Service</h1>
     <p class="mt-4">The terms of service will be posted here soon.</p>

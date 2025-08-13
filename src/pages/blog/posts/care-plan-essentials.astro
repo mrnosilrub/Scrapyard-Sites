@@ -3,6 +3,9 @@ const base = import.meta.env.BASE_URL;
 const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <Base title="Care Plan Essentials — Scrapyard Sites">
+  <Fragment slot="head">
+    <meta name="description" content="Security patches, backups, and monitoring keep your scrapyard website running 24/7." />
+  </Fragment>
   <main class="mx-auto max-w-3xl px-4 py-16">
     <a href={withBase('/blog/')} class="text-brand-orange">← Back to blog</a>
     <div class="mt-6 text-xs font-semibold uppercase text-zinc-500">Reliability</div>

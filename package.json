@@ -1,24 +1,25 @@
 {
-  "name": "astro-blank-template",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "format": "biome format --write .",
-    "lint": "biome check .",
-    "test": "vitest run"
-  },
-  "devDependencies": {
-    "@astrojs/mdx": "^4.3.3",
-    "@astrojs/tailwind": "^6.0.2",
-    "@vitest/coverage-v8": "^3.2.4",
-    "astro": "^5.12.9",
-    "biome": "^0.3.3",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
-  }
+	"name": "astro-blank-template",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"format": "biome format --write .",
+		"lint": "biome check .",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"@astrojs/mdx": "^4.3.3",
+		"@astrojs/sitemap": "^3.1.7",
+		"@astrojs/tailwind": "^6.0.2",
+		"@vitest/coverage-v8": "^3.2.4",
+		"astro": "^5.12.9",
+		"@biomejs/biome": "^1.9.4",
+		"tailwindcss": "^3.4.17",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	}
 }

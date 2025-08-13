@@ -1,20 +1,33 @@
 ---
-const { title = "Scrapyard Sites" } = Astro.props;
-import PromoBanner from "../components/PromoBanner.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/globals.css";
+const {
+	title = "Scrapyard Sites",
+	description = "Scrapyard websites built for credibility, qualification, visibility and reliability.",
+} = Astro.props
+import PromoBanner from "../components/PromoBanner.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import "../styles/globals.css"
+import faviconUrl from "../assets/favicon.svg"
+const canonical = new URL(Astro.url.pathname, Astro.site).toString()
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={faviconUrl.src ?? faviconUrl} />
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900">
+    <a href="#main-content" class="absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0">Skip to content</a>
     <PromoBanner />
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />

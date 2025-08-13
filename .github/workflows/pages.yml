@@ -24,6 +24,8 @@ jobs:
       - name: Show versions
         run: node -v && pnpm -v
       - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test
       - run: pnpm build
       - uses: actions/upload-pages-artifact@v3
         with:

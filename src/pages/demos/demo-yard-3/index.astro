@@ -1,17 +1,17 @@
 ---
-import Demo from "../../../layouts/Demo.astro";
-import hero from "../../../assets/hero.jpg";
-import logo from "../../../assets/logo.svg";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import Demo from "../../../layouts/Demo.astro"
+import hero from "../../../assets/hero.jpg"
+import logo from "../../../assets/logo.svg"
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
 <Demo>
   <style>
     :root { --brand-orange: #4169e1; --brand-steel: #5E6367; --brand-charcoal: #2B2B2B; }
   </style>
-  <link rel="icon" href={withBase('/assets/logo.svg')} />
-  <link rel="icon" type="image/png" href={withBase('/assets/logo.png')} />
-  <meta property="og:image" content={withBase('/assets/hero.jpg')} />
+  <link rel="icon" href={logo.src ?? logo} />
+  <meta property="og:image" content={hero.src ?? hero} />
   <script type="application/ld+json">{JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -40,7 +40,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     <div class="mx-auto max-w-7xl px-6 md:px-8">
       <div class="flex h-16 items-center justify-between">
         <a href={withBase('/demos/demo-yard-3/')} class="flex items-center gap-3">
-          <img src={withBase('/assets/logo.svg')} alt="Premium Demo" class="h-8 w-8" />
+          <img src={logo.src ?? logo} alt="Premium Demo" class="h-8 w-8" />
           <span class="text-lg font-semibold tracking-tight">Premium Demo</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -64,7 +64,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
       <div class="flex h-full flex-col">
         <div class="flex items-center justify-between px-6 md:px-8 h-16 shadow-header">
           <a href={withBase('/demos/demo-yard-3/')} class="flex items-center gap-3">
-            <img src={withBase('/assets/logo.svg')} alt="Premium Demo" class="h-8 w-8" />
+            <img src={logo.src ?? logo} alt="Premium Demo" class="h-8 w-8" />
             <span class="text-lg font-semibold tracking-tight">Premium Demo</span>
           </a>
           <label for="demo-nav-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Close Menu">
@@ -88,7 +88,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
   </header>
 
   <section id="top" class="relative isolate">
-    <div class="relative h-[60vh] min-h-[420px] w-full bg-cover bg-center" style={`background-image: url(${withBase('/assets/hero.jpg')});`} aria-hidden="true">
+    <div class="relative h-[60vh] min-h-[420px] w-full bg-cover bg-center" style={`background-image: url(${hero.src ?? hero});`} aria-hidden="true">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 mx-auto max-w-5xl px-6 md:px-8 py-24 flex h-full items-center">
         <div class="text-white">
@@ -154,7 +154,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
         <p class="mt-1 text-sm text-zinc-600">Watch your weight ticket print, then choose Cash, ACH, or Check on the spot. A live price ticker shows today’s top three metals while you wait.</p>
       </div>
     </div>
-    <div class="mt-6"><a href={withBase('/demos/demo-yard-3/contact.html')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white">Request a Quote</a></div>
+    <div class="mt-6">      <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white">Request a Quote</a></div>
   </section>
 
   <section id="containers" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
@@ -173,10 +173,10 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
         </div>
       </div>
       <div class="grid grid-cols-2 gap-4">
-        <img src={withBase('/assets/rolloff.jpg')} alt="Roll-off" class="h-36 w-full rounded-lg object-cover" />
-        <img src={withBase('/assets/bin20.jpg')} alt="20yd bin" class="h-36 w-full rounded-lg object-cover" />
-        <img src={withBase('/assets/bin30.jpg')} alt="30yd bin" class="h-36 w-full rounded-lg object-cover" />
-        <img src={withBase('/assets/bin60.jpg')} alt="60yd bin" class="h-36 w-full rounded-lg object-cover" />
+        <img src={hero.src ?? hero} alt="Roll-off" class="h-36 w-full rounded-lg object-cover" loading="lazy" />
+        <img src={hero.src ?? hero} alt="20yd bin" class="h-36 w-full rounded-lg object-cover" loading="lazy" />
+        <img src={hero.src ?? hero} alt="30yd bin" class="h-36 w-full rounded-lg object-cover" loading="lazy" />
+        <img src={hero.src ?? hero} alt="60yd bin" class="h-36 w-full rounded-lg object-cover" loading="lazy" />
       </div>
     </div>
   </section>
@@ -194,8 +194,8 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
         { t: 'Switch Gear', s: 'Industrial electrical panels', img: 'rolloff.jpg', id: 'switchgear' },
         { t: 'E‑Scrap & Batteries', s: 'Boards and lead‑acid', img: 'batteries.jpg', id: 'escrap' }
       ].map((c) => (
-        <a href={withBase(`/demos/demo-yard-3/accepted-materials/#${c.id}`)} class="group overflow-hidden rounded-lg border border-zinc-200">
-          <img src={withBase(`/assets/${c.img}`)} alt={c.t} class="h-40 w-full object-cover" />
+                 <a href={withBase(`/demos/demo-yard-3/accepted-materials/#${c.id}`)} class="group overflow-hidden rounded-lg border border-zinc-200" data-aos>
+                     <img src={hero.src ?? hero} alt={c.t} class="h-40 w-full object-cover" loading="lazy" />
           <div class="p-4">
             <h3 class="font-semibold group-hover:text-[var(--brand-orange)]">{c.t}</h3>
             <p class="mt-1 text-sm text-zinc-600">{c.s}</p>

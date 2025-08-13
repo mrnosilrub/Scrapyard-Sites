@@ -1,8 +1,9 @@
 ---
-import Demo from "../../layouts/Demo.astro";
-import Hero from "../../components/Hero.astro";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import Demo from "../../layouts/Demo.astro"
+import Hero from "../../components/Hero.astro"
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
 <Demo>
   <section class="bg-emerald-600/10">
@@ -45,9 +46,12 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
         <div class="text-sm text-zinc-600">Phone, Fax, Email, Address, Hours</div>
       </div>
       <form class="grid gap-4">
-        <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
-        <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
-        <textarea class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
+        <label class="text-sm font-medium text-zinc-700" for="d2-name">Name</label>
+        <input id="d2-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+        <label class="text-sm font-medium text-zinc-700" for="d2-email">Email</label>
+        <input id="d2-email" name="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
+        <label class="text-sm font-medium text-zinc-700" for="d2-message">Message</label>
+        <textarea id="d2-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
         <button class="inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Send →</button>
       </form>
     </div>
