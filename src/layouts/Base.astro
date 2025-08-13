@@ -8,7 +8,9 @@ import Header from "../components/Header.astro"
 import PromoBanner from "../components/PromoBanner.astro"
 import "../styles/globals.css"
 import faviconUrl from "../assets/favicon.svg"
-const canonical = new URL(Astro.url.pathname, Astro.site).toString()
+import heroUrl from "../assets/hero.jpg"
+import { withBase } from "../lib/paths"
+const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
 ---
 <html lang="en">
   <head>
@@ -20,7 +22,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString()
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Scrapyard Sites" />
+    <meta property="og:image" content={heroUrl.src ?? heroUrl} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={heroUrl.src ?? heroUrl} />
     <link rel="icon" href={faviconUrl.src ?? faviconUrl} />
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900">

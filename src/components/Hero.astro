@@ -20,16 +20,11 @@ const {
 } = Astro.props as Props
 
 import heroAsset from "../assets/hero.jpg"
+import { withBase } from "../lib/paths"
 const bg = image ?? heroAsset
 const bgSrc = typeof bg === "string" ? bg : (bg?.src ?? "")
-const base = import.meta.env.BASE_URL
-const withBase = (p: string | undefined) => {
-	if (!p) return undefined
-	if (p.startsWith("http") || p.startsWith("#")) return p
-	return base + p.replace(/^\//, "")
-}
 const resolvedPrimary = withBase(primaryHref)
-const resolvedSecondary = withBase(secondaryHref)
+const resolvedSecondary = secondaryHref ? withBase(secondaryHref) : undefined
 ---
 <section class="relative isolate">
   <div

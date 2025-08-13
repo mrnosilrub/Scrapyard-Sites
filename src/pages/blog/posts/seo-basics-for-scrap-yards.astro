@@ -1,6 +1,6 @@
+---
 import Base from "../../../layouts/Base.astro";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import { withBase } from "../../../lib/paths";
 ---
 <Base title="SEO Basics for Scrap Yards — Scrapyard Sites">
   <Fragment slot="head">
