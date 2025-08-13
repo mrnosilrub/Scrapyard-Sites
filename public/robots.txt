@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mrnosilrub.github.io/Scrapyard-Sites/sitemap-index.xml

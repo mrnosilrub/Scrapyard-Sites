@@ -1,7 +1,8 @@
 ---
-import Demo from "../../../layouts/Demo.astro";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import Demo from "../../../layouts/Demo.astro"
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
 <Demo>
   <Fragment slot="head">
@@ -41,10 +42,14 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
       <div><dt class="font-semibold">Yard Address</dt><dd>123 Demo Road, Demo City, NY 12345</dd></div>
     </dl>
     <form class="mt-8 grid gap-4 sm:max-w-md" action="#" method="post">
-      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
-      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
-      <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard / Company" />
-      <textarea class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
+      <label class="text-sm font-medium text-zinc-700" for="d3-name">Name</label>
+      <input id="d3-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+      <label class="text-sm font-medium text-zinc-700" for="d3-email">Email</label>
+      <input id="d3-email" name="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
+      <label class="text-sm font-medium text-zinc-700" for="d3-company">Yard / Company</label>
+      <input id="d3-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard / Company" />
+      <label class="text-sm font-medium text-zinc-700" for="d3-message">Message</label>
+      <textarea id="d3-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
       <button class="inline-flex items-center justify-center rounded-md bg-[var(--brand-orange)] px-4 py-2 font-medium text-white">Send →</button>
     </form>
   </main>

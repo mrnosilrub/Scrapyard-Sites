@@ -1,22 +1,23 @@
 ---
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
 <section class="mx-auto max-w-3xl rounded-lg border border-zinc-200 p-6 sm:p-8">
   <h2 class="text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
   <p class="mt-2 text-zinc-600">Every missed call is material on your competitor’s scale. Run the numbers—see what procrastination costs.</p>
   <form id="risk-form" class="mt-6 grid gap-4 sm:grid-cols-2">
     <div>
-      <label class="block text-sm font-medium text-zinc-700">Average tons per missed load (t)</label>
-      <input type="number" step="0.1" min="0" id="t" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 3" />
+      <label for="t" class="block text-sm font-medium text-zinc-700">Average tons per missed load (t)</label>
+      <input type="number" name="t" step="0.1" min="0" id="t" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 3" />
     </div>
     <div>
-      <label class="block text-sm font-medium text-zinc-700">Margin per ton ($) (m)</label>
-      <input type="number" step="0.01" min="0" id="m" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 65" />
+      <label for="m" class="block text-sm font-medium text-zinc-700">Margin per ton ($) (m)</label>
+      <input type="number" name="m" step="0.01" min="0" id="m" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 65" />
     </div>
     <div>
-      <label class="block text-sm font-medium text-zinc-700">Missed loads per month (l)</label>
-      <input type="number" step="1" min="0" id="l" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 4" />
+      <label for="l" class="block text-sm font-medium text-zinc-700">Missed loads per month (l)</label>
+      <input type="number" name="l" step="1" min="0" id="l" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 4" />
     </div>
     <div class="sm:col-span-2">
       <button type="button" id="calc" class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Calculate</button>

@@ -1,35 +1,35 @@
 ---
 interface Props {
-  title: string;
-  body?: string;
-  primaryHref?: string;
-  primaryLabel?: string;
-  secondaryHref?: string;
-  secondaryLabel?: string;
-  image?: any;
+	title: string
+	body?: string
+	primaryHref?: string
+	primaryLabel?: string
+	secondaryHref?: string
+	secondaryLabel?: string
+	image?: string | { src: string }
 }
 
 const {
-  title,
-  body = "",
-  primaryHref = "/contact/",
-  primaryLabel = "Book a Discovery Call",
-  secondaryHref,
-  secondaryLabel,
-  image
-} = Astro.props as Props;
+	title,
+	body = "",
+	primaryHref = "/contact/",
+	primaryLabel = "Book a Discovery Call",
+	secondaryHref,
+	secondaryLabel,
+	image,
+} = Astro.props as Props
 
-import heroAsset from "../assets/hero.jpg";
-const bg = image ?? heroAsset;
-const bgSrc = typeof bg === 'string' ? bg : (bg?.src ?? '');
-const base = import.meta.env.BASE_URL;
+import heroAsset from "../assets/hero.jpg"
+const bg = image ?? heroAsset
+const bgSrc = typeof bg === "string" ? bg : (bg?.src ?? "")
+const base = import.meta.env.BASE_URL
 const withBase = (p: string | undefined) => {
-  if (!p) return undefined;
-  if (p.startsWith('http') || p.startsWith('#')) return p;
-  return base + p.replace(/^\//, '');
-};
-const resolvedPrimary = withBase(primaryHref);
-const resolvedSecondary = withBase(secondaryHref);
+	if (!p) return undefined
+	if (p.startsWith("http") || p.startsWith("#")) return p
+	return base + p.replace(/^\//, "")
+}
+const resolvedPrimary = withBase(primaryHref)
+const resolvedSecondary = withBase(secondaryHref)
 ---
 <section class="relative isolate">
   <div

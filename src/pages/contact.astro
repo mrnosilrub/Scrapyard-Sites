@@ -1,7 +1,8 @@
 ---
-import Base from "../layouts/Base.astro";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import Base from "../layouts/Base.astro"
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
 <Base title="Contact — Scrapyard Sites">
   <section class="mx-auto max-w-5xl px-6 md:px-8 py-16">
@@ -16,10 +17,14 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     </div>
     <div class="mx-auto mt-8 max-w-2xl">
       <form class="grid gap-4">
-        <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
-        <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
-        <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
-        <textarea class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
+        <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
+        <input id="c-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+        <label class="text-sm font-medium text-zinc-700" for="c-email">Email</label>
+        <input id="c-email" name="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
+        <label class="text-sm font-medium text-zinc-700" for="c-company">Yard/Company</label>
+        <input id="c-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
+        <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
+        <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
         <button class="inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Schedule My 15‑Minute Scan</button>
       </form>
       <p class="mt-2 text-sm text-zinc-600">We’ll reply within 15 minutes during business hours.</p>

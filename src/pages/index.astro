@@ -1,12 +1,16 @@
 ---
-import Base from "../layouts/Base.astro";
-import Hero from "../components/Hero.astro";
-import BetaInvite from "../components/BetaInvite.astro";
-import Calculator from "../components/Calculator.astro";
-const base = import.meta.env.BASE_URL;
-const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
+import Base from "../layouts/Base.astro"
+import Hero from "../components/Hero.astro"
+import BetaInvite from "../components/BetaInvite.astro"
+import Calculator from "../components/Calculator.astro"
+const base = import.meta.env.BASE_URL
+const withBase = (p: string) =>
+	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
 ---
-<Base title="Scrapyard Sites — Your Reputation Is Your Edge">
+<Base title="Scrapyard Sites — Your Reputation Is Your Edge" description="Launch a high‑performing scrapyard website in 7 days to build credibility, capture leads, and boost visibility.">
+  <Fragment slot="head">
+    <meta name="description" content="Launch a high‑performing scrapyard website in 7 days to build credibility, capture leads, and boost visibility." />
+  </Fragment>
   <Hero
     title="Your Reputation Is Your Edge"
     body="In scrap, your name is your currency. Before a single load hits the scale, brokers, drivers and suppliers decide whether they trust you. Without that trust, you’re just another yard to avoid."
@@ -148,10 +152,14 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
       </div>
       <div>
         <form class="grid gap-4">
-          <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
-          <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
-          <input class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
-          <textarea class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
+          <label class="text-sm font-medium text-zinc-700" for="contact2-name">Name</label>
+          <input id="contact2-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+          <label class="text-sm font-medium text-zinc-700" for="contact2-email">Email</label>
+          <input id="contact2-email" name="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
+          <label class="text-sm font-medium text-zinc-700" for="contact2-company">Yard/Company</label>
+          <input id="contact2-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
+          <label class="text-sm font-medium text-zinc-700" for="contact2-message">Message</label>
+          <textarea id="contact2-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
           <button class="inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Send →</button>
         </form>
         <p class="mt-2 text-sm text-zinc-600">Prefer immediate answers? Call 949‑356‑8762</p>

@@ -3,6 +3,9 @@ const base = import.meta.env.BASE_URL;
 const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p : base + p.replace(/^\//, ''));
 ---
 <Base title="Pre‑Qualify Scrap Sellers — Scrapyard Sites">
+  <Fragment slot="head">
+    <meta name="description" content="Use smarter web forms to filter tire kickers and attract serious scrap sellers." />
+  </Fragment>
   <main class="mx-auto max-w-3xl px-4 py-16">
     <a href={withBase('/blog/')} class="text-brand-orange">← Back to blog</a>
     <div class="mt-6 text-xs font-semibold uppercase text-zinc-500">Qualification</div>
