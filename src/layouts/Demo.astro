@@ -3,13 +3,20 @@ import "../styles/globals.css"
 import heroImg from "../assets/hero.jpg"
 import logoSvg from "../assets/logo.svg"
 import { withBase } from "../lib/paths"
+const {
+  title = "",
+  description = "",
+  renderDefaultHeader = true,
+  renderDefaultFooter = true,
+} = Astro.props
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><slot name="title" /> — Demo</title>
+    <title>{title ? `${title} — Demo` : "Demo"}</title>
+    {description && <meta name="description" content={description} />}
     <link rel="icon" href={logoSvg.src ?? logoSvg} />
     <link rel="canonical" href={canonical} />
     <meta property="og:image" content={heroImg.src ?? heroImg} />
@@ -17,7 +24,63 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
     <slot name="head" />
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900">
+    {renderDefaultHeader && (
+      <header class="sticky top-0 z-40 bg-white shadow-header">
+        <div id="demo-top-banner" class="w-full bg-[var(--brand-orange,#D75E02)] text-white text-sm">
+          <div class="mx-auto max-w-7xl px-6 md:px-8 py-2 text-center">
+            <a href={withBase('/')} class="underline underline-offset-4">Return to ScrapyardSites.com</a>
+          </div>
+        </div>
+        <input id="demo-nav-toggle" type="checkbox" class="peer sr-only" />
+        <div class="mx-auto max-w-7xl px-6 md:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <a href="#top" class="text-lg font-semibold">Demo Yard</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+              <a href="#materials" class="hover:text-[var(--brand-orange,#D75E02)]">Materials</a>
+              <a href="#quote" class="hover:text-[var(--brand-orange,#D75E02)]">Quote</a>
+            </nav>
+            <div class="hidden md:flex">
+              <a href="#quote" class="inline-flex items-center rounded-md bg-[var(--brand-orange,#D75E02)] px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
+            </div>
+            <label for="demo-nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Open Menu" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </label>
+          </div>
+        </div>
+        <div class="fixed inset-0 z-50 hidden bg-white peer-checked:block">
+          <div class="flex h-full flex-col">
+            <div class="flex items-center justify-between px-6 md:px-8 h-16 shadow-header">
+              <a href="#top" class="text-lg font-semibold">Demo Yard</a>
+              <label for="demo-nav-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Close Menu" aria-expanded="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </label>
+            </div>
+            <nav class="flex-1 p-8 text-lg font-medium space-y-6">
+              <a href="#materials" class="block">Materials</a>
+              <a href="#quote" class="block">Quote</a>
+            </nav>
+            <div class="p-8">
+              <a href="#quote" class="inline-flex w-full items-center justify-center rounded-md bg-[var(--brand-orange,#D75E02)] px-4 py-3 text-white shadow">Request a Quote</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    )}
+
     <slot />
+
+    {renderDefaultFooter && (
+      <footer class="mt-24 border-t border-zinc-200 bg-white">
+        <div class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+          <p class="text-sm text-zinc-600">© {new Date().getFullYear()} Scrapyard Sites — All rights reserved.</p>
+        </div>
+      </footer>
+    )}
+
+    <style>
+      [data-aos] { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+      .aos-in { opacity: 1; transform: none; }
+    </style>
     <script src={withBase('/demos/demo-yard-3/script.js')}></script>
   </body>
   </html>

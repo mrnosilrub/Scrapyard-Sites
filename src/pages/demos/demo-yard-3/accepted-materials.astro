@@ -1,5 +1,7 @@
 ---
 import Demo from "../../../layouts/Demo.astro"
+import DemoHeader from "../../../components/demo/DemoHeader.astro"
+import DemoFooter from "../../../components/demo/DemoFooter.astro"
 const base = import.meta.env.BASE_URL
 const withBase = (p: string) =>
 	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
@@ -9,31 +11,7 @@ const withBase = (p: string) =>
     <meta name="description" content="See what scrap metals Demo Yard accepts for recycling." />
     <meta property="og:title" content="Accepted Materials | Demo Yard" />
   </Fragment>
-  <div id="demo-top-banner" class="w-full bg-[var(--brand-orange)] text-white text-sm">
-    <div class="mx-auto max-w-7xl px-6 md:px-8 py-2 text-center">
-      <a href={withBase('/')} class="underline underline-offset-4">Return to ScrapyardSites.com</a>
-    </div>
-  </div>
-  <header class="sticky top-0 z-40 bg-white shadow-header">
-    <input id="demo-nav-toggle" type="checkbox" class="peer sr-only" />
-    <div class="mx-auto max-w-7xl px-6 md:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href={withBase('/demos/demo-yard-3/')} class="text-lg font-semibold">Premium Demo</a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href={withBase('/demos/demo-yard-3/services/')} class="hover:text-[var(--brand-orange)]">Services</a>
-          <a href={withBase('/demos/demo-yard-3/process/')} class="hover:text-[var(--brand-orange)]">Process</a>
-          <a href={withBase('/demos/demo-yard-3/accepted-materials/')} class="hover:text-[var(--brand-orange)]">Materials</a>
-          <a href={withBase('/demos/demo-yard-3/about/')} class="hover:text-[var(--brand-orange)]">About Us</a>
-          <a href={withBase('/demos/demo-yard-3/our-team/')} class="hover:text-[var(--brand-orange)]">Our Team</a>
-          <a href={withBase('/demos/demo-yard-3/contact/')} class="hover:text-[var(--brand-orange)]">Contact</a>
-          <a href={withBase('/demos/demo-yard-3/faq/')} class="hover:text-[var(--brand-orange)]">FAQ</a>
-        </nav>
-        <div class="hidden md:flex">
-          <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex items-center rounded-md bg-[var(--brand-orange)] px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <DemoHeader title="Premium Demo" basePath="/demos/demo-yard-3" />
   <main>
     <section id="top" class="mx-auto max-w-7xl px-6 md:px-8 py-16">
       <h1 class="text-3xl font-bold tracking-tight">Accepted Materials</h1>
@@ -63,10 +41,6 @@ const withBase = (p: string) =>
       <div class="mt-6 rounded-md bg-zinc-50 p-4 text-sm text-zinc-700 ring-1 ring-zinc-200">State law reminder: A valid photo ID is required for non‑ferrous sales. No fuel, oil, or refrigerants may remain in scrap items.</div>
     </section>
   </main>
-  <footer class="mt-24 border-t border-zinc-200 bg-white">
-    <div class="mx-auto max-w-7xl px-6 md:px-8 py-12">
-      <p class="text-sm text-zinc-600">© {new Date().getFullYear()} Scrapyard Sites — All rights reserved.</p>
-    </div>
-  </footer>
+  <DemoFooter />
 </Demo>
 

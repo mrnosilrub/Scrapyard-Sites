@@ -1,0 +1,60 @@
+---
+import { withBase } from "../../lib/paths"
+interface Props {
+  title?: string
+  basePath?: string
+}
+const { title = "Premium Demo", basePath = "/demos/demo-yard-3" } = Astro.props as Props
+const link = (p: string) => withBase(`${basePath}${p}`)
+---
+<div id="demo-top-banner" class="w-full bg-brand-orange text-white text-sm">
+  <div class="mx-auto max-w-7xl px-6 md:px-8 py-2 text-center">
+    <a href={withBase('/')} class="underline underline-offset-4">Return to ScrapyardSites.com</a>
+  </div>
+  </div>
+<header class="sticky top-0 z-40 bg-white shadow-header">
+  <input id="demo-nav-toggle" type="checkbox" class="peer sr-only" />
+  <div class="mx-auto max-w-7xl px-6 md:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href={link('/')} class="text-lg font-semibold tracking-tight">{title}</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href={link('/services/')} class="hover:text-brand-orange">Services</a>
+        <a href={link('/process/')} class="hover:text-brand-orange">Process</a>
+        <a href={link('/accepted-materials/')} class="hover:text-brand-orange">Materials</a>
+        <a href={link('/about/')} class="hover:text-brand-orange">About Us</a>
+        <a href={link('/our-team/')} class="hover:text-brand-orange">Our Team</a>
+        <a href={link('/contact/')} class="hover:text-brand-orange">Contact</a>
+        <a href={link('/faq/')} class="hover:text-brand-orange">FAQ</a>
+      </nav>
+      <div class="hidden md:flex">
+        <a href={link('/contact/')} class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 text-white shadow hover:opacity-95">Request a Quote</a>
+      </div>
+      <label for="demo-nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Open Menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </label>
+    </div>
+  </div>
+  <div class="fixed inset-0 z-50 hidden bg-white peer-checked:block">
+    <div class="flex h-full flex-col">
+      <div class="flex items-center justify-between px-6 md:px-8 h-16 shadow-header">
+        <a href={link('/')} class="text-lg font-semibold tracking-tight">{title}</a>
+        <label for="demo-nav-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Close Menu" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </label>
+      </div>
+      <nav class="flex-1 p-8 text-lg font-medium space-y-6">
+        <a href={link('/services/')} class="block">Services</a>
+        <a href={link('/process/')} class="block">Process</a>
+        <a href={link('/accepted-materials/')} class="block">Materials</a>
+        <a href={link('/about/')} class="block">About Us</a>
+        <a href={link('/our-team/')} class="block">Our Team</a>
+        <a href={link('/contact/')} class="block">Contact</a>
+        <a href={link('/faq/')} class="block">FAQ</a>
+      </nav>
+      <div class="p-8">
+        <a href={link('/contact/')} class="inline-flex w-full items-center justify-center rounded-md bg-brand-orange px-4 py-3 text-white shadow">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</header>
+

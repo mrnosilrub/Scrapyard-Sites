@@ -9,6 +9,8 @@
 		const openNow = isChecked()
 		document.body.style.overflow = openNow ? "hidden" : ""
 		if (banner) banner.style.display = openNow ? "none" : ""
+		const labelOpen = document.querySelector('label[for="demo-nav-toggle"]')
+		if (labelOpen) labelOpen.setAttribute("aria-expanded", openNow ? "true" : "false")
 	}
 	if (open) open.addEventListener("change", toggleBody)
 	toggleBody()
