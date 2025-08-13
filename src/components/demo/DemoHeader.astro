@@ -1,10 +1,11 @@
 ---
 import { withBase } from "../../lib/paths"
 interface Props {
-  title?: string
-  basePath?: string
+	title?: string
+	basePath?: string
 }
-const { title = "Premium Demo", basePath = "/demos/demo-yard-3" } = Astro.props as Props
+const { title = "Premium Demo", basePath = "/demos/demo-yard-3" } =
+	Astro.props as Props
 const link = (p: string) => withBase(`${basePath}${p}`)
 ---
 <div id="demo-top-banner" class="w-full bg-brand-orange text-white text-sm">

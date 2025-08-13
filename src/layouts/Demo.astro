@@ -4,10 +4,10 @@ import heroImg from "../assets/hero.jpg?url"
 import logoSvg from "../assets/logo.svg?url"
 import { withBase } from "../lib/paths"
 const {
-  title = "",
-  description = "",
-  renderDefaultHeader = true,
-  renderDefaultFooter = true,
+	title = "",
+	description = "",
+	renderDefaultHeader = true,
+	renderDefaultFooter = true,
 } = Astro.props
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
 ---
