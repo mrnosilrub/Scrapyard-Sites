@@ -1,7 +1,7 @@
 ---
-import Demo from "../../../layouts/Demo.astro"
 import hero from "../../../assets/hero.jpg"
 import logo from "../../../assets/logo.svg"
+import Demo from "../../../layouts/Demo.astro"
 const base = import.meta.env.BASE_URL
 const withBase = (p: string) =>
 	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
@@ -99,7 +99,6 @@ const withBase = (p: string) =>
           </h1>
           <p class="mt-4 max-w-3xl text-lg text-zinc-100">Serving the metro area with 24‑hour turnarounds and honest weights.</p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href={withBase('/demos/demo-yard-3/contact/')} class="inline-flex items-center justify-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white shadow">Request a Quote</a>
             <a href="#services" class="inline-flex items-center justify-center rounded-md bg-white/10 px-5 py-3 font-medium text-white ring-1 ring-inset ring-white/40 hover:bg-white/20">Our Services ↓</a>
           </div>
         </div>
@@ -248,7 +247,7 @@ const withBase = (p: string) =>
         entries.forEach(e => {
           if (e.isIntersecting) {
             const el = e.target as HTMLElement;
-            const target = parseInt(el.dataset.target || '0', 10);
+            const target = Number.parseInt(el.dataset.target || '0', 10);
             let n = 0; const step = Math.max(1, Math.floor(target/50));
             const id = setInterval(() => { n += step; if (n >= target) { n = target; clearInterval(id); } el.textContent = (el.textContent?.includes('%')? n+'%': el.textContent?.includes('h')? n+'h': n + (el.textContent?.includes('+')?'+':'')); }, 30);
             io.unobserve(el);

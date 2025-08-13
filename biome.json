@@ -8,13 +8,12 @@
 	"javascript": { "formatter": { "semicolons": "asNeeded" } },
 	"overrides": [
 		{
-			"files": { "include": ["public/**/*.js"] },
+			"include": ["public/**/*.js"],
 			"linter": {
 				"rules": {
 					"complexity": {
 						"noForEach": "off",
-						"useOptionalChain": "off",
-						"useNumberNamespace": "off"
+						"useOptionalChain": "off"
 					},
 					"style": { "useSingleVarDeclarator": "off" },
 					"suspicious": { "noAssignInExpressions": "off" }
