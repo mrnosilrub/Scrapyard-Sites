@@ -1,0 +1,834 @@
+{
+	"summary": {
+		"changed": 0,
+		"unchanged": 41,
+		"matches": 0,
+		"duration": { "secs": 0, "nanos": 8535022 },
+		"errors": 17,
+		"warnings": 0,
+		"skipped": 0,
+		"suggestedFixesSkipped": 12,
+		"diagnosticsNotPrinted": 0
+	},
+	"diagnostics": [
+		{
+			"category": "parse",
+			"severity": "error",
+			"description": "Expected an array, an object, or a literal but instead found the end of the file.",
+			"message": [
+				{
+					"elements": [],
+					"content": "Expected an array, an object, or a literal but instead found the end of the file."
+				}
+			],
+			"advices": {
+				"advices": [
+					{
+						"log": [
+							"info",
+							[
+								{
+									"elements": [],
+									"content": "Expected an array, an object, or a literal here."
+								}
+							]
+						]
+					},
+					{ "frame": { "path": null, "span": [0, 0], "sourceCode": "" } }
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./biome-report.json" },
+				"span": [0, 0],
+				"sourceCode": ""
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "parse",
+			"severity": "error",
+			"description": "Expected an array, an object, or a literal but instead found the end of the file.",
+			"message": [
+				{
+					"elements": [],
+					"content": "Expected an array, an object, or a literal but instead found the end of the file."
+				}
+			],
+			"advices": {
+				"advices": [
+					{
+						"log": [
+							"info",
+							[
+								{
+									"elements": [],
+									"content": "Expected an array, an object, or a literal here."
+								}
+							]
+						]
+					},
+					{ "frame": { "path": null, "span": [0, 0], "sourceCode": "" } }
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./biome-report.json" },
+				"span": [0, 0],
+				"sourceCode": ""
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "format",
+			"severity": "error",
+			"description": "Code formatting aborted due to parsing errors. To format code with errors, enable the 'formatter.formatWithErrors' option.",
+			"message": [
+				{
+					"elements": [],
+					"content": "Code formatting aborted due to parsing errors. To format code with errors, enable the 'formatter.formatWithErrors' option."
+				}
+			],
+			"advices": { "advices": [] },
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./biome-report.json" },
+				"span": null,
+				"sourceCode": null
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "import { defineConfigmdx } from \"astro@astrojs/config\"\nimport tailwindsitemap from \"@astrojs/{ defineConfig }\"\n\nexport default defineConfig({\tbuild: { inlineStylesheets: \"auto\" },\n})\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 7] } } },
+								{ "diffOp": { "delete": { "range": [7, 21] } } },
+								{ "diffOp": { "insert": { "range": [21, 24] } } },
+								{ "diffOp": { "equal": { "range": [24, 25] } } },
+								{ "diffOp": { "delete": { "range": [25, 27] } } },
+								{ "diffOp": { "equal": { "range": [27, 33] } } },
+								{ "diffOp": { "delete": { "range": [33, 38] } } },
+								{ "diffOp": { "insert": { "range": [38, 46] } } },
+								{ "diffOp": { "equal": { "range": [46, 47] } } },
+								{ "diffOp": { "delete": { "range": [47, 53] } } },
+								{ "diffOp": { "insert": { "range": [21, 24] } } },
+								{ "diffOp": { "equal": { "range": [53, 62] } } },
+								{ "diffOp": { "delete": { "range": [62, 70] } } },
+								{ "diffOp": { "insert": { "range": [70, 77] } } },
+								{ "diffOp": { "equal": { "range": [77, 93] } } },
+								{ "diffOp": { "delete": { "range": [62, 70] } } },
+								{ "diffOp": { "insert": { "range": [70, 77] } } },
+								{ "diffOp": { "equal": { "range": [53, 62] } } },
+								{ "diffOp": { "delete": { "range": [21, 24] } } },
+								{ "diffOp": { "insert": { "range": [62, 70] } } },
+								{ "diffOp": { "equal": { "range": [77, 93] } } },
+								{ "diffOp": { "delete": { "range": [21, 24] } } },
+								{ "diffOp": { "insert": { "range": [62, 70] } } },
+								{ "diffOp": { "equal": { "range": [53, 62] } } },
+								{ "diffOp": { "delete": { "range": [70, 77] } } },
+								{ "diffOp": { "insert": { "range": [93, 109] } } },
+								{ "diffOp": { "equal": { "range": [77, 84] } } },
+								{ "diffOp": { "delete": { "range": [38, 46] } } },
+								{ "diffOp": { "insert": { "range": [33, 38] } } },
+								{ "diffOp": { "equal": { "range": [46, 47] } } },
+								{ "diffOp": { "delete": { "range": [70, 77] } } },
+								{ "diffOp": { "insert": { "range": [47, 53] } } },
+								{ "diffOp": { "equal": { "range": [109, 141] } } },
+								{ "equalLines": { "line_count": 4 } },
+								{ "diffOp": { "equal": { "range": [141, 183] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./astro.config.mjs" },
+				"span": null,
+				"sourceCode": "import { defineConfig } from \"astro/config\"\nimport tailwind from \"@astrojs/tailwind\"\nimport mdx from \"@astrojs/mdx\"\nimport sitemap from \"@astrojs/sitemap\"\n\nexport default defineConfig({\n\tsite: \"https://mrnosilrub.github.io\",\n\tbase: \"/Scrapyard-Sites\",\n\ttrailingSlash: \"always\",\n\tintegrations: [tailwind(), mdx(), sitemap()],\n\tbuild: { inlineStylesheets: \"auto\" },\n})\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BaseBetaInvite from \"../layoutscomponents/Base.astroBetaInvite.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport \"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Base>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 25] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [35, 42] } } },
+								{ "diffOp": { "insert": { "range": [42, 52] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [53, 63] } } },
+								{ "diffOp": { "insert": { "range": [63, 79] } } },
+								{ "diffOp": { "equal": { "range": [79, 132] } } },
+								{ "diffOp": { "delete": { "range": [63, 73] } } },
+								{ "diffOp": { "insert": { "range": [53, 57] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [42, 52] } } },
+								{ "diffOp": { "insert": { "range": [35, 42] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [63, 79] } } },
+								{ "diffOp": { "insert": { "range": [53, 63] } } },
+								{ "diffOp": { "equal": { "range": [132, 203] } } },
+								{ "equalLines": { "line_count": 63 } },
+								{ "diffOp": { "equal": { "range": [203, 212] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/services.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../layouts/Base.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport BetaInvite from \"../components/BetaInvite.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Base title=\"Services — Scrapyard Sites\">\n  <Hero\n    title=\"Build Your Reputation Engine\"\n    body=\"Launch a high‑performing scrapyard website in just seven days. Designed to grow trust, visibility and bookings from day one.\"\n    primaryHref=\"/contact/\"\n    primaryLabel=\"Book a Discovery Call\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Our Reputation‑First Approach</h2>\n    <p class=\"mt-3 text-zinc-700\">We focus on the four pillars that matter most for scrapyards.</p>\n    <ul class=\"mt-4 grid gap-4 sm:grid-cols-2 text-zinc-700\">\n      <li><span class=\"font-semibold\">Instant credibility</span> — fast, modern, trustworthy.</li>\n      <li><span class=\"font-semibold\">Pre‑qualifying forms</span> — filter serious sellers.</li>\n      <li><span class=\"font-semibold\">Local visibility</span> — show up where it counts.</li>\n      <li><span class=\"font-semibold\">Rock‑solid reliability</span> — care plans and monitoring.</li>\n    </ul>\n    <div class=\"mt-6\"><a href={withBase('/contact/')} class=\"text-brand-orange font-medium\">Book a Discovery Call</a></div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Four Pillars</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4\">\n      <a href={withBase('/process/#credibility')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Credibility</h3><p class=\"mt-1 text-sm text-zinc-600\">Make the right first impression.</p></a>\n      <a href={withBase('/process/#qualification')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Qualification</h3><p class=\"mt-1 text-sm text-zinc-600\">Spend time with serious sellers.</p></a>\n      <a href={withBase('/process/#visibility')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Visibility</h3><p class=\"mt-1 text-sm text-zinc-600\">Be found in local search.</p></a>\n      <a href={withBase('/process/#reliability')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Reliability</h3><p class=\"mt-1 text-sm text-zinc-600\">Stay fast and secure.</p></a>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Service Packages</h2>\n    <div class=\"mt-6 grid gap-6 md:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Standard</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Get trusted fast.</p>\n        <a href={withBase('/pricing/')} class=\"mt-3 inline-block text-brand-orange\">View Pricing</a>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Premium</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Dominate your market.</p>\n        <a href={withBase('/pricing/')} class=\"mt-3 inline-block text-brand-orange\">View Pricing</a>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Care Plan</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Keep your site fresh and secure.</p>\n        <a href={withBase('/pricing/')} class=\"mt-3 inline-block text-brand-orange\">View Pricing</a>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">See It in Action</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      <a href={withBase('/demos/demo-yard-1/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\"><div class=\"h-40 bg-zinc-100\"></div><div class=\"p-4\"><h3 class=\"font-semibold group-hover:text-brand-orange\">Metro Yard Demo</h3></div></a>\n      <a href={withBase('/demos/demo-yard-2/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\"><div class=\"h-40 bg-zinc-100\"></div><div class=\"p-4\"><h3 class=\"font-semibold group-hover:text-brand-orange\">Mobile‑Friendly Demo</h3></div></a>\n      <a href={withBase('/demos/demo-yard-3/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\"><div class=\"h-40 bg-zinc-100\"></div><div class=\"p-4\"><h3 class=\"font-semibold group-hover:text-brand-orange\">Industrial Client Demo</h3></div></a>\n    </div>\n  </section>\n\n  <BetaInvite />\n</Base>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "lint/style/useNumberNamespace",
+			"severity": "error",
+			"description": "Use Number.POSITIVE_INFINITY instead of the equivalent global.",
+			"message": [
+				{ "elements": [], "content": "Use " },
+				{ "elements": ["Emphasis"], "content": "Number.POSITIVE_INFINITY" },
+				{ "elements": [], "content": " instead of the equivalent global." }
+			],
+			"advices": {
+				"advices": [
+					{
+						"log": [
+							"info",
+							[
+								{
+									"elements": [],
+									"content": "ES2015 moved some globals into the "
+								},
+								{ "elements": ["Emphasis"], "content": "Number" },
+								{ "elements": [], "content": " namespace for consistency." }
+							]
+						]
+					},
+					{
+						"log": [
+							"info",
+							[
+								{ "elements": [], "content": "Safe fix: Use " },
+								{
+									"elements": ["Emphasis"],
+									"content": "Number.POSITIVE_INFINITY"
+								},
+								{ "elements": [], "content": " instead." }
+							]
+						]
+					},
+					{
+						"diff": {
+							"dictionary": ";(() => {\n\tconst open = document.getElementById(\"demo-nav-toggle\")\n\tconst banner = document.getElementById(\"demo-top-banner\")\t\t\tconst left = container.getBoundingClientRect().left\n\t\t\tlet idx = 0,\n\t\t\t\tmind = InfinityNumber.POSITIVE_INFINITY\n\t\t\titems.forEach((it, i) => {\n\t\t\t\tconst d = Math.abs(it.getBoundingClientRect().left - left)\tapply()\n})()\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 125] } } },
+								{ "equalLines": { "line_count": 87 } },
+								{ "diffOp": { "equal": { "range": [125, 207] } } },
+								{ "diffOp": { "delete": { "range": [207, 215] } } },
+								{ "diffOp": { "insert": { "range": [215, 239] } } },
+								{ "diffOp": { "equal": { "range": [239, 332] } } },
+								{ "equalLines": { "line_count": 25 } },
+								{ "diffOp": { "equal": { "range": [332, 346] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./public/demos/demo-yard-3/script.js" },
+				"span": [3117, 3125],
+				"sourceCode": ";(() => {\n\tconst open = document.getElementById(\"demo-nav-toggle\")\n\tconst banner = document.getElementById(\"demo-top-banner\")\n\tconst isChecked = () => {\n\t\tconst input = open\n\t\treturn input && \"checked\" in input ? input.checked : false\n\t}\n\tconst toggleBody = () => {\n\t\tconst openNow = isChecked()\n\t\tdocument.body.style.overflow = openNow ? \"hidden\" : \"\"\n\t\tif (banner) banner.style.display = openNow ? \"none\" : \"\"\n\t}\n\tif (open) open.addEventListener(\"change\", toggleBody)\n\ttoggleBody()\n\tdocument\n\t\t.querySelectorAll(\"details\")\n\t\t.forEach((d) =>\n\t\t\td.addEventListener(\"toggle\", () =>\n\t\t\t\td.setAttribute(\"aria-expanded\", d.open ? \"true\" : \"false\"),\n\t\t\t),\n\t\t)\n\tconst io = new IntersectionObserver(\n\t\t(entries) =>\n\t\t\tentries.forEach((e) => {\n\t\t\t\tif (e.isIntersecting) {\n\t\t\t\t\te.target.classList.add(\"aos-in\")\n\t\t\t\t\tio.unobserve(e.target)\n\t\t\t\t}\n\t\t\t}),\n\t\t{ threshold: 0.2 },\n\t)\n\t// Active nav highlight (handles trailing slashes)\n\tconst pathLast = location.pathname.replace(/\\/$/, \"\").split(\"/\").pop()\n\tdocument.querySelectorAll(\"nav a\").forEach((a) => {\n\t\tconst href = a.getAttribute(\"href\")\n\t\tif (!href) return\n\t\tconst last = href.replace(/\\/$/, \"\").split(\"/\").pop()\n\t\tif (last && last === pathLast) a.classList.add(\"text-[var(--brand-orange)]\")\n\t})\n\tdocument.querySelectorAll(\"[data-aos]\").forEach((el) => io.observe(el))\n\t// Deep-link open on Accepted Materials\n\tconst onAccepted = /\\/demos\\/demo-yard-3\\/accepted-materials\\/?$/.test(\n\t\tlocation.pathname,\n\t)\n\tif (onAccepted && location.hash) {\n\t\tconst id = decodeURIComponent(location.hash.slice(1))\n\t\tconst details = document.getElementById(id)\n\t\tif (\n\t\t\tdetails &&\n\t\t\tdetails.tagName &&\n\t\t\tdetails.tagName.toLowerCase() === \"details\"\n\t\t) {\n\t\t\tdetails.setAttribute(\"open\", \"\")\n\t\t\tdetails.setAttribute(\"aria-expanded\", \"true\")\n\t\t\tdetails.scrollIntoView({ behavior: \"smooth\", block: \"start\" })\n\t\t}\n\t}\n\t// Simple mobile carousel for grids\n\tconst mq = window.matchMedia(\"(max-width: 640px)\")\n\tconst enableCarousel = (container) => {\n\t\tif (!container) return\n\t\tif (container.dataset && container.dataset.carousel) return\n\t\tif (container.dataset) container.dataset.carousel = \"1\"\n\t\tcontainer.style.scrollSnapType = \"x mandatory\"\n\t\tcontainer.style.overflowX = \"auto\"\n\t\tArray.from(container.children).forEach((el) => {\n\t\t\tel.style.scrollSnapAlign = \"start\"\n\t\t\tel.style.minWidth = \"80%\"\n\t\t\tel.style.flex = \"0 0 auto\"\n\t\t})\n\t\tconst dots = document.createElement(\"div\")\n\t\tdots.style.display = \"flex\"\n\t\tdots.style.gap = \"6px\"\n\t\tdots.style.justifyContent = \"center\"\n\t\tdots.style.marginTop = \"8px\"\n\t\tconst items = Array.from(container.children)\n\t\titems.forEach((_, i) => {\n\t\t\tconst b = document.createElement(\"button\")\n\t\t\tb.style.width = \"8px\"\n\t\t\tb.style.height = \"8px\"\n\t\t\tb.style.borderRadius = \"50%\"\n\t\t\tb.style.background = \"#d4d4d8\"\n\t\t\tif (i === 0) b.style.background = \"var(--brand-orange)\"\n\t\t\tb.addEventListener(\"click\", () =>\n\t\t\t\titems[i].scrollIntoView({ behavior: \"smooth\", inline: \"start\" }),\n\t\t\t)\n\t\t\tdots.appendChild(b)\n\t\t})\n\t\tcontainer.parentElement.appendChild(dots)\n\t\tconst update = () => {\n\t\t\tconst left = container.getBoundingClientRect().left\n\t\t\tlet idx = 0,\n\t\t\t\tmind = Infinity\n\t\t\titems.forEach((it, i) => {\n\t\t\t\tconst d = Math.abs(it.getBoundingClientRect().left - left)\n\t\t\t\tif (d < mind) {\n\t\t\t\t\tmind = d\n\t\t\t\t\tidx = i\n\t\t\t\t}\n\t\t\t})\n\t\t\tArray.from(dots.children).forEach(\n\t\t\t\t(d, i) =>\n\t\t\t\t\t(d.style.background = i === idx ? \"var(--brand-orange)\" : \"#d4d4d8\"),\n\t\t\t)\n\t\t}\n\t\tcontainer.addEventListener(\n\t\t\t\"scroll\",\n\t\t\t() => window.requestAnimationFrame(update),\n\t\t\t{ passive: true },\n\t\t)\n\t\tupdate()\n\t}\n\tconst apply = () => {\n\t\tif (!mq.matches) return\n\t\tconst grids = document.querySelectorAll(\"#materials .grid\")\n\t\tgrids.forEach(enableCarousel)\n\t}\n\tmq.addEventListener\n\t\t? mq.addEventListener(\"change\", apply)\n\t\t: mq.addListener(apply)\n\tapply()\n})()\n"
+			},
+			"tags": ["fixable"],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BaseBetaInvite from \"../layoutscomponents/Base.astroBetaInvite.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport \"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Base>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 25] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [35, 42] } } },
+								{ "diffOp": { "insert": { "range": [42, 52] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [53, 63] } } },
+								{ "diffOp": { "insert": { "range": [63, 79] } } },
+								{ "diffOp": { "equal": { "range": [79, 132] } } },
+								{ "diffOp": { "delete": { "range": [63, 73] } } },
+								{ "diffOp": { "insert": { "range": [53, 57] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [42, 52] } } },
+								{ "diffOp": { "insert": { "range": [35, 42] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [63, 79] } } },
+								{ "diffOp": { "insert": { "range": [53, 63] } } },
+								{ "diffOp": { "equal": { "range": [132, 203] } } },
+								{ "equalLines": { "line_count": 38 } },
+								{ "diffOp": { "equal": { "range": [203, 212] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/process.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../layouts/Base.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport BetaInvite from \"../components/BetaInvite.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Base title=\"Process — Scrapyard Sites\">\n  <Hero\n    title=\"How We Build Your Reputation\"\n    body=\"In just seven days, we transform an outdated or invisible scrapyard site into a trusted digital storefront—built for compliance, local visibility, and lasting credibility.\"\n    primaryHref=\"/contact/\"\n    primaryLabel=\"Book a Discovery Call\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\" id=\"credibility\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Our Process</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Assess & Plan</h3><p class=\"mt-1 text-sm text-zinc-600\">Audit, compliance review, sitemap + local SEO.</p></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\" id=\"qualification\"><h3 class=\"font-semibold\">Design & Build</h3><p class=\"mt-1 text-sm text-zinc-600\">Modern responsive site; copy answers seller questions.</p></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\" id=\"visibility\"><h3 class=\"font-semibold\">Optimize & Launch</h3><p class=\"mt-1 text-sm text-zinc-600\">Local SEO, schema, QA, DNS switch.</p></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\" id=\"reliability\"><h3 class=\"font-semibold\">Maintain & Grow</h3><p class=\"mt-1 text-sm text-zinc-600\">Unlimited updates, patches, backups, reports.</p></div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Straight‑Shooter Pricing</h2>\n    <div class=\"mt-6 grid gap-6 md:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-6\"><h3 class=\"text-lg font-semibold\">Standard — $2,499</h3><ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\"><li>One‑page site</li><li>Contact form</li><li>Maps embed</li><li>Basic on‑site SEO</li><li>30 days updates</li></ul></div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\"><h3 class=\"text-lg font-semibold\">Premium — $5,499</h3><ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\"><li>Multi‑page</li><li>Forms</li><li>Location pages + SEO</li><li>Schema</li><li>60 days updates</li></ul></div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\"><h3 class=\"text-lg font-semibold\">Care Plan — $99/mo</h3><ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\"><li>Unlimited edits</li><li>Patches & backups</li><li>Uptime monitoring</li><li>Quarterly reports</li></ul></div>\n    </div>\n    <div class=\"mt-6\"><a href={withBase('/contact/')} class=\"inline-flex items-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white\">Book a Discovery Call</a></div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Reputation Risk Calculator</h2>\n    <div class=\"mt-6\">\n      <iframe src={withBase('/calculator/')} class=\"h-[640px] w-full rounded-lg border border-zinc-200\"></iframe>\n    </div>\n  </section>\n\n  <BetaInvite />\n</Base>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nconst {\n\ttitle = \"Scrapyard Sites\",\n\tdescription = \"Scrapyard websites built for credibility, qualification, visibility and reliability.\",\n} = Astro.props\nimport PromoBannerFooter from \"../components/PromoBanner.astroFooter.astro\"\nimport Header from \"../components/Header.astro\"\nimport \"\nimport \"../styles/globals.css\"\nimport faviconUrl from \"../assets/favicon.svg\"\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 166] } } },
+								{ "diffOp": { "delete": { "range": [166, 177] } } },
+								{ "diffOp": { "insert": { "range": [177, 183] } } },
+								{ "diffOp": { "equal": { "range": [183, 204] } } },
+								{ "diffOp": { "delete": { "range": [204, 221] } } },
+								{ "diffOp": { "insert": { "range": [221, 233] } } },
+								{ "diffOp": { "equal": { "range": [233, 290] } } },
+								{ "diffOp": { "delete": { "range": [177, 183] } } },
+								{ "diffOp": { "insert": { "range": [166, 177] } } },
+								{ "diffOp": { "equal": { "range": [183, 204] } } },
+								{ "diffOp": { "delete": { "range": [221, 233] } } },
+								{ "diffOp": { "insert": { "range": [204, 221] } } },
+								{ "diffOp": { "equal": { "range": [290, 369] } } },
+								{ "equalLines": { "line_count": 25 } },
+								{ "diffOp": { "equal": { "range": [369, 371] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/layouts/Base.astro" },
+				"span": null,
+				"sourceCode": "---\nconst {\n\ttitle = \"Scrapyard Sites\",\n\tdescription = \"Scrapyard websites built for credibility, qualification, visibility and reliability.\",\n} = Astro.props\nimport PromoBanner from \"../components/PromoBanner.astro\"\nimport Header from \"../components/Header.astro\"\nimport Footer from \"../components/Footer.astro\"\nimport \"../styles/globals.css\"\nimport faviconUrl from \"../assets/favicon.svg\"\nconst canonical = new URL(Astro.url.pathname, Astro.site).toString()\n---\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>{title}</title>\n    <meta name=\"description\" content={description} />\n    <link rel=\"canonical\" href={canonical} />\n    <meta property=\"og:title\" content={title} />\n    <meta property=\"og:description\" content={description} />\n    <meta property=\"og:url\" content={canonical} />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <link rel=\"icon\" href={faviconUrl.src ?? faviconUrl} />\n  </head>\n  <body class=\"min-h-screen antialiased bg-white text-zinc-900\">\n    <a href=\"#main-content\" class=\"absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0\">Skip to content</a>\n    <PromoBanner />\n    <Header />\n    <main id=\"main-content\">\n      <slot />\n    </main>\n    <Footer />\n  </body>\n</html>\n\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "format",
+			"severity": "error",
+			"description": "Formatter would have printed the following content:",
+			"message": [
+				{
+					"elements": [],
+					"content": "Formatter would have printed the following content:"
+				}
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport \"../styles/globals.css\";\nimport heroImg from \"../assets/hero.jpg\"\nimport logoSvg from \"../assets/logo.svg\"\nconst base = import.meta.env.BASE_URL\nfunction withBase(p) {\n  \tif (p.startsWith(\"http\") || p.startsWith(\"#\")) return preturn base + (p.startsWith(\"/\") ? p.slice(1) : p)\n}\n---\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 34] } } },
+								{ "diffOp": { "delete": { "range": [34, 35] } } },
+								{ "diffOp": { "equal": { "range": [35, 76] } } },
+								{ "diffOp": { "delete": { "range": [34, 35] } } },
+								{ "diffOp": { "equal": { "range": [76, 117] } } },
+								{ "diffOp": { "delete": { "range": [34, 35] } } },
+								{ "diffOp": { "equal": { "range": [117, 155] } } },
+								{ "diffOp": { "delete": { "range": [34, 35] } } },
+								{ "diffOp": { "equal": { "range": [155, 179] } } },
+								{ "diffOp": { "delete": { "range": [179, 181] } } },
+								{ "diffOp": { "insert": { "range": [181, 182] } } },
+								{ "diffOp": { "equal": { "range": [182, 237] } } },
+								{ "diffOp": { "delete": { "range": [34, 35] } } },
+								{ "diffOp": { "equal": { "range": [76, 77] } } },
+								{ "diffOp": { "delete": { "range": [179, 181] } } },
+								{ "diffOp": { "insert": { "range": [181, 182] } } },
+								{ "diffOp": { "equal": { "range": [237, 287] } } },
+								{ "diffOp": { "delete": { "range": [34, 35] } } },
+								{ "diffOp": { "equal": { "range": [287, 293] } } },
+								{ "equalLines": { "line_count": 14 } },
+								{ "diffOp": { "equal": { "range": [293, 295] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/layouts/Demo.astro" },
+				"span": null,
+				"sourceCode": "---\nimport \"../styles/globals.css\";\nimport heroImg from \"../assets/hero.jpg\";\nimport logoSvg from \"../assets/logo.svg\";\nconst base = import.meta.env.BASE_URL;\nfunction withBase(p) {\n  if (p.startsWith(\"http\") || p.startsWith(\"#\")) return p;\n  return base + (p.startsWith(\"/\") ? p.slice(1) : p);\n}\n---\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title><slot name=\"title\" /> — Demo</title>\n    <link rel=\"icon\" href={logoSvg.src ?? logoSvg} />\n    <meta property=\"og:image\" content={heroImg.src ?? heroImg} />\n    <slot name=\"head\" />\n  </head>\n  <body class=\"min-h-screen antialiased bg-white text-zinc-900\">\n    <slot />\n    <script src={withBase('/demos/demo-yard-3/script.js')}></script>\n  </body>\n  </html>\n\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BaseBetaInvite from \"../layoutscomponents/Base.astroBetaInvite.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport \"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Base>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 25] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [35, 42] } } },
+								{ "diffOp": { "insert": { "range": [42, 52] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [53, 63] } } },
+								{ "diffOp": { "insert": { "range": [63, 79] } } },
+								{ "diffOp": { "equal": { "range": [79, 132] } } },
+								{ "diffOp": { "delete": { "range": [63, 73] } } },
+								{ "diffOp": { "insert": { "range": [53, 57] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [42, 52] } } },
+								{ "diffOp": { "insert": { "range": [35, 42] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [63, 79] } } },
+								{ "diffOp": { "insert": { "range": [53, 63] } } },
+								{ "diffOp": { "equal": { "range": [132, 203] } } },
+								{ "equalLines": { "line_count": 87 } },
+								{ "diffOp": { "equal": { "range": [203, 212] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/pricing.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../layouts/Base.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport BetaInvite from \"../components/BetaInvite.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Base title=\"Pricing — Scrapyard Sites\">\n  <Hero\n    title=\"Invest in Your Reputation\"\n    body=\"Choose from two flat packages and a simple care plan—no hidden fees, no surprises. Each plan builds credibility, attracts qualified sellers and keeps you visible in local search.\"\n    primaryHref=\"#packages\"\n    primaryLabel=\"Explore Packages\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\" id=\"packages\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Service Pricing</h2>\n    <div class=\"mt-6 grid gap-6 md:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Standard Launch — $2,499</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Get trusted fast.</p>\n        <ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\">\n          <li>One‑page site with professional copy and design</li>\n          <li>Contact form routed to your inbox</li>\n          <li>Google Maps Embed</li>\n          <li>30 days of updates post‑launch</li>\n          <li>Launch in 7 days</li>\n        </ul>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Premium Launch — $5,499</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Dominate your market.</p>\n        <ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\">\n          <li>Multi‑page site with professional copy</li>\n          <li>Forms on every key page</li>\n          <li>Location pages with maps and SEO</li>\n          <li>60 days of updates post‑launch</li>\n          <li>Launch in 10 days</li>\n        </ul>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Care Plan — $99/mo</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Keep your site fresh and secure.</p>\n        <ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\">\n          <li>Unlimited edits with 24‑hour turnaround</li>\n          <li>Security patches and backups</li>\n          <li>Uptime monitoring</li>\n          <li>Quarterly performance reports</li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"mt-6\" id=\"deposit\">\n      <a href=\"#deposit\" aria-label=\"Pay deposit and reserve my build week\" class=\"inline-flex items-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white\">Pay Deposit & Reserve My Build Week</a>\n      <p class=\"mt-2 text-sm text-zinc-600\">50% deposit now, balance at launch. 90‑day warm lead guarantee.</p>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">How It Works & Extras</h2>\n    <div class=\"mt-4 grid gap-6 lg:grid-cols-2\">\n      <div>\n        <h3 class=\"font-semibold\">How It Works</h3>\n        <ul class=\"mt-2 list-disc pl-5 text-sm text-zinc-700\">\n          <li>Book build week (50% deposit)</li>\n          <li>Launch (balance due)</li>\n          <li>Payment methods</li>\n          <li>90‑day warm lead guarantee</li>\n        </ul>\n      </div>\n      <div>\n        <h3 class=\"font-semibold\">Extras</h3>\n        <ul class=\"mt-2 list-disc pl-5 text-sm text-zinc-700\">\n          <li>Extra pages – $350 each</li>\n          <li>On‑site photo/video (Lower 48) – from $750</li>\n          <li>Hand‑off to your server – $199</li>\n          <li><a href={withBase('/contact/')} class=\"text-brand-orange\">Contact us</a></li>\n        </ul>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">FAQ</h2>\n    <div class=\"mt-4 space-y-2\">\n      <details class=\"rounded-md border border-zinc-200 p-4\"><summary class=\"cursor-pointer font-medium\">Timeline</summary><p class=\"mt-2 text-sm text-zinc-700\">Standard in 7 days, Premium in 10.</p></details>\n      <details class=\"rounded-md border border-zinc-200 p-4\"><summary class=\"cursor-pointer font-medium\">Ownership</summary><p class=\"mt-2 text-sm text-zinc-700\">You own your content and domain.</p></details>\n      <details class=\"rounded-md border border-zinc-200 p-4\"><summary class=\"cursor-pointer font-medium\">Deposits</summary><p class=\"mt-2 text-sm text-zinc-700\">50% deposit reserves your build week.</p></details>\n      <details class=\"rounded-md border border-zinc-200 p-4\"><summary class=\"cursor-pointer font-medium\">Hosting</summary><p class=\"mt-2 text-sm text-zinc-700\">We host or hand off to your server.</p></details>\n    </div>\n  </section>\n\n  <BetaInvite />\n</Base>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BasefounderAsset from \"../layoutsassets/Base.astrofounder.jpg\"\nimport HeroBetaInvite from \"../components/Hero.astroBetaInvite.astro\"\n---\n<Base title=\"About — Scrapyard Sites\"></Base>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 27] } } },
+								{ "diffOp": { "equal": { "range": [27, 37] } } },
+								{ "diffOp": { "delete": { "range": [37, 44] } } },
+								{ "diffOp": { "insert": { "range": [44, 50] } } },
+								{ "diffOp": { "equal": { "range": [50, 51] } } },
+								{ "diffOp": { "delete": { "range": [51, 61] } } },
+								{ "diffOp": { "insert": { "range": [61, 72] } } },
+								{ "diffOp": { "equal": { "range": [72, 81] } } },
+								{ "diffOp": { "delete": { "range": [81, 85] } } },
+								{ "diffOp": { "insert": { "range": [85, 95] } } },
+								{ "diffOp": { "equal": { "range": [95, 116] } } },
+								{ "diffOp": { "delete": { "range": [116, 126] } } },
+								{ "diffOp": { "insert": { "range": [126, 142] } } },
+								{ "diffOp": { "equal": { "range": [72, 81] } } },
+								{ "diffOp": { "delete": { "range": [85, 95] } } },
+								{ "diffOp": { "insert": { "range": [81, 85] } } },
+								{ "diffOp": { "equal": { "range": [95, 116] } } },
+								{ "diffOp": { "delete": { "range": [126, 142] } } },
+								{ "diffOp": { "insert": { "range": [116, 126] } } },
+								{ "diffOp": { "equal": { "range": [72, 81] } } },
+								{ "diffOp": { "delete": { "range": [15, 27] } } },
+								{ "diffOp": { "insert": { "range": [11, 15] } } },
+								{ "diffOp": { "equal": { "range": [95, 105] } } },
+								{ "diffOp": { "delete": { "range": [44, 50] } } },
+								{ "diffOp": { "insert": { "range": [37, 44] } } },
+								{ "diffOp": { "equal": { "range": [50, 51] } } },
+								{ "diffOp": { "delete": { "range": [61, 72] } } },
+								{ "diffOp": { "insert": { "range": [51, 61] } } },
+								{ "diffOp": { "equal": { "range": [142, 188] } } },
+								{ "equalLines": { "line_count": 56 } },
+								{ "diffOp": { "equal": { "range": [188, 197] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/about.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../layouts/Base.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport BetaInvite from \"../components/BetaInvite.astro\"\nimport founderAsset from \"../assets/founder.jpg\"\n---\n<Base title=\"About — Scrapyard Sites\">\n  <Hero\n    title=\"From the Sample Desk to the Keyboard\"\n    body=\"I’m a scrap‑industry R&D analyst who builds websites for scrapyards. When suppliers can’t load your site, you lose the foot‑tons they’re ready to drop—so I created Scrapyard Sites to fix that gap with the same methodical approach I use on the production floor: measure, improve, and lock‑in.\"\n    primaryHref=\"/contact/\"\n    primaryLabel=\"Book a Discovery Call\"\n    image={founderAsset}\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <div class=\"grid gap-8 lg:grid-cols-2 lg:items-center\">\n      <img src={founderAsset.src ?? founderAsset} alt=\"Founder\" class=\"aspect-video w-full rounded-lg object-cover\" />\n      <div class=\"prose prose-zinc max-w-none\">\n        <h2>Our Story</h2>\n        <p>\n          We bring ISO‑9001 discipline and real‑world scrap operations experience (LIBS, data/ops) to web, applying a\n          simple loop: measure, improve, lock‑in. That means faster, more credible websites that convert browsers into\n          booked loads.\n        </p>\n        <p>\n          We obsess over the details that build trust: uptime, SSL, schema, fast forms and performance budgets that keep\n          pages light and responsive on the yard’s Wi‑Fi.\n        </p>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Our Reputation Shields</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Credibility</h3><p class=\"mt-1 text-sm text-zinc-600\">Sub‑2‑second load times, SSL, and real yard photos build instant trust.</p></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Qualification</h3><p class=\"mt-1 text-sm text-zinc-600\">Copy is written around the questions sellers actually ask—grades, pricing cadence, pick‑up radius.</p></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Visibility</h3><p class=\"mt-1 text-sm text-zinc-600\">Local SEO schema and keyword research help you appear above chain recyclers in the map pack.</p></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Reliability</h3><p class=\"mt-1 text-sm text-zinc-600\">Care plans with monitoring, backups and edits ensure your site never rusts.</p></div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Our Core Values</h2>\n    <ul class=\"mt-4 grid gap-4 sm:grid-cols-3 text-sm text-zinc-700\">\n      <li><span class=\"font-semibold\">Honesty</span> — say what we’ll do, do what we say.</li>\n      <li><span class=\"font-semibold\">Accountability</span> — decisions backed by data.</li>\n      <li><span class=\"font-semibold\">Continuous Improvement</span> — we ship, we learn, we improve.</li>\n    </ul>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Why Choose Scrapyard Sites?</h2>\n    <ul class=\"mt-4 list-disc pl-6 text-zinc-700\">\n      <li>Industry Expertise</li>\n      <li>Proven Process</li>\n      <li>Reputation‑First Design</li>\n      <li>90‑day warm lead guarantee</li>\n    </ul>\n  </section>\n\n  <BetaInvite />\n</Base>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BaseBetaInvite from \"../layoutscomponents/Base.astroBetaInvite.astro\"\nimport HeroCalculator from \"../components/Hero.astroCalculator.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 25] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [35, 42] } } },
+								{ "diffOp": { "insert": { "range": [42, 52] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [53, 63] } } },
+								{ "diffOp": { "insert": { "range": [63, 79] } } },
+								{ "diffOp": { "equal": { "range": [79, 88] } } },
+								{ "diffOp": { "delete": { "range": [88, 92] } } },
+								{ "diffOp": { "insert": { "range": [92, 102] } } },
+								{ "diffOp": { "equal": { "range": [102, 123] } } },
+								{ "diffOp": { "delete": { "range": [123, 133] } } },
+								{ "diffOp": { "insert": { "range": [133, 149] } } },
+								{ "diffOp": { "equal": { "range": [79, 88] } } },
+								{ "diffOp": { "delete": { "range": [15, 25] } } },
+								{ "diffOp": { "insert": { "range": [88, 92] } } },
+								{ "diffOp": { "equal": { "range": [102, 123] } } },
+								{ "diffOp": { "delete": { "range": [63, 79] } } },
+								{ "diffOp": { "insert": { "range": [123, 133] } } },
+								{ "diffOp": { "equal": { "range": [79, 88] } } },
+								{ "diffOp": { "delete": { "range": [92, 102] } } },
+								{ "diffOp": { "insert": { "range": [11, 15] } } },
+								{ "diffOp": { "equal": { "range": [102, 112] } } },
+								{ "diffOp": { "delete": { "range": [42, 52] } } },
+								{ "diffOp": { "insert": { "range": [35, 42] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [133, 149] } } },
+								{ "diffOp": { "insert": { "range": [53, 63] } } },
+								{ "diffOp": { "equal": { "range": [149, 220] } } },
+								{ "equalLines": { "line_count": 190 } },
+								{ "diffOp": { "equal": { "range": [220, 222] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/index.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../layouts/Base.astro\"\nimport Hero from \"../components/Hero.astro\"\nimport BetaInvite from \"../components/BetaInvite.astro\"\nimport Calculator from \"../components/Calculator.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Base title=\"Scrapyard Sites — Your Reputation Is Your Edge\" description=\"Launch a high‑performing scrapyard website in 7 days to build credibility, capture leads, and boost visibility.\">\n  <Fragment slot=\"head\">\n    <meta name=\"description\" content=\"Launch a high‑performing scrapyard website in 7 days to build credibility, capture leads, and boost visibility.\" />\n  </Fragment>\n  <Hero\n    title=\"Your Reputation Is Your Edge\"\n    body=\"In scrap, your name is your currency. Before a single load hits the scale, brokers, drivers and suppliers decide whether they trust you. Without that trust, you’re just another yard to avoid.\"\n    primaryHref=\"/contact/\"\n    primaryLabel=\"Book a Discovery Call\"\n    secondaryHref=\"/pricing/\"\n    secondaryLabel=\"See Pricing →\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <div class=\"mx-auto max-w-3xl\">\n      <h2 class=\"text-3xl font-bold tracking-tight\">Your Website Is Your Digital Reputation</h2>\n      <p class=\"mt-3 text-zinc-600\">Before a single load hits your scale, sellers decide if they trust you—based in large part on what they see online.</p>\n\n      <div class=\"mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3\">\n        <div class=\"rounded-lg border border-zinc-200 p-4 text-center\"><div class=\"text-2xl font-bold\">7 Days</div><div class=\"text-sm text-zinc-600\">to launch a high‑converting yard site</div></div>\n        <div class=\"rounded-lg border border-zinc-200 p-4 text-center\"><div class=\"text-2xl font-bold\">24/7</div><div class=\"text-sm text-zinc-600\">quote form captures every lead</div></div>\n        <div class=\"rounded-lg border border-zinc-200 p-4 text-center\"><div class=\"text-2xl font-bold\">100%</div><div class=\"text-sm text-zinc-600\">tailored to your yard & customers</div></div>\n      </div>\n\n      <div class=\"mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2\">\n        <div>\n          <h3 class=\"text-xl font-semibold\">If You Don’t Look the Part…</h3>\n          <ul class=\"mt-3 list-disc pl-5 text-zinc-700 space-y-2\">\n            <li>Invisible to Sellers — No website means you don’t exist to new haulers.</li>\n            <li>Missed Leads — Without a fast quote form, profits go to your competitor.</li>\n            <li>Outdated Signals — An old site makes you look unlicensed or unreliable—or simply out of business.</li>\n          </ul>\n        </div>\n        <div>\n          <h3 class=\"text-xl font-semibold\">We Fix That</h3>\n          <ul class=\"mt-3 list-disc pl-5 text-zinc-700 space-y-2\">\n            <li>Secure & Compliant — HTTPS forms, SSL, and clear license displays.</li>\n            <li>Showcase Your Edge — Real yard photos, team bios & supplier reviews.</li>\n            <li>Built for Conversion — Fast load times and a mobile‑friendly quote form capture every lead.</li>\n          </ul>\n        </div>\n      </div>\n      <p class=\"mt-8 text-zinc-700\">When your reputation is reinforced online, trust goes up and so do your profits. Engage visitors, collect quotes, and become the yard drivers choose every time.</p>\n      <div class=\"mt-6\"><a href={withBase('/pricing/')} class=\"text-brand-orange font-medium\">See Pricing →</a></div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Demo Yards</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      <a href={withBase('/demos/demo-yard-1/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\">\n        <div class=\"h-40 bg-zinc-100\"></div>\n        <div class=\"p-4\">\n          <h3 class=\"font-semibold group-hover:text-brand-orange\">Metro Yard Demo</h3>\n          <p class=\"mt-1 text-sm text-zinc-600\">Concept build showing credibility, qualification, visibility and reliability.</p>\n        </div>\n      </a>\n      <a href={withBase('/demos/demo-yard-2/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\">\n        <div class=\"h-40 bg-zinc-100\"></div>\n        <div class=\"p-4\">\n          <h3 class=\"font-semibold group-hover:text-brand-orange\">Mobile‑Friendly Demo</h3>\n          <p class=\"mt-1 text-sm text-zinc-600\">Optimized for fast quotes and on‑the‑go sellers.</p>\n        </div>\n      </a>\n      <a href={withBase('/demos/demo-yard-3/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\">\n        <div class=\"h-40 bg-zinc-100\"></div>\n        <div class=\"p-4\">\n          <h3 class=\"font-semibold group-hover:text-brand-orange\">Industrial Client Demo</h3>\n          <p class=\"mt-1 text-sm text-zinc-600\">Services, materials, and conversions for industrial accounts.</p>\n        </div>\n      </a>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">How We Work</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-4\">\n        <h3 class=\"font-semibold\">Discovery Call</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">15 minutes to learn your yard, materials & draw area.</p>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-4\">\n        <h3 class=\"font-semibold\">Build Week</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">We design, write and code. You review once—done.</p>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-4\">\n        <h3 class=\"font-semibold\">Launch & Maintain</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Site goes live, Google Business updated, $99/mo care plan kicks in.</p>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Straight‑Shooter Pricing</h2>\n    <div class=\"mt-6 grid gap-6 md:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Standard Launch — $2,499</h3>\n        <ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\">\n          <li>One‑page design</li>\n          <li>Contact form</li>\n          <li>Google Maps embed & GBP tune‑up</li>\n          <li>Basic on‑site SEO</li>\n          <li>30 days of support</li>\n        </ul>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Premium Launch — $5,499</h3>\n        <ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\">\n          <li>Multi‑page</li>\n          <li>Forms</li>\n          <li>Location pages</li>\n          <li>Structured‑data SEO</li>\n          <li>60 days of support</li>\n        </ul>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-6\">\n        <h3 class=\"text-lg font-semibold\">Care Plan — $99/mo</h3>\n        <ul class=\"mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700\">\n          <li>Unlimited edits</li>\n          <li>Security patches</li>\n          <li>Backups</li>\n          <li>Uptime checks</li>\n          <li>Quarterly report</li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"mt-6\">\n      <a href={withBase('/pricing/#deposit')} class=\"inline-flex items-center rounded-md bg-brand-orange px-5 py-3 font-medium text-white\">Pay Deposit & Reserve My Build Week</a>\n      <p class=\"mt-2 text-sm text-zinc-600\">50% deposit now, balance at launch. 90‑day warm lead guarantee.</p>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\" id=\"contact\">\n    <div class=\"grid gap-8 lg:grid-cols-2\">\n      <div>\n        <h2 class=\"text-2xl font-bold tracking-tight\">Protect Your Name</h2>\n        <p class=\"mt-3 text-zinc-700\">Reputation is everything. Don’t let an outdated or nonexistent site put yours at risk. Fill the form below or call <a href=\"tel:19493568762\" class=\"text-brand-orange font-medium\">949‑356‑8762</a> to see how much credibility a modern website can add.</p>\n        <ul class=\"mt-4 flex gap-4 text-sm text-zinc-600\">\n          <li>• No spam</li>\n          <li>• Confidential</li>\n          <li>• 15 minutes max</li>\n        </ul>\n      </div>\n      <div>\n        <form class=\"grid gap-4\">\n          <label class=\"text-sm font-medium text-zinc-700\" for=\"contact2-name\">Name</label>\n          <input id=\"contact2-name\" name=\"name\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Name\" />\n          <label class=\"text-sm font-medium text-zinc-700\" for=\"contact2-email\">Email</label>\n          <input id=\"contact2-email\" name=\"email\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Email\" />\n          <label class=\"text-sm font-medium text-zinc-700\" for=\"contact2-company\">Yard/Company</label>\n          <input id=\"contact2-company\" name=\"company\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Yard/Company\" />\n          <label class=\"text-sm font-medium text-zinc-700\" for=\"contact2-message\">Message</label>\n          <textarea id=\"contact2-message\" name=\"message\" class=\"rounded-md border border-zinc-300 px-3 py-2\" rows=\"4\" placeholder=\"Message\"></textarea>\n          <button class=\"inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white\">Send →</button>\n        </form>\n        <p class=\"mt-2 text-sm text-zinc-600\">Prefer immediate answers? Call 949‑356‑8762</p>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">FAQ</h2>\n    <div class=\"mt-4 space-y-2\">\n      <details class=\"rounded-md border border-zinc-200 p-4\">\n        <summary class=\"cursor-pointer font-medium\">Timeline?</summary>\n        <p class=\"mt-2 text-sm text-zinc-700\">Launch a one‑page site in 7 days; multi‑page in 10.</p>\n      </details>\n      <details class=\"rounded-md border border-zinc-200 p-4\">\n        <summary class=\"cursor-pointer font-medium\">Ownership?</summary>\n        <p class=\"mt-2 text-sm text-zinc-700\">You own your content, domain and assets.</p>\n      </details>\n      <details class=\"rounded-md border border-zinc-200 p-4\">\n        <summary class=\"cursor-pointer font-medium\">What’s needed to start?</summary>\n        <p class=\"mt-2 text-sm text-zinc-700\">A short call, your logo, and any photos you want featured.</p>\n      </details>\n      <details class=\"rounded-md border border-zinc-200 p-4\">\n        <summary class=\"cursor-pointer font-medium\">Pricing overview?</summary>\n        <p class=\"mt-2 text-sm text-zinc-700\">Flat Standard and Premium packages plus a $99/mo care plan.</p>\n      </details>\n    </div>\n  </section>\n\n  <BetaInvite />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <Calculator />\n  </section>\n</Base>\n\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BaseBetaInvite from \"../layoutscomponents/Base.astroBetaInvite.astro\"\nimport Calculator from \"../components/Calculator.astro\"\nimport \"\n---\n<Base title=\"Reputation Risk Calculator — Scrapyard Sites\"></Base>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 25] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [35, 42] } } },
+								{ "diffOp": { "insert": { "range": [42, 52] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [53, 63] } } },
+								{ "diffOp": { "insert": { "range": [63, 79] } } },
+								{ "diffOp": { "equal": { "range": [79, 144] } } },
+								{ "diffOp": { "delete": { "range": [63, 73] } } },
+								{ "diffOp": { "insert": { "range": [53, 57] } } },
+								{ "diffOp": { "equal": { "range": [25, 35] } } },
+								{ "diffOp": { "delete": { "range": [42, 52] } } },
+								{ "diffOp": { "insert": { "range": [35, 42] } } },
+								{ "diffOp": { "equal": { "range": [52, 53] } } },
+								{ "diffOp": { "delete": { "range": [63, 79] } } },
+								{ "diffOp": { "insert": { "range": [53, 63] } } },
+								{ "diffOp": { "equal": { "range": [144, 211] } } },
+								{ "equalLines": { "line_count": 10 } },
+								{ "diffOp": { "equal": { "range": [211, 220] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/calculator.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../layouts/Base.astro\"\nimport Calculator from \"../components/Calculator.astro\"\nimport BetaInvite from \"../components/BetaInvite.astro\"\n---\n<Base title=\"Reputation Risk Calculator — Scrapyard Sites\">\n  <section class=\"mx-auto max-w-5xl px-6 md:px-8 py-16\">\n    <div class=\"mx-auto max-w-2xl text-center\">\n      <h1 class=\"text-3xl font-bold tracking-tight\">Reputation Risk Calculator</h1>\n      <p class=\"mt-3 text-zinc-700\">Enter a few numbers and see what missed calls are costing per year.</p>\n    </div>\n    <div class=\"mt-8\">\n      <Calculator />\n    </div>\n  </section>\n  <BetaInvite />\n</Base>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport BaseBetaInvite from \"../../layoutscomponents/Base.astroBetaInvite.astro\"\nimport Hero from \"../../components/Hero.astro\"\nimport \"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Base>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 25] } } },
+								{ "diffOp": { "equal": { "range": [25, 38] } } },
+								{ "diffOp": { "delete": { "range": [38, 45] } } },
+								{ "diffOp": { "insert": { "range": [45, 55] } } },
+								{ "diffOp": { "equal": { "range": [55, 56] } } },
+								{ "diffOp": { "delete": { "range": [56, 66] } } },
+								{ "diffOp": { "insert": { "range": [66, 82] } } },
+								{ "diffOp": { "equal": { "range": [82, 138] } } },
+								{ "diffOp": { "delete": { "range": [66, 76] } } },
+								{ "diffOp": { "insert": { "range": [56, 60] } } },
+								{ "diffOp": { "equal": { "range": [25, 38] } } },
+								{ "diffOp": { "delete": { "range": [45, 55] } } },
+								{ "diffOp": { "insert": { "range": [38, 45] } } },
+								{ "diffOp": { "equal": { "range": [55, 56] } } },
+								{ "diffOp": { "delete": { "range": [66, 82] } } },
+								{ "diffOp": { "insert": { "range": [56, 66] } } },
+								{ "diffOp": { "equal": { "range": [138, 209] } } },
+								{ "equalLines": { "line_count": 22 } },
+								{ "diffOp": { "equal": { "range": [209, 218] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/demos/index.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Base from \"../../layouts/Base.astro\"\nimport Hero from \"../../components/Hero.astro\"\nimport BetaInvite from \"../../components/BetaInvite.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Base title=\"Demos — Scrapyard Sites\">\n  <Fragment slot=\"head\">\n    <meta name=\"description\" content=\"Explore demo scrapyard websites showcasing credibility, qualification, visibility, and reliability.\" />\n  </Fragment>\n  <Hero\n    title=\"Reputation in Action: Demo Yards\"\n    body=\"Explore our concept builds designed with real scrap‑yard scenarios. Each demo shows how a professional website built on our reputation‑first pillars—credibility, qualification, visibility and reliability—can transform perception and drive results.\"\n    primaryHref=\"#demos\"\n    primaryLabel=\"Explore Demos\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\" id=\"demos\">\n    <div class=\"grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      <a href={withBase('/demos/demo-yard-1/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\"><div class=\"h-40 bg-zinc-100\"></div><div class=\"p-4\"><h3 class=\"font-semibold group-hover:text-brand-orange\">Metro Yard Demo</h3><p class=\"mt-1 text-sm text-zinc-600\">Credibility, Qualification, Visibility, Reliability.</p></div></a>\n      <a href={withBase('/demos/demo-yard-2/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\"><div class=\"h-40 bg-zinc-100\"></div><div class=\"p-4\"><h3 class=\"font-semibold group-hover:text-brand-orange\">Mobile‑Friendly Demo</h3><p class=\"mt-1 text-sm text-zinc-600\">Built for fast quotes and on‑the‑go sellers.</p></div></a>\n      <a href={withBase('/demos/demo-yard-3/')} class=\"group overflow-hidden rounded-lg border border-zinc-200\"><div class=\"h-40 bg-zinc-100\"></div><div class=\"p-4\"><h3 class=\"font-semibold group-hover:text-brand-orange\">Industrial Client Demo</h3><p class=\"mt-1 text-sm text-zinc-600\">Services and conversions for industrial accounts.</p></div></a>\n    </div>\n  </section>\n\n  <BetaInvite />\n</Base>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport DemoHero from \"../../layoutscomponents/Demo.astroHero.astro\"\nimport \"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Demo>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 19] } } },
+								{ "diffOp": { "equal": { "range": [19, 32] } } },
+								{ "diffOp": { "delete": { "range": [32, 39] } } },
+								{ "diffOp": { "insert": { "range": [39, 49] } } },
+								{ "diffOp": { "equal": { "range": [49, 50] } } },
+								{ "diffOp": { "delete": { "range": [50, 60] } } },
+								{ "diffOp": { "insert": { "range": [60, 70] } } },
+								{ "diffOp": { "equal": { "range": [70, 79] } } },
+								{ "diffOp": { "delete": { "range": [60, 64] } } },
+								{ "diffOp": { "insert": { "range": [50, 54] } } },
+								{ "diffOp": { "equal": { "range": [19, 32] } } },
+								{ "diffOp": { "delete": { "range": [39, 49] } } },
+								{ "diffOp": { "insert": { "range": [32, 39] } } },
+								{ "diffOp": { "equal": { "range": [49, 50] } } },
+								{ "diffOp": { "delete": { "range": [60, 70] } } },
+								{ "diffOp": { "insert": { "range": [50, 60] } } },
+								{ "diffOp": { "equal": { "range": [79, 150] } } },
+								{ "equalLines": { "line_count": 56 } },
+								{ "diffOp": { "equal": { "range": [150, 159] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/demos/demo-yard-1.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Demo from \"../../layouts/Demo.astro\"\nimport Hero from \"../../components/Hero.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Demo>\n  <section class=\"bg-brand-orange/10\">\n    <div class=\"mx-auto max-w-7xl px-4 py-3 text-sm\"><a href={withBase('/demos/')} class=\"font-medium text-brand-orange\">← Back to demos</a></div>\n  </section>\n  <Hero\n    title=\"Top Dollar for Scrap Metal\"\n    body=\"Fast, fair, and reliable service in Demo City.\"\n    primaryHref=\"#quote\"\n    primaryLabel=\"Request a Quote\"\n    secondaryHref=\"#materials\"\n    secondaryLabel=\"What We Buy\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">How It Works</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Check Your Material</h3></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Drive On & Unload</h3></div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Get Paid</h3></div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\" id=\"materials\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Materials We Buy</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Copper & Brass</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Aluminum</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Steel & Iron</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Stainless & High Temp</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Catalytic Converters</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">E‑Scrap & Batteries</div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\" id=\"quote\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Get a Fast Quote</h2>\n    <form class=\"mt-6 grid gap-4 sm:grid-cols-2\">\n      <label class=\"text-sm font-medium text-zinc-700\" for=\"d1-name\">Name</label>\n      <input id=\"d1-name\" name=\"name\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Name\" />\n      <label class=\"text-sm font-medium text-zinc-700\" for=\"d1-phone\">Phone</label>\n      <input id=\"d1-phone\" name=\"phone\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Phone\" />\n      <label class=\"text-sm font-medium text-zinc-700 sm:col-span-2\" for=\"d1-email\">Email</label>\n      <input id=\"d1-email\" name=\"email\" class=\"rounded-md border border-zinc-300 px-3 py-2 sm:col-span-2\" placeholder=\"Email\" />\n      <label class=\"text-sm font-medium text-zinc-700 sm:col-span-2\" for=\"d1-message\">Message</label>\n      <textarea id=\"d1-message\" name=\"message\" class=\"rounded-md border border-zinc-300 px-3 py-2 sm:col-span-2\" rows=\"4\" placeholder=\"Message\"></textarea>\n      <button class=\"inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white sm:col-span-2\">Send →</button>\n    </form>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Visit Our Yard</h2>\n    <div class=\"mt-4 h-64 w-full rounded-lg border border-zinc-200 bg-zinc-100\"></div>\n    <p class=\"mt-2 text-sm text-zinc-600\">Hours, address, phone link.</p>\n  </section>\n</Demo>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport DemoHero from \"../../layoutscomponents/Demo.astroHero.astro\"\nimport \"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Demo>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 19] } } },
+								{ "diffOp": { "equal": { "range": [19, 32] } } },
+								{ "diffOp": { "delete": { "range": [32, 39] } } },
+								{ "diffOp": { "insert": { "range": [39, 49] } } },
+								{ "diffOp": { "equal": { "range": [49, 50] } } },
+								{ "diffOp": { "delete": { "range": [50, 60] } } },
+								{ "diffOp": { "insert": { "range": [60, 70] } } },
+								{ "diffOp": { "equal": { "range": [70, 79] } } },
+								{ "diffOp": { "delete": { "range": [60, 64] } } },
+								{ "diffOp": { "insert": { "range": [50, 54] } } },
+								{ "diffOp": { "equal": { "range": [19, 32] } } },
+								{ "diffOp": { "delete": { "range": [39, 49] } } },
+								{ "diffOp": { "insert": { "range": [32, 39] } } },
+								{ "diffOp": { "equal": { "range": [49, 50] } } },
+								{ "diffOp": { "delete": { "range": [60, 70] } } },
+								{ "diffOp": { "insert": { "range": [50, 60] } } },
+								{ "diffOp": { "equal": { "range": [79, 150] } } },
+								{ "equalLines": { "line_count": 53 } },
+								{ "diffOp": { "equal": { "range": [150, 159] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/demos/demo-yard-2.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Demo from \"../../layouts/Demo.astro\"\nimport Hero from \"../../components/Hero.astro\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Demo>\n  <section class=\"bg-emerald-600/10\">\n    <div class=\"mx-auto max-w-7xl px-4 py-3 text-sm\"><a href={withBase('/demos/')} class=\"font-medium text-emerald-700\">← Back to demos</a></div>\n  </section>\n  <Hero\n    title=\"Appalachia’s Trusted Scrap Metal Recycling Partner\"\n    body=\"We pay top dollar for cars, copper, aluminum & more—keeping Appalachia green one load at a time.\"\n    primaryHref=\"#quote\"\n    primaryLabel=\"Get a Fast Quote\"\n    secondaryHref=\"#materials\"\n    secondaryLabel=\"What We Buy\"\n  />\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Why Choose Us?</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Top‑Tier Payouts</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Fast In‑&‑Out Yard</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Eco Impact</div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\" id=\"materials\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Materials We Accept</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Aluminum</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Copper</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Automobiles</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Appliances & Misc.</div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">Switch Gear</div>\n    </div>\n    <p class=\"mt-2 text-sm text-zinc-600\">Call for guidance on materials: <a href=\"tel:19493568762\" class=\"text-brand-orange\">949‑356‑8762</a></p>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\" id=\"quote\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Contact</h2>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\">\n        <div class=\"text-sm text-zinc-600\">Phone, Fax, Email, Address, Hours</div>\n      </div>\n      <form class=\"grid gap-4\">\n        <label class=\"text-sm font-medium text-zinc-700\" for=\"d2-name\">Name</label>\n        <input id=\"d2-name\" name=\"name\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Name\" />\n        <label class=\"text-sm font-medium text-zinc-700\" for=\"d2-email\">Email</label>\n        <input id=\"d2-email\" name=\"email\" class=\"rounded-md border border-zinc-300 px-3 py-2\" placeholder=\"Email\" />\n        <label class=\"text-sm font-medium text-zinc-700\" for=\"d2-message\">Message</label>\n        <textarea id=\"d2-message\" name=\"message\" class=\"rounded-md border border-zinc-300 px-3 py-2\" rows=\"4\" placeholder=\"Message\"></textarea>\n        <button class=\"inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white\">Send →</button>\n      </form>\n    </div>\n  </section>\n</Demo>\n\n"
+			},
+			"tags": [],
+			"source": null
+		},
+		{
+			"category": "organizeImports",
+			"severity": "error",
+			"description": "Import statements could be sorted:",
+			"message": [
+				{ "elements": [], "content": "Import statements could be sorted:" }
+			],
+			"advices": {
+				"advices": [
+					{
+						"diff": {
+							"dictionary": "---\nimport Demohero from \"../../../layoutsassets/Demo.astrohero.jpg\"\nimport logo from \"../../../assets/logo.svg\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =></Demo>\n\n",
+							"ops": [
+								{ "diffOp": { "equal": { "range": [0, 11] } } },
+								{ "diffOp": { "delete": { "range": [11, 15] } } },
+								{ "diffOp": { "insert": { "range": [15, 19] } } },
+								{ "diffOp": { "equal": { "range": [19, 35] } } },
+								{ "diffOp": { "delete": { "range": [35, 42] } } },
+								{ "diffOp": { "insert": { "range": [42, 48] } } },
+								{ "diffOp": { "equal": { "range": [48, 49] } } },
+								{ "diffOp": { "delete": { "range": [49, 59] } } },
+								{ "diffOp": { "insert": { "range": [59, 67] } } },
+								{ "diffOp": { "equal": { "range": [67, 76] } } },
+								{ "diffOp": { "delete": { "range": [59, 63] } } },
+								{ "diffOp": { "insert": { "range": [76, 80] } } },
+								{ "diffOp": { "equal": { "range": [80, 103] } } },
+								{ "diffOp": { "delete": { "range": [59, 67] } } },
+								{ "diffOp": { "insert": { "range": [103, 111] } } },
+								{ "diffOp": { "equal": { "range": [67, 76] } } },
+								{ "diffOp": { "delete": { "range": [103, 107] } } },
+								{ "diffOp": { "insert": { "range": [49, 53] } } },
+								{ "diffOp": { "equal": { "range": [80, 96] } } },
+								{ "diffOp": { "delete": { "range": [42, 48] } } },
+								{ "diffOp": { "insert": { "range": [35, 42] } } },
+								{ "diffOp": { "equal": { "range": [48, 49] } } },
+								{ "diffOp": { "delete": { "range": [103, 111] } } },
+								{ "diffOp": { "insert": { "range": [49, 59] } } },
+								{ "diffOp": { "equal": { "range": [111, 182] } } },
+								{ "equalLines": { "line_count": 254 } },
+								{ "diffOp": { "equal": { "range": [182, 191] } } }
+							]
+						}
+					}
+				]
+			},
+			"verboseAdvices": { "advices": [] },
+			"location": {
+				"path": { "file": "./src/pages/demos/demo-yard-3/index.astro" },
+				"span": null,
+				"sourceCode": "---\nimport Demo from \"../../../layouts/Demo.astro\"\nimport hero from \"../../../assets/hero.jpg\"\nimport logo from \"../../../assets/logo.svg\"\nconst base = import.meta.env.BASE_URL\nconst withBase = (p: string) =>\n\tp.startsWith(\"http\") || p.startsWith(\"#\") ? p : base + p.replace(/^\\//, \"\")\n---\n<Demo>\n  <style>\n    :root { --brand-orange: #4169e1; --brand-steel: #5E6367; --brand-charcoal: #2B2B2B; }\n  </style>\n  <link rel=\"icon\" href={logo.src ?? logo} />\n  <meta property=\"og:image\" content={hero.src ?? hero} />\n  <script type=\"application/ld+json\">{JSON.stringify({\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"LocalBusiness\",\n    name: \"Demo Yard\",\n    description: \"Scrap metal recycling services in the Metropolis area.\",\n    url: \"https://www.demoyard.com\",\n    telephone: \"+1-555-0100\",\n    address: {\n      \"@type\": \"PostalAddress\",\n      streetAddress: \"1234 Industrial Dr.\",\n      addressLocality: \"Metropolis\",\n      addressRegion: \"TX\",\n      postalCode: \"77000\",\n      addressCountry: \"US\"\n    }\n  })}</script>\n\n  <div id=\"demo-top-banner\" class=\"w-full bg-[var(--brand-orange)] text-white text-sm\">\n    <div class=\"mx-auto max-w-7xl px-6 md:px-8 py-2 text-center\">\n      <a href={withBase('/')} class=\"underline underline-offset-4\">Return to ScrapyardSites.com</a>\n    </div>\n  </div>\n\n  <header class=\"sticky top-0 z-40 bg-white shadow-header\">\n    <input id=\"demo-nav-toggle\" type=\"checkbox\" class=\"peer sr-only\" />\n    <div class=\"mx-auto max-w-7xl px-6 md:px-8\">\n      <div class=\"flex h-16 items-center justify-between\">\n        <a href={withBase('/demos/demo-yard-3/')} class=\"flex items-center gap-3\">\n          <img src={logo.src ?? logo} alt=\"Premium Demo\" class=\"h-8 w-8\" />\n          <span class=\"text-lg font-semibold tracking-tight\">Premium Demo</span>\n        </a>\n        <nav class=\"hidden md:flex items-center gap-6 text-sm font-medium\">\n          <a href={withBase('/demos/demo-yard-3/services/')} class=\"hover:text-[var(--brand-orange)]\">Services</a>\n          <a href={withBase('/demos/demo-yard-3/process/')} class=\"hover:text-[var(--brand-orange)]\">Process</a>\n          <a href={withBase('/demos/demo-yard-3/accepted-materials/')} class=\"hover:text-[var(--brand-orange)]\">Materials</a>\n          <a href={withBase('/demos/demo-yard-3/about/')} class=\"hover:text-[var(--brand-orange)]\">About Us</a>\n          <a href={withBase('/demos/demo-yard-3/our-team/')} class=\"hover:text-[var(--brand-orange)]\">Our Team</a>\n          <a href={withBase('/demos/demo-yard-3/contact/')} class=\"hover:text-[var(--brand-orange)]\">Contact</a>\n          <a href={withBase('/demos/demo-yard-3/faq/')} class=\"hover:text-[var(--brand-orange)]\">FAQ</a>\n        </nav>\n        <div class=\"hidden md:flex\">\n          <a href={withBase('/demos/demo-yard-3/contact/')} class=\"inline-flex items-center rounded-md bg-[var(--brand-orange)] px-4 py-2 text-white shadow hover:opacity-95\">Request a Quote</a>\n        </div>\n        <label for=\"demo-nav-toggle\" class=\"md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100\" aria-label=\"Open Menu\">\n          <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\" /></svg>\n        </label>\n      </div>\n    </div>\n    <div class=\"fixed inset-0 z-50 hidden bg-white peer-checked:block\">\n      <div class=\"flex h-full flex-col\">\n        <div class=\"flex items-center justify-between px-6 md:px-8 h-16 shadow-header\">\n          <a href={withBase('/demos/demo-yard-3/')} class=\"flex items-center gap-3\">\n            <img src={logo.src ?? logo} alt=\"Premium Demo\" class=\"h-8 w-8\" />\n            <span class=\"text-lg font-semibold tracking-tight\">Premium Demo</span>\n          </a>\n          <label for=\"demo-nav-toggle\" class=\"inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100\" aria-label=\"Close Menu\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" /></svg>\n          </label>\n        </div>\n        <nav class=\"flex-1 p-8 text-lg font-medium space-y-6\">\n          <a href={withBase('/demos/demo-yard-3/services/')} class=\"block\">Services</a>\n          <a href={withBase('/demos/demo-yard-3/process/')} class=\"block\">Process</a>\n          <a href={withBase('/demos/demo-yard-3/accepted-materials/')} class=\"block\">Materials</a>\n          <a href={withBase('/demos/demo-yard-3/about/')} class=\"block\">About Us</a>\n          <a href={withBase('/demos/demo-yard-3/our-team/')} class=\"block\">Our Team</a>\n          <a href={withBase('/demos/demo-yard-3/contact/')} class=\"block\">Contact</a>\n          <a href={withBase('/demos/demo-yard-3/faq/')} class=\"block\">FAQ</a>\n        </nav>\n        <div class=\"p-8\">\n          <a href={withBase('/demos/demo-yard-3/contact/')} class=\"inline-flex w-full items-center justify-center rounded-md bg-[var(--brand-orange)] px-4 py-3 text-white shadow\">Request a Quote</a>\n        </div>\n      </div>\n    </div>\n  </header>\n\n  <section id=\"top\" class=\"relative isolate\">\n    <div class=\"relative h-[60vh] min-h-[420px] w-full bg-cover bg-center\" style={`background-image: url(${hero.src ?? hero});`} aria-hidden=\"true\">\n      <div class=\"absolute inset-0 bg-black/50\"></div>\n      <div class=\"relative z-10 mx-auto max-w-5xl px-6 md:px-8 py-24 flex h-full items-center\">\n        <div class=\"text-white\">\n          <h1 class=\"text-5xl font-bold tracking-tight leading-tight\">\n            <span class=\"block\">Top Dollar for</span>\n            <span class=\"block\">Scrap Metal</span>\n            <span class=\"block\">Fast, Fair, & Reliable</span>\n          </h1>\n          <p class=\"mt-4 max-w-3xl text-lg text-zinc-100\">Serving the metro area with 24‑hour turnarounds and honest weights.</p>\n          <div class=\"mt-8 flex flex-col sm:flex-row gap-3\">\n            <a href={withBase('/demos/demo-yard-3/contact/')} class=\"inline-flex items-center justify-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white shadow\">Request a Quote</a>\n            <a href=\"#services\" class=\"inline-flex items-center justify-center rounded-md bg-white/10 px-5 py-3 font-medium text-white ring-1 ring-inset ring-white/40 hover:bg-white/20\">Our Services ↓</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section id=\"services\" class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Our Core Services</h2>\n    <p class=\"mt-2 text-zinc-700\">Comprehensive scrap buying, container rental, and on-site demolition.</p>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      <a href={withBase('/demos/demo-yard-3/services/#buying')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Ferrous & Non‑Ferrous Buying</h3><p class=\"mt-1 text-sm text-zinc-600\">Competitive pricing on steel, aluminum, copper, brass, and more.</p></a>\n      <a href={withBase('/demos/demo-yard-3/services/#containers')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Industrial Container Service</h3><p class=\"mt-1 text-sm text-zinc-600\">Scheduled roll‑off swaps to keep your operation moving.</p></a>\n      <a href={withBase('/demos/demo-yard-3/services/#demo')} class=\"rounded-lg border border-zinc-200 p-5\"><h3 class=\"font-semibold\">Demolition & Clean‑Up</h3><p class=\"mt-1 text-sm text-zinc-600\">Safe, insured crews for on‑site dismantling and hauling.</p></a>\n    </div>\n    <div class=\"mt-6\"><a href={withBase('/demos/demo-yard-3/services/')} class=\"text-[var(--brand-orange)] font-medium\">View All</a></div>\n  </section>\n\n  <section id=\"client-band\" class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <div class=\"rounded-lg bg-zinc-50 ring-1 ring-zinc-200 p-6 text-center\">\n      <div>★★★★★ 4.8 Google rating</div>\n      <div class=\"mt-1 text-sm text-zinc-600\">City of Houston · XYZ Construction · Acme Manufacturing · MegaCorp</div>\n      <div class=\"mt-1 text-sm text-zinc-600\">As seen in Recycling Today</div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n    <div class=\"grid gap-4 sm:grid-cols-3\">\n      <div class=\"rounded-lg bg-gradient-to-br from-[var(--brand-orange)] to-blue-400 p-6 text-white\"><div class=\"text-xl font-bold stat-number\" data-target=\"50\">0+</div><div class=\"text-sm\">Years Combined Experience</div></div>\n      <div class=\"rounded-lg bg-gradient-to-br from-[var(--brand-orange)] to-blue-400 p-6 text-white\"><div class=\"text-xl font-bold stat-number\" data-target=\"24\">0h</div><div class=\"text-sm\">Average Turnaround</div></div>\n      <div class=\"rounded-lg bg-gradient-to-br from-[var(--brand-orange)] to-blue-400 p-6 text-white\"><div class=\"text-xl font-bold stat-number\" data-target=\"100\">0%</div><div class=\"text-sm\">Satisfaction Guarantee</div></div>\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <div class=\"max-w-3xl\">\n      <h2 class=\"text-2xl font-bold tracking-tight\">Sell Your Scrap in 3 Easy Steps</h2>\n      <p class=\"mt-1 text-zinc-700\">(Total yard time: ~10 minutes—no appointment, no hassle.)</p>\n    </div>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-3\">\n      <div class=\"rounded-lg border border-zinc-200 p-5\">\n        <h3 class=\"font-semibold\">1 — Check Your Material</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">We accept Copper, Brass, Aluminum (sheet, cast & cans), Steel, Iron, Stainless Steel & High Temp, Catalytic Converters, Switch Gear, E-Scrap, Batteries, & more!</p>\n        <a href={withBase('/demos/demo-yard-3/accepted-materials/#materials')} class=\"mt-2 inline-block text-[var(--brand-orange)]\">Accepted Materials ↓</a>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">\n        <h3 class=\"font-semibold\">2 — Drive On & Unload</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Roll onto our calibrated truck scale, grab a yard pass, and follow the clearly-marked lanes. Our crew will grade, sort, and unload for you—so you’re back on the road fast.</p>\n      </div>\n      <div class=\"rounded-lg border border-zinc-200 p-5\">\n        <h3 class=\"font-semibold\">3 — Get Paid—Instantly</h3>\n        <p class=\"mt-1 text-sm text-zinc-600\">Watch your weight ticket print, then choose Cash, ACH, or Check on the spot. A live price ticker shows today’s top three metals while you wait.</p>\n      </div>\n    </div>\n    <div class=\"mt-6\">      <a href={withBase('/demos/demo-yard-3/contact/')} class=\"inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white\">Request a Quote</a></div>\n  </section>\n\n  <section id=\"containers\" class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <div class=\"grid gap-8 lg:grid-cols-2 lg:items-center\">\n      <div>\n        <h2 class=\"text-2xl font-bold tracking-tight\">Need a Roll-Off Tomorrow?</h2>\n        <p class=\"mt-2 text-zinc-700\">Same-day drops, 20-60 yd³ bins, and GPS-tracked drivers who swap your box before your scrap bay backs up.</p>\n        <ul class=\"mt-3 list-disc pl-5 text-zinc-700 space-y-1\">\n          <li>4-hour average response inside 50 mi radius</li>\n          <li>No rental fees; freight only—metal value offsets the rest</li>\n          <li>E-mailed tonnage report before the truck leaves your dock</li>\n        </ul>\n        <div class=\"mt-4 flex gap-3\">\n          <a href=\"#quote\" class=\"inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white\">Book a Container</a>\n          <a href=\"tel:555123SCRAP\" class=\"inline-flex items-center rounded-md bg-zinc-900 px-5 py-3 font-medium text-white\">Call Dispatch</a>\n        </div>\n      </div>\n      <div class=\"grid grid-cols-2 gap-4\">\n        <img src={hero.src ?? hero} alt=\"Roll-off\" class=\"h-36 w-full rounded-lg object-cover\" loading=\"lazy\" />\n        <img src={hero.src ?? hero} alt=\"20yd bin\" class=\"h-36 w-full rounded-lg object-cover\" loading=\"lazy\" />\n        <img src={hero.src ?? hero} alt=\"30yd bin\" class=\"h-36 w-full rounded-lg object-cover\" loading=\"lazy\" />\n        <img src={hero.src ?? hero} alt=\"60yd bin\" class=\"h-36 w-full rounded-lg object-cover\" loading=\"lazy\" />\n      </div>\n    </div>\n  </section>\n\n  <section id=\"materials\" class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <h2 class=\"text-2xl font-bold tracking-tight\">Accepted Materials</h2>\n    <p class=\"mt-1 text-zinc-700\">These common items bring the best rates.</p>\n    <div class=\"mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n      {[\n        { t: 'Copper & Brass', s: 'Highest copper prices in county', img: 'copper.jpg', id: 'copper' },\n        { t: 'Aluminum', s: 'Clean extrusion & sheet', img: 'aluminum.jpg', id: 'aluminum' },\n        { t: 'Steel & Iron', s: 'HMS, prepared plate & tin', img: 'steel.jpg', id: 'steel' },\n        { t: 'Stainless Steel & High Temp', s: '304/316 solids', img: 'stainless.jpg', id: 'stainless' },\n        { t: 'Catalytic Converters', s: 'OEM units', img: 'catalytic.jpg', id: 'cats' },\n        { t: 'Switch Gear', s: 'Industrial electrical panels', img: 'rolloff.jpg', id: 'switchgear' },\n        { t: 'E‑Scrap & Batteries', s: 'Boards and lead‑acid', img: 'batteries.jpg', id: 'escrap' }\n      ].map((c) => (\n                 <a href={withBase(`/demos/demo-yard-3/accepted-materials/#${c.id}`)} class=\"group overflow-hidden rounded-lg border border-zinc-200\" data-aos>\n                     <img src={hero.src ?? hero} alt={c.t} class=\"h-40 w-full object-cover\" loading=\"lazy\" />\n          <div class=\"p-4\">\n            <h3 class=\"font-semibold group-hover:text-[var(--brand-orange)]\">{c.t}</h3>\n            <p class=\"mt-1 text-sm text-zinc-600\">{c.s}</p>\n          </div>\n        </a>\n      ))}\n    </div>\n    <div class=\"mt-6\"><a href={withBase('/demos/demo-yard-3/accepted-materials/')} class=\"text-[var(--brand-orange)] font-medium\">View All</a></div>\n  </section>\n\n  <section id=\"cta-final\" class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <div class=\"grid gap-8 lg:grid-cols-2 lg:items-center\">\n      <div>\n        <h2 class=\"text-2xl font-bold tracking-tight\">Ready to turn scrap into cash?</h2>\n        <p class=\"mt-1 text-zinc-700\">Pull in today—or lock a roll-off for tomorrow—and leave with money in your pocket in minutes.</p>\n        <p class=\"mt-1 text-sm text-zinc-600\">Phones answered 7 a – 6 p · Monday – Saturday</p>\n        <div class=\"mt-4 flex gap-3\">\n          <a href=\"#quote\" class=\"inline-flex items-center rounded-md bg-[var(--brand-orange)] px-5 py-3 font-medium text-white\">Request a Quote</a>\n          <a href=\"tel:555123SCRAP\" class=\"inline-flex items-center rounded-md bg-zinc-900 px-5 py-3 font-medium text-white\">Call (555) 123-SCRAP</a>\n        </div>\n      </div>\n      <img src={withBase('/assets/hero.jpg')} alt=\"Demo\" class=\"h-56 w-full rounded-lg object-cover\" />\n    </div>\n  </section>\n\n  <section class=\"mx-auto max-w-7xl px-6 md:px-8 py-16\">\n    <div class=\"rounded-lg bg-zinc-50 p-6 ring-1 ring-zinc-200\">\n      <iframe class=\"h-64 w-full rounded\" src=\"https://maps.google.com/maps?q=Houston&t=&z=12&ie=UTF8&iwloc=&output=embed\"></iframe>\n      <dl class=\"mt-4 grid gap-2 text-sm text-zinc-700 sm:grid-cols-2\">\n        <div><dt class=\"font-semibold\">Hours</dt><dd>Mon–Fri 8am–5pm</dd></div>\n        <div><dt class=\"font-semibold\">Address</dt><dd>123 Demo Road, Demo City, NY 12345</dd></div>\n        <div><dt class=\"font-semibold\">Phone</dt><dd><a class=\"text-[var(--brand-orange)]\" href=\"tel:5551234567\">555-123-4567</a></dd></div>\n        <div><dt class=\"font-semibold\">Email</dt><dd><a class=\"text-[var(--brand-orange)]\" href=\"mailto:info@demoyard.com\">info@demoyard.com</a></dd></div>\n      </dl>\n    </div>\n  </section>\n\n  <footer class=\"mt-24 border-t border-zinc-200 bg-white\">\n    <div class=\"mx-auto max-w-7xl px-6 md:px-8 py-12\">\n      <p class=\"text-sm text-zinc-600\">© {new Date().getFullYear()} Scrapyard Sites — All rights reserved.</p>\n    </div>\n  </footer>\n\n  <script is:inline>\n    const path = location.pathname;\n    document.querySelectorAll('nav a').forEach(a => { if (a.getAttribute('href') && path.endsWith(a.getAttribute('href')!.split('/').pop()!)) a.classList.add('text-[var(--brand-orange)]'); });\n    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n    if (!prefersReduced) {\n      const io = new IntersectionObserver(entries => {\n        entries.forEach(e => {\n          if (e.isIntersecting) {\n            const el = e.target as HTMLElement;\n            const target = parseInt(el.dataset.target || '0', 10);\n            let n = 0; const step = Math.max(1, Math.floor(target/50));\n            const id = setInterval(() => { n += step; if (n >= target) { n = target; clearInterval(id); } el.textContent = (el.textContent?.includes('%')? n+'%': el.textContent?.includes('h')? n+'h': n + (el.textContent?.includes('+')?'+':'')); }, 30);\n            io.unobserve(el);\n          }\n        });\n      }, { threshold: 0.3 });\n      document.querySelectorAll('.stat-number').forEach(el => io.observe(el));\n    }\n  </script>\n</Demo>\n\n"
+			},
+			"tags": [],
+			"source": null
+		}
+	],
+	"command": "check"
+}

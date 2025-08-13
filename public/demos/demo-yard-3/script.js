@@ -90,7 +90,7 @@
 		const update = () => {
 			const left = container.getBoundingClientRect().left
 			let idx = 0,
-				mind = Infinity
+				mind = Number.POSITIVE_INFINITY
 			items.forEach((it, i) => {
 				const d = Math.abs(it.getBoundingClientRect().left - left)
 				if (d < mind) {

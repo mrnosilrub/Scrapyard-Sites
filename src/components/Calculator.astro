@@ -40,9 +40,9 @@ const withBase = (p: string) =>
     const leak = document.getElementById('leak');
     const roiDays = document.getElementById('roiDays');
     btn?.addEventListener('click', () => {
-      const tv = parseFloat(t.value) || 0;
-      const mv = parseFloat(m.value) || 0;
-      const lv = parseInt(l.value) || 0;
+      const tv = Number.parseFloat(t.value) || 0;
+      const mv = Number.parseFloat(m.value) || 0;
+      const lv = Number.parseInt(l.value, 10) || 0;
       const annualLeak = tv * mv * lv * 12; // t tons * $/ton * missed loads/month * 12
       leak.textContent = fmt(annualLeak);
       const standardCost = 2499;

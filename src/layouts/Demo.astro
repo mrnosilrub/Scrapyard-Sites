@@ -1,11 +1,11 @@
 ---
-import "../styles/globals.css";
-import heroImg from "../assets/hero.jpg";
-import logoSvg from "../assets/logo.svg";
-const base = import.meta.env.BASE_URL;
+import "../styles/globals.css"
+import heroImg from "../assets/hero.jpg"
+import logoSvg from "../assets/logo.svg"
+const base = import.meta.env.BASE_URL
 function withBase(p) {
-  if (p.startsWith("http") || p.startsWith("#")) return p;
-  return base + (p.startsWith("/") ? p.slice(1) : p);
+	if (p.startsWith("http") || p.startsWith("#")) return p
+	return base + (p.startsWith("/") ? p.slice(1) : p)
 }
 ---
 <html lang="en">
