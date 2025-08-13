@@ -8,7 +8,7 @@ const withBase = (p: string) =>
   <section class="mx-auto max-w-5xl px-6 md:px-8 py-16">
     <div class="mx-auto max-w-2xl text-center">
       <h1 class="text-3xl font-bold tracking-tight">Book Your 15‑Minute Reputation Scan</h1>
-      <p class="mt-3 text-zinc-700">Call <a href="tel:19493568762" class="text-brand-orange font-medium">949‑356‑8762</a> or use the form below.</p>
+      <p class="mt-3 text-zinc-700">Call <a href="tel:19493568762" class="link font-medium">949‑356‑8762</a> or use the form below.</p>
       <ul class="mt-4 flex items-center justify-center gap-4 text-sm text-zinc-600">
         <li>• No spam</li>
         <li>• Confidential</li>
@@ -25,10 +25,10 @@ const withBase = (p: string) =>
         <input id="c-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
         <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
         <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
-        <button class="inline-flex items-center justify-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Schedule My 15‑Minute Scan</button>
+        <button class="btn btn-primary px-4 py-2">Schedule My 15‑Minute Scan</button>
       </form>
       <p class="mt-2 text-sm text-zinc-600">We’ll reply within 15 minutes during business hours.</p>
-      <p class="mt-2 text-sm text-zinc-600">Not ready to chat? Try our <a href={withBase('/calculator/')} class="text-brand-orange">Risk Calculator</a>.</p>
+      <p class="mt-2 text-sm text-zinc-600">Not ready to chat? Try our <a href={withBase('/calculator/')} class="link">Risk Calculator</a>.</p>
     </div>
 
     <div class="mt-12">

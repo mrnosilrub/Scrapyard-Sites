@@ -28,7 +28,7 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
     <meta name="twitter:image" content={heroUrl} />
     <link rel="icon" href={faviconUrl} />
   </head>
-  <body class="min-h-screen antialiased bg-white text-zinc-900">
+  <body class="min-h-screen antialiased bg-white text-zinc-900 font-sans">
     <a href="#main-content" class="absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0">Skip to content</a>
     <PromoBanner />
     <Header />

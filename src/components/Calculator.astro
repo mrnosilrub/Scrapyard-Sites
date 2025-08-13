@@ -29,14 +29,14 @@ const { bare = false, hideTitle = false } = Astro.props as Props
       <input type="number" name="l" step="1" min="0" id="l" class="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" placeholder="e.g., 4" />
     </div>
     <div class="sm:col-span-2">
-      <button type="button" id="calc" class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Calculate</button>
+      <button type="button" id="calc" class="btn btn-primary px-4 py-2">Calculate</button>
     </div>
   </form>
   <div id="result" class="mt-6 hidden rounded-md bg-zinc-50 p-4 ring-1 ring-inset ring-zinc-200">
     <p class="text-lg font-semibold">You’re Leaking <span id="leak" class="text-brand-orange"></span>/year</p>
     <p class="mt-1 text-sm text-zinc-600">A Standard Launch pays for itself in <span id="roiDays"></span> days.</p>
     <div class="mt-4">
-      <a href={withBase('/contact/')} class="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-medium text-white">Book a Discovery Call</a>
+      <a href={withBase('/contact/')} class="btn btn-primary px-4 py-2">Book a Discovery Call</a>
     </div>
   </div>
   <script is:inline>
