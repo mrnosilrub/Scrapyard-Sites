@@ -143,7 +143,7 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
       <div class="rounded-lg border border-zinc-200 p-5">
         <h3 class="font-semibold">1 — Check Your Material</h3>
         <p class="mt-1 text-sm text-zinc-600">We accept Copper, Brass, Aluminum (sheet, cast & cans), Steel, Iron, Stainless Steel & High Temp, Catalytic Converters, Switch Gear, E-Scrap, Batteries, & more!</p>
-        <a href="#materials" class="mt-2 inline-block text-[var(--brand-orange)]">Accepted Materials ↓</a>
+        <a href={withBase('/demos/demo-yard-3/accepted-materials/#materials')} class="mt-2 inline-block text-[var(--brand-orange)]">Accepted Materials ↓</a>
       </div>
       <div class="rounded-lg border border-zinc-200 p-5">
         <h3 class="font-semibold">2 — Drive On & Unload</h3>
@@ -186,14 +186,15 @@ const withBase = (p: string) => (p.startsWith('http') || p.startsWith('#') ? p :
     <p class="mt-1 text-zinc-700">These common items bring the best rates.</p>
     <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {[
-        { t: 'Copper & Brass', s: 'Highest copper prices in county', img: 'copper.jpg' },
-        { t: 'Aluminum', s: 'Clean extrusion & sheet', img: 'aluminum.jpg' },
-        { t: 'Steel & Iron', s: 'HMS, prepared plate & tin', img: 'steel.jpg' },
-        { t: 'Stainless Steel & High Temp', s: '304/316 solids', img: 'stainless.jpg' },
-        { t: 'Catalytic Converters', s: 'OEM units', img: 'catalytic.jpg' },
-        { t: 'E‑Scrap & Batteries', s: 'Boards and lead‑acid', img: 'batteries.jpg' }
+        { t: 'Copper & Brass', s: 'Highest copper prices in county', img: 'copper.jpg', id: 'copper' },
+        { t: 'Aluminum', s: 'Clean extrusion & sheet', img: 'aluminum.jpg', id: 'aluminum' },
+        { t: 'Steel & Iron', s: 'HMS, prepared plate & tin', img: 'steel.jpg', id: 'steel' },
+        { t: 'Stainless Steel & High Temp', s: '304/316 solids', img: 'stainless.jpg', id: 'stainless' },
+        { t: 'Catalytic Converters', s: 'OEM units', img: 'catalytic.jpg', id: 'cats' },
+        { t: 'Switch Gear', s: 'Industrial electrical panels', img: 'rolloff.jpg', id: 'switchgear' },
+        { t: 'E‑Scrap & Batteries', s: 'Boards and lead‑acid', img: 'batteries.jpg', id: 'escrap' }
       ].map((c) => (
-        <a href={withBase(`/demos/demo-yard-3/accepted-materials/#${c.t.toLowerCase().split(' ')[0].replace(/[^a-z]/g,'')}`)} class="group overflow-hidden rounded-lg border border-zinc-200">
+        <a href={withBase(`/demos/demo-yard-3/accepted-materials/#${c.id}`)} class="group overflow-hidden rounded-lg border border-zinc-200">
           <img src={withBase(`/assets/${c.img}`)} alt={c.t} class="h-40 w-full object-cover" />
           <div class="p-4">
             <h3 class="font-semibold group-hover:text-[var(--brand-orange)]">{c.t}</h3>
