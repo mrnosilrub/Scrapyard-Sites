@@ -13,7 +13,7 @@ import { withBase } from "../lib/paths"
     primaryLabel="Book a Discovery Call"
   />
 
-  <section class="mx-auto max-w-7xl px-6 md:px-8 py-16" id="credibility">
+  <section class="section" id="credibility">
     <h2 class="text-2xl font-bold tracking-tight">Our Process</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <div class="card"><h3 class="font-semibold">Assess & Plan</h3><p class="mt-1 text-sm text-zinc-600">Audit, compliance review, sitemap + local SEO.</p></div>
@@ -23,7 +23,7 @@ import { withBase } from "../lib/paths"
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+  <section class="section">
     <h2 class="text-2xl font-bold tracking-tight">Straight‑Shooter Pricing</h2>
     <div class="mt-6 grid gap-6 md:grid-cols-3">
       <div class="rounded-lg border border-zinc-200 p-6"><h3 class="text-lg font-semibold">Standard — $2,499</h3><ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700"><li>One‑page site</li><li>Contact form</li><li>Maps embed</li><li>Basic on‑site SEO</li><li>30 days updates</li></ul></div>
@@ -33,10 +33,10 @@ import { withBase } from "../lib/paths"
     <div class="mt-6"><a href={withBase('/contact/')} class="btn btn-primary">Book a Discovery Call</a></div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-6 md:px-8 py-12">
+  <section class="section">
     <h2 class="text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
     <div class="mt-6">
-      <div class="mx-auto max-w-3xl">
+        <div class="container-narrow">
         <iframe id="calculator-embed" src={withBase('/embed/calculator/')} title="Reputation Risk Calculator" class="w-full rounded-lg border border-zinc-200" style="height: 420px;"></iframe>
       </div>
       <script is:inline>

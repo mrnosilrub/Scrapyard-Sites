@@ -8,7 +8,7 @@ interface Props {
 }
 const { bare = false, hideTitle = false } = Astro.props as Props
 ---
-<section class={bare ? "mx-auto max-w-3xl" : "mx-auto max-w-3xl rounded-lg border border-zinc-200 p-6 sm:p-8"}>
+<section class={bare ? "container-narrow" : "container-narrow rounded-lg border border-zinc-200 p-6 sm:p-8"}>
   {!hideTitle && (
     <>
       <h2 class="text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
