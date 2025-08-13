@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 @layer components {
-  .section {
-    @apply mx-auto max-w-7xl px-6 md:px-8 py-12 md:py-16;
-  }
-  .section-narrow {
-    @apply mx-auto max-w-3xl px-4 md:px-6 py-8 md:py-12;
-  }
-  .anchor-target {
-    scroll-margin-top: 6rem;
-  }
-  .card {
-    @apply rounded-lg border border-zinc-200 p-5 transition-shadow;
-  }
-  .card:hover {
-    @apply shadow-sm border-zinc-300;
-  }
+	.section {
+		@apply mx-auto max-w-7xl px-6 md:px-8 py-12 md:py-16;
+	}
+	.section-narrow {
+		@apply mx-auto max-w-3xl px-4 md:px-6 py-8 md:py-12;
+	}
+	.anchor-target {
+		scroll-margin-top: 6rem;
+	}
+	.card {
+		@apply rounded-lg border border-zinc-200 p-5 transition-shadow;
+	}
+	.card:hover {
+		@apply shadow-sm border-zinc-300;
+	}
 
-  /* Buttons */
-  .btn {
-    @apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-  .btn-primary {
-    @apply bg-brand-orange text-white shadow px-5 py-3 hover:opacity-95;
-  }
-  .btn-secondary {
-    @apply bg-white text-zinc-900 ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50 px-5 py-3;
-  }
-  /* For buttons on dark/imagery backgrounds */
-  .btn-ghost-white {
-    @apply bg-white/10 text-white ring-1 ring-inset ring-white/40 hover:bg-white/20 px-5 py-3;
-  }
-  /* High-contrast button on brand background */
-  .btn-contrast {
-    @apply bg-white text-brand-orange px-5 py-3;
-  }
+	/* Buttons */
+	.btn {
+		@apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+	}
+	.btn-primary {
+		@apply bg-brand-orange text-white shadow px-5 py-3 hover:opacity-95;
+	}
+	.btn-secondary {
+		@apply bg-white text-zinc-900 ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50 px-5 py-3;
+	}
+	/* For buttons on dark/imagery backgrounds */
+	.btn-ghost-white {
+		@apply bg-white/10 text-white ring-1 ring-inset ring-white/40 hover:bg-white/20 px-5 py-3;
+	}
+	/* High-contrast button on brand background */
+	.btn-contrast {
+		@apply bg-white text-brand-orange px-5 py-3;
+	}
 
-  /* Inline links */
-  .link {
-    @apply text-brand-orange underline underline-offset-4 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 rounded-sm transition-colors;
-  }
+	/* Inline links */
+	.link {
+		@apply text-brand-orange underline underline-offset-4 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 rounded-sm transition-colors;
+	}
 }
