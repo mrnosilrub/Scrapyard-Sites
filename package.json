@@ -12,7 +12,8 @@
 		"test": "vitest run",
 		"docs:update": "node scripts/update-docs.mjs",
 		"docs:watch": "node scripts/update-docs.mjs --watch",
-		"changelog:normalize": "node scripts/update-docs.mjs --normalize"
+		"changelog:normalize": "node scripts/update-docs.mjs --normalize",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "^4.3.3",
@@ -23,6 +24,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@vitest/coverage-v8": "^3.2.4",
 		"astro": "^5.12.9",
+		"husky": "^9.1.7",
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.9.2",
 		"vitest": "^3.2.4"
