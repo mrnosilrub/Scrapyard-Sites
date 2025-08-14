@@ -3,10 +3,8 @@ interface Props {
 	submitLabel?: string
 	goal?: string
 }
-const {
-	submitLabel = "Schedule My 15‑Minute Scan",
-	goal,
-} = Astro.props as Props
+const { submitLabel = "Schedule My 15‑Minute Scan", goal } =
+	Astro.props as Props
 ---
 <form class="grid gap-4" action="https://formspree.io/f/xyyorkzz" method="POST">
   <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
