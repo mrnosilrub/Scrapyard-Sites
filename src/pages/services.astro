@@ -16,22 +16,13 @@ import { withBase } from "../lib/paths"
     primaryLabel="Book a Discovery Call"
   />
 
-  <section class="section">
-    <h2 class="text-2xl font-bold tracking-tight">Our Reputation‑First Approach</h2>
-    <p class="mt-3 text-zinc-700">We focus on the four pillars that matter most for scrapyards.</p>
-    <ul class="mt-4 grid gap-4 sm:grid-cols-2 text-zinc-700">
-      <li><span class="font-semibold">Instant credibility</span> — fast, modern, trustworthy.</li>
-      <li><span class="font-semibold">Pre‑qualifying forms</span> — filter serious sellers.</li>
-      <li><span class="font-semibold">Local visibility</span> — show up where it counts.</li>
-      <li><span class="font-semibold">Rock‑solid reliability</span> — care plans and monitoring.</li>
-    </ul>
-    <div class="mt-6"><a href={withBase('/contact/')} class="link font-medium">Book a Discovery Call</a></div>
-  </section>
+  
 
   <section class="band">
     <div class="section bg-brand-orange/5">
       <div class="eyebrow">Services</div>
       <h2 class="mt-1 text-2xl font-bold tracking-tight">Four Pillars</h2>
+      <p class="mt-3 text-zinc-700">We focus on the four pillars that matter most for scrapyards.</p>
       <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <a href={withBase('/process/#credibility')} class="card p-5">
           <Shield class="h-6 w-6 text-brand-orange" />
@@ -54,6 +45,7 @@ import { withBase } from "../lib/paths"
           <p class="mt-1 text-sm text-zinc-600">Stay fast and secure.</p>
         </a>
       </div>
+      <div class="mt-6"><a href={withBase('/contact/')} class="link font-medium">Book a Discovery Call</a></div>
     </div>
   </section>
 
