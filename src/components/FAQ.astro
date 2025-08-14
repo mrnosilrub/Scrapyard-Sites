@@ -6,14 +6,16 @@ interface Props {
 }
 const { items, heading = "FAQ" } = Astro.props as Props
 ---
-<section class="section">
+<section class="section" itemscope itemtype="https://schema.org/FAQPage">
   <div class="eyebrow">FAQ</div>
   <h2 class="mt-1 text-2xl font-bold tracking-tight">{heading}</h2>
   <div class="mt-4 space-y-2">
     {items.map((it) => (
-      <details class="rounded-md border border-zinc-200 p-4">
-        <summary class="cursor-pointer font-medium">{it.q}</summary>
-        <p class="mt-2 text-sm text-zinc-700">{it.a}</p>
+      <details class="rounded-md border border-zinc-200 p-4" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="cursor-pointer font-medium" itemprop="name">{it.q}</summary>
+        <div class="mt-2 text-sm text-zinc-700" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">{it.a}</p>
+        </div>
       </details>
     ))}
   </div>

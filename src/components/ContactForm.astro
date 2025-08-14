@@ -6,15 +6,15 @@ interface Props {
 const { submitLabel = "Schedule My 15‑Minute Scan", goal } =
 	Astro.props as Props
 ---
-<form class="grid gap-4" action="https://formspree.io/f/xyyorkzz" method="POST">
+<form class="grid gap-4" action="https://formspree.io/f/xyyorkzz" method="POST" novalidate>
   <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
-  <input id="c-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
+  <input id="c-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" required />
   <label class="text-sm font-medium text-zinc-700" for="c-email">Email</label>
-  <input id="c-email" name="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
+  <input id="c-email" name="email" type="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" required />
   <label class="text-sm font-medium text-zinc-700" for="c-company">Yard/Company</label>
-  <input id="c-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
+  <input id="c-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" required />
   <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
-  <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
+  <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message" required></textarea>
   <input type="hidden" name="_subject" value="New Reputation Scan request" />
   <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
   <button class="btn btn-primary px-4 py-2" {...(goal ? { 'data-goal': goal } : {})}>{submitLabel}</button>
