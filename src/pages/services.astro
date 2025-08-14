@@ -1,5 +1,9 @@
 ---
 import Hero from "../components/Hero.astro"
+import Check from "../components/icons/Check.astro"
+import Clock from "../components/icons/Clock.astro"
+import Globe from "../components/icons/Globe.astro"
+import Shield from "../components/icons/Shield.astro"
 import DepositBanner from "../components/DepositBanner.astro"
 import Base from "../layouts/Base.astro"
 import { withBase } from "../lib/paths"
@@ -24,14 +28,32 @@ import { withBase } from "../lib/paths"
     <div class="mt-6"><a href={withBase('/contact/')} class="link font-medium">Book a Discovery Call</a></div>
   </section>
 
-  <section class="section">
-    <div class="eyebrow">Services</div>
-    <h2 class="mt-1 text-2xl font-bold tracking-tight">Four Pillars</h2>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <a href={withBase('/process/#credibility')} class="card p-5"><h3 class="font-semibold">Credibility</h3><p class="mt-1 text-sm text-zinc-600">Make the right first impression.</p></a>
-      <a href={withBase('/process/#qualification')} class="card p-5"><h3 class="font-semibold">Qualification</h3><p class="mt-1 text-sm text-zinc-600">Spend time with serious sellers.</p></a>
-      <a href={withBase('/process/#visibility')} class="card p-5"><h3 class="font-semibold">Visibility</h3><p class="mt-1 text-sm text-zinc-600">Be found in local search.</p></a>
-      <a href={withBase('/process/#reliability')} class="card p-5"><h3 class="font-semibold">Reliability</h3><p class="mt-1 text-sm text-zinc-600">Stay fast and secure.</p></a>
+  <section class="band">
+    <div class="section bg-brand-orange/5">
+      <div class="eyebrow">Services</div>
+      <h2 class="mt-1 text-2xl font-bold tracking-tight">Four Pillars</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <a href={withBase('/process/#credibility')} class="card p-5">
+          <Shield class="h-6 w-6 text-brand-orange" />
+          <h3 class="mt-2 font-semibold">Credibility</h3>
+          <p class="mt-1 text-sm text-zinc-600">Make the right first impression.</p>
+        </a>
+        <a href={withBase('/process/#qualification')} class="card p-5">
+          <Check class="h-6 w-6 text-brand-orange" />
+          <h3 class="mt-2 font-semibold">Qualification</h3>
+          <p class="mt-1 text-sm text-zinc-600">Spend time with serious sellers.</p>
+        </a>
+        <a href={withBase('/process/#visibility')} class="card p-5">
+          <Globe class="h-6 w-6 text-brand-orange" />
+          <h3 class="mt-2 font-semibold">Visibility</h3>
+          <p class="mt-1 text-sm text-zinc-600">Be found in local search.</p>
+        </a>
+        <a href={withBase('/process/#reliability')} class="card p-5">
+          <Clock class="h-6 w-6 text-brand-orange" />
+          <h3 class="mt-2 font-semibold">Reliability</h3>
+          <p class="mt-1 text-sm text-zinc-600">Stay fast and secure.</p>
+        </a>
+      </div>
     </div>
   </section>
 

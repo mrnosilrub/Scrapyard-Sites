@@ -1,6 +1,10 @@
 ---
 import founderAsset from "../assets/founder.jpg?url"
 import Hero from "../components/Hero.astro"
+import Shield from "../components/icons/Shield.astro"
+import Check from "../components/icons/Check.astro"
+import Globe from "../components/icons/Globe.astro"
+import Clock from "../components/icons/Clock.astro"
 import DepositBanner from "../components/DepositBanner.astro"
 import Base from "../layouts/Base.astro"
 ---
@@ -32,14 +36,16 @@ import Base from "../layouts/Base.astro"
     </div>
   </section>
 
-  <section class="section">
-    <div class="eyebrow">Pillars</div>
-    <h2 class="mt-1 text-2xl font-bold tracking-tight">Our Reputation Shields</h2>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Credibility</h3><p class="mt-1 text-sm text-zinc-600">Sub‑2‑second load times, SSL, and real yard photos build instant trust.</p></div>
-      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Qualification</h3><p class="mt-1 text-sm text-zinc-600">Copy is written around the questions sellers actually ask—grades, pricing cadence, pick‑up radius.</p></div>
-      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Visibility</h3><p class="mt-1 text-sm text-zinc-600">Local SEO schema and keyword research help you appear above chain recyclers in the map pack.</p></div>
-      <div class="rounded-lg border border-zinc-200 p-5"><h3 class="font-semibold">Reliability</h3><p class="mt-1 text-sm text-zinc-600">Care plans with monitoring, backups and edits ensure your site never rusts.</p></div>
+  <section class="band">
+    <div class="section bg-brand-orange/5">
+      <div class="eyebrow">Pillars</div>
+      <h2 class="mt-1 text-2xl font-bold tracking-tight">Our Reputation Shields</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg border border-zinc-200 p-5"><Shield class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Credibility</h3><p class="mt-1 text-sm text-zinc-600">Sub‑2‑second load times, SSL, and real yard photos build instant trust.</p></div>
+        <div class="rounded-lg border border-zinc-200 p-5"><Check class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Qualification</h3><p class="mt-1 text-sm text-zinc-600">Copy is written around the questions sellers actually ask—grades, pricing cadence, pick‑up radius.</p></div>
+        <div class="rounded-lg border border-zinc-200 p-5"><Globe class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Visibility</h3><p class="mt-1 text-sm text-zinc-600">Local SEO schema and keyword research help you appear above chain recyclers in the map pack.</p></div>
+        <div class="rounded-lg border border-zinc-200 p-5"><Clock class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Reliability</h3><p class="mt-1 text-sm text-zinc-600">Care plans with monitoring, backups and edits ensure your site never rusts.</p></div>
+      </div>
     </div>
   </section>
 
