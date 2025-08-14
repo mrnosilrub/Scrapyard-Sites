@@ -1,6 +1,9 @@
 ---
 import type { FaqItem } from "../data/faq"
-interface Props { items: FaqItem[]; heading?: string }
+interface Props {
+	items: FaqItem[]
+	heading?: string
+}
 const { items, heading = "FAQ" } = Astro.props as Props
 ---
 <section class="section">

@@ -1,8 +1,16 @@
 ---
 import { PRICING_PLANS } from "../data/pricing"
 import { withBase } from "../lib/paths"
-interface Props { heading?: string; showDepositCta?: boolean; depositGoal?: string }
-const { heading = "Service Pricing", showDepositCta = false, depositGoal } = Astro.props as Props
+interface Props {
+	heading?: string
+	showDepositCta?: boolean
+	depositGoal?: string
+}
+const {
+	heading = "Service Pricing",
+	showDepositCta = false,
+	depositGoal,
+} = Astro.props as Props
 ---
 <section class="section">
   <div class="eyebrow">Pricing</div>

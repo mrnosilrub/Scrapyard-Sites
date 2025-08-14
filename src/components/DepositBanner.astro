@@ -1,7 +1,13 @@
 ---
 import { withBase } from "../lib/paths"
-interface Props { message?: string; sub?: string }
-const { message = "Save 10% on your build — pay your deposit by Aug 30.", sub = "50% today, balance at launch – 90-day warm lead guarantee" } = Astro.props as Props
+interface Props {
+	message?: string
+	sub?: string
+}
+const {
+	message = "Save 10% on your build — pay your deposit by Aug 30.",
+	sub = "50% today, balance at launch – 90-day warm lead guarantee",
+} = Astro.props as Props
 ---
 <section class="mt-16">
   <div class="container">
