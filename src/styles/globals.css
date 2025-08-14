@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+	.eyebrow {
+		@apply text-xs font-semibold uppercase tracking-wider text-zinc-700;
+	}
 	.container {
 		@apply mx-auto max-w-7xl px-6 md:px-8;
 	}
@@ -23,6 +26,11 @@
 	}
 	.card:hover {
 		@apply shadow-sm border-zinc-300;
+	}
+
+	/* Banded section separator */
+	.band {
+		@apply border-y border-zinc-100;
 	}
 
 	/* Chips */
