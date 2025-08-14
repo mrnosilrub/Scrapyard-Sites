@@ -12,5 +12,3 @@ export const DEFAULT_FAQ: FaqItem[] = [
 	},
 	{ q: "Hosting?", a: "We can host or hand off to your server—your choice." },
 ]
-
-
