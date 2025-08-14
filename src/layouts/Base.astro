@@ -12,7 +12,8 @@ import faviconUrl from "../assets/favicon.svg?url"
 import heroUrl from "../assets/hero.jpg?url"
 import { withBase } from "../lib/paths"
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
-const ogImageUrl = typeof ogImage === 'string' ? ogImage : (ogImage?.src ?? heroUrl)
+const ogImageUrl =
+	typeof ogImage === "string" ? ogImage : (ogImage?.src ?? heroUrl)
 ---
 <html lang="en">
   <head>

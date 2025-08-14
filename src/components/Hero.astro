@@ -38,11 +38,11 @@ const resolvedSecondary = secondaryHref ? withBase(secondaryHref) : undefined
         <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">{title}</h1>
         {body && <p class="mt-4 max-w-3xl text-lg text-zinc-100">{body}</p>}
         <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a href={resolvedPrimary} class="btn btn-primary">
+          <a href={resolvedPrimary} class="btn btn-primary" data-goal="CTA: Book Discovery (Hero)">
             {primaryLabel}
           </a>
           {resolvedSecondary && secondaryLabel && (
-            <a href={resolvedSecondary} class="btn btn-ghost-white">
+            <a href={resolvedSecondary} class="btn btn-ghost-white" data-goal="Nav: See Pricing (Hero)">
               {secondaryLabel}
             </a>
           )}

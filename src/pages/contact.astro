@@ -27,7 +27,7 @@ const withBase = (p: string) =>
         <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
         <input type="hidden" name="_subject" value="New Reputation Scan request" />
         <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-        <button class="btn btn-primary px-4 py-2">Schedule My 15‑Minute Scan</button>
+        <button class="btn btn-primary px-4 py-2" data-goal="Form: Submit (Contact)">Schedule My 15‑Minute Scan</button>
       </form>
       <p class="mt-2 text-sm text-zinc-600">We’ll reply within 15 minutes during business hours.</p>
       <p class="mt-2 text-sm text-zinc-600">Not ready to chat? Try our <a href={withBase('/calculator/')} class="link">Risk Calculator</a>.</p>

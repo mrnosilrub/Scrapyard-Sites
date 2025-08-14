@@ -25,8 +25,10 @@
 		@apply shadow-sm border-zinc-300;
 	}
 
-  /* Chips */
-  .chip { @apply inline-flex items-center rounded-full border border-zinc-300 px-3 py-1 text-sm; }
+	/* Chips */
+	.chip {
+		@apply inline-flex items-center rounded-full border border-zinc-300 px-3 py-1 text-sm;
+	}
 
 	/* Buttons */
 	.btn {
@@ -54,6 +56,10 @@
 }
 
 @layer utilities {
-  .reveal { @apply opacity-0 translate-y-4; }
-  .reveal.in { @apply opacity-100 translate-y-0 transition-all duration-500; }
+	.reveal {
+		@apply opacity-0 translate-y-4;
+	}
+	.reveal.in {
+		@apply opacity-100 translate-y-0 transition-all duration-500;
+	}
 }
