@@ -4,7 +4,6 @@ const {
 	description = "Scrapyard websites built for credibility, qualification, visibility and reliability.",
 	ogImage,
 } = Astro.props
-import DepositBanner from "../components/DepositBanner.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import "../styles/globals.css"
@@ -43,7 +42,6 @@ const ogImageUrl =
   <body class="min-h-screen antialiased bg-white text-zinc-900 font-sans">
     <a href="#main-content" class="absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0">Skip to content</a>
     <Header />
-    <DepositBanner />
     <main id="main-content">
       <slot />
     </main>

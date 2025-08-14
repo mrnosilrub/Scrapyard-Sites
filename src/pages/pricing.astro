@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro"
 import PricingTable from "../components/PricingTable.astro"
 import { DEFAULT_FAQ } from "../data/faq"
 import Base from "../layouts/Base.astro"
+import DepositBanner from "../components/DepositBanner.astro"
 import { withBase } from "../lib/paths"
 ---
 <Base title="Pricing — Scrapyard Sites">
@@ -46,5 +47,6 @@ import { withBase } from "../lib/paths"
   <section class="section">
     <FAQ items={DEFAULT_FAQ} />
   </section>
+  <DepositBanner />
 </Base>
 
