@@ -2,6 +2,7 @@
 const {
 	title = "Scrapyard Sites",
 	description = "Scrapyard websites built for credibility, qualification, visibility and reliability.",
+	ogImage,
 } = Astro.props
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
@@ -11,6 +12,7 @@ import faviconUrl from "../assets/favicon.svg?url"
 import heroUrl from "../assets/hero.jpg?url"
 import { withBase } from "../lib/paths"
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
+const ogImageUrl = typeof ogImage === 'string' ? ogImage : (ogImage?.src ?? heroUrl)
 ---
 <html lang="en">
   <head>
@@ -23,10 +25,19 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Scrapyard Sites" />
-    <meta property="og:image" content={heroUrl} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={heroUrl} />
+    <meta name="twitter:image" content={ogImageUrl} />
     <link rel="icon" href={faviconUrl} />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="05311cc2-11da-4d7c-b0bb-7de8ec3277a1"></script>
+    <script type="application/ld+json" is:inline>{JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Scrapyard Sites',
+      url: Astro.site,
+      logo: faviconUrl,
+      sameAs: []
+    })}</script>
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900 font-sans">
     <a href="#main-content" class="absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0">Skip to content</a>
@@ -36,6 +47,35 @@ const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      (function(){
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var observer = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+      })();
+    </script>
+    <script is:inline>
+      // Umami goals for key CTAs
+      (function(){
+        var d = document;
+        function send(goal){
+          try {
+            var u = (window && (window).umami);
+            if (u && typeof u.track === 'function') u.track(goal);
+          } catch {}
+        }
+        d.addEventListener('click', function(e){
+          var target = e.target as HTMLElement | null;
+          if (!target) return;
+          var a = target.closest('[data-goal]') as HTMLElement | null;
+          if (a && a.getAttribute('data-goal')) send(a.getAttribute('data-goal'));
+          var link = target.closest('a') as HTMLAnchorElement | null;
+          if (link && link.href && link.href.startsWith('tel:')) send('Click: Phone');
+        }, true);
+      })();
+    </script>
   </body>
 </html>
 

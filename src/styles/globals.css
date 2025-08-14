@@ -25,6 +25,9 @@
 		@apply shadow-sm border-zinc-300;
 	}
 
+  /* Chips */
+  .chip { @apply inline-flex items-center rounded-full border border-zinc-300 px-3 py-1 text-sm; }
+
 	/* Buttons */
 	.btn {
 		@apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
@@ -48,4 +51,9 @@
 	.link {
 		@apply text-brand-orange underline underline-offset-4 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 rounded-sm transition-colors;
 	}
+}
+
+@layer utilities {
+  .reveal { @apply opacity-0 translate-y-4; }
+  .reveal.in { @apply opacity-100 translate-y-0 transition-all duration-500; }
 }

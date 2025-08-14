@@ -16,7 +16,7 @@ const withBase = (p: string) =>
       </ul>
     </div>
     <div class="container-narrow mt-8">
-      <form class="grid gap-4">
+      <form class="grid gap-4" action="https://formspree.io/f/xyyorkzz" method="POST">
         <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
         <input id="c-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
         <label class="text-sm font-medium text-zinc-700" for="c-email">Email</label>
@@ -25,6 +25,8 @@ const withBase = (p: string) =>
         <input id="c-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
         <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
         <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
+        <input type="hidden" name="_subject" value="New Reputation Scan request" />
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
         <button class="btn btn-primary px-4 py-2">Schedule My 15‑Minute Scan</button>
       </form>
       <p class="mt-2 text-sm text-zinc-600">We’ll reply within 15 minutes during business hours.</p>

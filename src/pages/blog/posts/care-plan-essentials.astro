@@ -5,6 +5,14 @@ import { withBase } from "../../../lib/paths"
 <Base title="Care Plan Essentials — Scrapyard Sites">
   <Fragment slot="head">
     <meta name="description" content="Security patches, backups, and monitoring keep your scrapyard website running 24/7." />
+    <script type="application/ld+json" is:inline>{JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'Article',
+      headline: 'Care Plan Essentials',
+      description: 'Security patches, backups, and monitoring keep your scrapyard website running 24/7.',
+      author: { '@type': 'Organization', name: 'Scrapyard Sites' },
+      datePublished: '2024-01-03',
+      mainEntityOfPage: { '@type': 'WebPage', '@id': Astro.url.href }
+    })}</script>
   </Fragment>
   <main class="container-narrow py-16">
     <a href={withBase('/blog/')} class="link">← Back to blog</a>
