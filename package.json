@@ -4,12 +4,15 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "astro dev",
+    "dev": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
 		"format": "biome format --write .",
 		"lint": "biome check .",
-		"test": "vitest run"
+    "test": "vitest run",
+    "docs:update": "node scripts/update-docs.mjs",
+    "docs:watch": "node scripts/update-docs.mjs --watch",
+    "changelog:normalize": "node scripts/update-docs.mjs --normalize"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "^4.3.3",
