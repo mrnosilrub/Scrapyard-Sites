@@ -1,293 +1,420 @@
 #!/usr/bin/env node
-import fs from 'fs'
-import fsp from 'fs/promises'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import fs from "node:fs"
+import fsp from "node:fs/promises"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const repoRoot = process.cwd()
 
 const IGNORED_DIR_NAMES = new Set([
-  'node_modules', '.git', '.github', '.next', 'dist', 'build', '.cache', '.turbo', '.venv', '.pnpm-store', '.astro'
+	"node_modules",
+	".git",
+	".github",
+	".next",
+	"dist",
+	"build",
+	".cache",
+	".turbo",
+	".venv",
+	".pnpm-store",
+	".astro",
 ])
 
 const IGNORED_BASENAMES = new Set([
-  'function.md', 'CHANGELOG.md', 'changelog.md', 'agents.md', 'AGENTS.md'
+	"function.md",
+	"CHANGELOG.md",
+	"changelog.md",
+	"agents.md",
+	"AGENTS.md",
 ])
 
-const SCRIPT_RELATIVE_PATH = 'scripts/update-docs.mjs'
+const SCRIPT_RELATIVE_PATH = "scripts/update-docs.mjs"
 
-function toPosix(p) { return p.split(path.sep).join('/') }
-function rel(p) { const r = '/' + toPosix(path.relative(repoRoot, p)); return r === '/' ? '/' : r }
-function today() { const d = new Date(); const yyyy = d.getFullYear(); const mm = String(d.getMonth()+1).padStart(2,'0'); const dd = String(d.getDate()).padStart(2,'0'); return `${yyyy}-${mm}-${dd}` }
-function isHidden(name) { return name.startsWith('.') }
+function toPosix(p) {
+	return p.split(path.sep).join("/")
+}
+function rel(p) {
+	const r = `/${toPosix(path.relative(repoRoot, p))}`
+	return r === "/" ? "/" : r
+}
+function today() {
+	const d = new Date()
+	const yyyy = d.getFullYear()
+	const mm = String(d.getMonth() + 1).padStart(2, "0")
+	const dd = String(d.getDate()).padStart(2, "0")
+	return `${yyyy}-${mm}-${dd}`
+}
+function isHidden(name) {
+	return name.startsWith(".")
+}
 
 function describeDirectory(relativeDir) {
-  const base = path.basename(relativeDir)
-  if (relativeDir === '/') return 'Repository root overview and index of top-level files and folders.'
-  switch (base) {
-    case 'planning': return 'Planning documents for IA and early design.'
-    case 'public': return 'Static assets that are copied as-is to the final build output.'
-    case 'src': return 'Application source: pages, layouts, components, styles, content, and assets.'
-    case 'assets': return 'Brand and shared assets referenced across the site.'
-    case 'components': return 'Reusable UI components for pages and layouts.'
-    case 'content': return 'Markdown/MDX content organized into collections.'
-    case 'layouts': return 'Layout components that wrap page content and provide shared structure.'
-    case 'pages': return 'Route files rendered by Astro.'
-    case 'styles': return 'Global and shared stylesheets.'
-    default: return `Overview of ${relativeDir} folder.`
-  }
+	const base = path.basename(relativeDir)
+	if (relativeDir === "/")
+		return "Repository root overview and index of top-level files and folders."
+	switch (base) {
+		case "planning":
+			return "Planning documents for IA and early design."
+		case "public":
+			return "Static assets that are copied as-is to the final build output."
+		case "src":
+			return "Application source: pages, layouts, components, styles, content, and assets."
+		case "assets":
+			return "Brand and shared assets referenced across the site."
+		case "components":
+			return "Reusable UI components for pages and layouts."
+		case "content":
+			return "Markdown/MDX content organized into collections."
+		case "layouts":
+			return "Layout components that wrap page content and provide shared structure."
+		case "pages":
+			return "Route files rendered by Astro."
+		case "styles":
+			return "Global and shared stylesheets."
+		default:
+			return `Overview of ${relativeDir} folder.`
+	}
 }
 
 function describeFile(base, dirRelative) {
-  const specials = {
-    'astro.config.mjs': 'Astro configuration.',
-    'biome.json': 'Biome formatter/linter configuration.',
-    'CNAME': 'Custom domain mapping for deployment.',
-    'package.json': 'Project metadata, scripts, and dependencies.',
-    'pnpm-lock.yaml': 'Dependency lockfile.',
-    'tailwind.config.js': 'Tailwind CSS configuration.',
-    'content.config.ts': 'Astro Content Collections configuration.'
-  }
-  if (Object.prototype.hasOwnProperty.call(specials, base)) return specials[base]
-  const ext = path.extname(base).toLowerCase()
-  if (ext === '.astro') return dirRelative.includes('/pages') ? 'Astro page route.' : 'Astro component.'
-  if (ext === '.md') return 'Markdown document.'
-  if (ext === '.mdx') return 'MDX document/page.'
-  if (ext === '.css') return 'Stylesheet.'
-  if (ext === '.scss' || ext === '.sass') return 'Sass stylesheet.'
-  if (ext === '.ts') return 'TypeScript module.'
-  if (ext === '.tsx') return 'TypeScript React component/module.'
-  if (ext === '.js') return 'JavaScript module.'
-  if (ext === '.jsx') return 'React component/module.'
-  if (ext === '.svg') return 'SVG vector asset.'
-  if (['.png','.jpg','.jpeg','.gif','.webp','.ico'].includes(ext)) return 'Image/ico asset.'
-  return 'File.'
+	const specials = {
+		"astro.config.mjs": "Astro configuration.",
+		"biome.json": "Biome formatter/linter configuration.",
+		CNAME: "Custom domain mapping for deployment.",
+		"package.json": "Project metadata, scripts, and dependencies.",
+		"pnpm-lock.yaml": "Dependency lockfile.",
+		"tailwind.config.js": "Tailwind CSS configuration.",
+		"content.config.ts": "Astro Content Collections configuration.",
+	}
+	if (Object.prototype.hasOwnProperty.call(specials, base))
+		return specials[base]
+	const ext = path.extname(base).toLowerCase()
+	if (ext === ".astro")
+		return dirRelative.includes("/pages")
+			? "Astro page route."
+			: "Astro component."
+	if (ext === ".md") return "Markdown document."
+	if (ext === ".mdx") return "MDX document/page."
+	if (ext === ".css") return "Stylesheet."
+	if (ext === ".scss" || ext === ".sass") return "Sass stylesheet."
+	if (ext === ".ts") return "TypeScript module."
+	if (ext === ".tsx") return "TypeScript React component/module."
+	if (ext === ".js") return "JavaScript module."
+	if (ext === ".jsx") return "React component/module."
+	if (ext === ".svg") return "SVG vector asset."
+	if ([".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico"].includes(ext))
+		return "Image/ico asset."
+	return "File."
 }
 
 async function readDirEntries(dir) {
-  const all = await fsp.readdir(dir, { withFileTypes: true })
-  const files = []
-  const dirs = []
-  for (const e of all) {
-    if (isHidden(e.name) && e.name !== '.well-known') continue
-    if (e.isDirectory()) { if (IGNORED_DIR_NAMES.has(e.name)) continue; dirs.push(e.name) }
-    else if (e.isFile()) { if (IGNORED_BASENAMES.has(e.name)) continue; files.push(e.name) }
-  }
-  files.sort(); dirs.sort();
-  return { files, dirs }
+	const all = await fsp.readdir(dir, { withFileTypes: true })
+	const files = []
+	const dirs = []
+	for (const e of all) {
+		if (isHidden(e.name) && e.name !== ".well-known") continue
+		if (e.isDirectory()) {
+			if (IGNORED_DIR_NAMES.has(e.name)) continue
+			dirs.push(e.name)
+		} else if (e.isFile()) {
+			if (IGNORED_BASENAMES.has(e.name)) continue
+			files.push(e.name)
+		}
+	}
+	files.sort()
+	dirs.sort()
+	return { files, dirs }
 }
 
-function headerTitle(relativeDir) { return relativeDir === '/' ? 'Root folder overview' : `${relativeDir} folder overview` }
-function autogeneratedNotice() { return '<!-- This file is auto-generated by scripts/update-docs.mjs. Manual edits may be overwritten. -->\n' }
+function headerTitle(relativeDir) {
+	return relativeDir === "/"
+		? "Root folder overview"
+		: `${relativeDir} folder overview`
+}
+function autogeneratedNotice() {
+	return "<!-- This file is auto-generated by scripts/update-docs.mjs. Manual edits may be overwritten. -->\n"
+}
 
 async function generateFunctionMd(dirAbs) {
-  const relativeDir = rel(dirAbs)
-  const { files, dirs } = await readDirEntries(dirAbs)
-  const lines = []
-  const isContentFolder = relativeDir.startsWith('/src/content/')
-  if (isContentFolder) {
-    const safeTitle = `Docs - ${relativeDir} folder`
-    const quoted = '"' + safeTitle.replace(/"/g, '\\"') + '"'
-    lines.push('---')
-    lines.push(`title: ${quoted}`)
-    lines.push('---')
-    lines.push('')
-  }
-  lines.push(autogeneratedNotice())
-  lines.push(`# ${headerTitle(relativeDir)}`)
-  lines.push('')
-  lines.push(describeDirectory(relativeDir))
-  lines.push('')
-  lines.push('## Files')
-  if (files.length > 0) {
-    for (const f of files) lines.push(`- \`${f}\`: ${describeFile(f, relativeDir)}`)
-  } else {
-    lines.push('- (none)')
-  }
-  lines.push('')
-  lines.push('## Subfolders')
-  if (dirs.length > 0) { for (const d of dirs) lines.push(`- \`${d}/\`: Subfolder.`) } else { lines.push('- (none)') }
-  lines.push('')
-  lines.push(`Last updated: ${today()}`)
-  lines.push('')
-  return lines.join('\n')
+	const relativeDir = rel(dirAbs)
+	const { files, dirs } = await readDirEntries(dirAbs)
+	const lines = []
+	const isContentFolder = relativeDir.startsWith("/src/content/")
+	if (isContentFolder) {
+		const safeTitle = `Docs - ${relativeDir} folder`
+		const quoted = `"${safeTitle.replace(/"/g, '\\"')}"`
+		lines.push("---")
+		lines.push(`title: ${quoted}`)
+		lines.push("---")
+		lines.push("")
+	}
+	lines.push(autogeneratedNotice())
+	lines.push(`# ${headerTitle(relativeDir)}`)
+	lines.push("")
+	lines.push(describeDirectory(relativeDir))
+	lines.push("")
+	lines.push("## Files")
+	if (files.length > 0) {
+		for (const f of files)
+			lines.push(`- \`${f}\`: ${describeFile(f, relativeDir)}`)
+	} else {
+		lines.push("- (none)")
+	}
+	lines.push("")
+	lines.push("## Subfolders")
+	if (dirs.length > 0) {
+		for (const d of dirs) lines.push(`- \`${d}/\`: Subfolder.`)
+	} else {
+		lines.push("- (none)")
+	}
+	lines.push("")
+	lines.push(`Last updated: ${today()}`)
+	lines.push("")
+	return lines.join("\n")
 }
 
 async function writeIfChanged(targetPath, newContent) {
-  let current = null
-  try { current = await fsp.readFile(targetPath, 'utf8') } catch {}
-  if (current === newContent) return false
-  await fsp.writeFile(targetPath, newContent, 'utf8')
-  return true
+	let current = null
+	try {
+		current = await fsp.readFile(targetPath, "utf8")
+	} catch {}
+	if (current === newContent) return false
+	await fsp.writeFile(targetPath, newContent, "utf8")
+	return true
 }
 
 async function ensureFunctionMdFor(dirAbs) {
-  const content = await generateFunctionMd(dirAbs)
-  const target = path.join(dirAbs, 'function.md')
-  const changed = await writeIfChanged(target, content)
-  return changed ? target : null
+	const content = await generateFunctionMd(dirAbs)
+	const target = path.join(dirAbs, "function.md")
+	const changed = await writeIfChanged(target, content)
+	return changed ? target : null
 }
 
 async function walkAndGenerate(startDirAbs) {
-  const changedFiles = []
-  async function walk(dir) {
-    const { dirs } = await readDirEntries(dir)
-    const changed = await ensureFunctionMdFor(dir)
-    if (changed) changedFiles.push(rel(path.dirname(changed)))
-    for (const d of dirs) await walk(path.join(dir, d))
-  }
-  await walk(startDirAbs)
-  return changedFiles
+	const changedFiles = []
+	async function walk(dir) {
+		const { dirs } = await readDirEntries(dir)
+		const changed = await ensureFunctionMdFor(dir)
+		if (changed) changedFiles.push(rel(path.dirname(changed)))
+		for (const d of dirs) await walk(path.join(dir, d))
+	}
+	await walk(startDirAbs)
+	return changedFiles
 }
 
 function ensureChangelogHeader(content) {
-  const header = '# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n'
-  if (!content || content.trim().length === 0) return header
-  return content
+	const header =
+		"# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n"
+	if (!content || content.trim().length === 0) return header
+	return content
 }
 
 function findDaySectionBounds(content, dateStr) {
-  const dateHeader = `## ${dateStr}`
-  const start = content.indexOf(dateHeader)
-  if (start === -1) return { start: -1, end: -1 }
-  const rest = content.slice(start + dateHeader.length)
-  const nextHeaderRel = rest.search(/\n##\s+\d{4}-\d{2}-\d{2}/)
-  const end = nextHeaderRel === -1 ? content.length : start + dateHeader.length + nextHeaderRel
-  return { start, end }
+	const dateHeader = `## ${dateStr}`
+	const start = content.indexOf(dateHeader)
+	if (start === -1) return { start: -1, end: -1 }
+	const rest = content.slice(start + dateHeader.length)
+	const nextHeaderRel = rest.search(/\n##\s+\d{4}-\d{2}-\d{2}/)
+	const end =
+		nextHeaderRel === -1
+			? content.length
+			: start + dateHeader.length + nextHeaderRel
+	return { start, end }
 }
 
 function dedupeEntries(entries) {
-  const seen = new Set()
-  const out = []
-  for (const e of entries) { const key = `${e.dir}|${e.reason || ''}`; if (seen.has(key)) continue; seen.add(key); out.push({ dir: e.dir, reason: e.reason || '' }) }
-  out.sort((a,b) => a.dir.localeCompare(b.dir))
-  return out
+	const seen = new Set()
+	const out = []
+	for (const e of entries) {
+		const key = `${e.dir}|${e.reason || ""}`
+		if (seen.has(key)) continue
+		seen.add(key)
+		out.push({ dir: e.dir, reason: e.reason || "" })
+	}
+	out.sort((a, b) => a.dir.localeCompare(b.dir))
+	return out
 }
 
 function buildUpdatedBlockLines(entries) {
-  const lines = []
-  lines.push('- Updated: Auto-generated folder docs')
-  for (const e of entries) lines.push(`  - \`${e.dir}\`${e.reason ? `: ${e.reason}` : ''}`)
-  return lines
+	const lines = []
+	lines.push("- Updated: Auto-generated folder docs")
+	for (const e of entries)
+		lines.push(`  - \`${e.dir}\`${e.reason ? `: ${e.reason}` : ""}`)
+	return lines
 }
 
 function injectOrMergeUpdatedBlock(dayBlock, entries) {
-  const UPDATED_LINE = '- Updated: Auto-generated folder docs'
-  const lines = dayBlock.split('\n')
-  let updatedIdx = -1
-  for (let i=1; i<lines.length; i++) { if (lines[i].trim() === UPDATED_LINE) { updatedIdx = i; break } }
-  if (updatedIdx === -1) { const newBlock = buildUpdatedBlockLines(entries); if (lines[lines.length-1].trim().length>0) lines.push(''); for (const l of newBlock) lines.push(l); return lines.join('\n') }
-  const existingSet = new Set()
-  let j = updatedIdx + 1
-  while (j < lines.length) { const l = lines[j]; if (/^\s{2}\-\s+/.test(l)) { existingSet.add(l.trim()); j += 1; continue } if (/^\-\s+/.test(l) || /^##\s+/.test(l)) break; j += 1 }
-  const incoming = buildUpdatedBlockLines(entries).slice(1).map(s => s.trim())
-  for (const l of incoming) existingSet.add(l)
-  const merged = Array.from(existingSet); merged.sort((a,b)=>a.localeCompare(b))
-  const before = lines.slice(0, updatedIdx + 1)
-  const after = lines.slice(j)
-  return [...before, ...merged.map(s => '  ' + s), ...after].join('\n')
+	const UPDATED_LINE = "- Updated: Auto-generated folder docs"
+	const lines = dayBlock.split("\n")
+	let updatedIdx = -1
+	for (let i = 1; i < lines.length; i++) {
+		if (lines[i].trim() === UPDATED_LINE) {
+			updatedIdx = i
+			break
+		}
+	}
+	if (updatedIdx === -1) {
+		const newBlock = buildUpdatedBlockLines(entries)
+		if (lines[lines.length - 1].trim().length > 0) lines.push("")
+		for (const l of newBlock) lines.push(l)
+		return lines.join("\n")
+	}
+	const existingSet = new Set()
+	let j = updatedIdx + 1
+	while (j < lines.length) {
+		const l = lines[j]
+		if (/^\s{2}\-\s+/.test(l)) {
+			existingSet.add(l.trim())
+			j += 1
+			continue
+		}
+		if (/^\-\s+/.test(l) || /^##\s+/.test(l)) break
+		j += 1
+	}
+	const incoming = buildUpdatedBlockLines(entries)
+		.slice(1)
+		.map((s) => s.trim())
+	for (const l of incoming) existingSet.add(l)
+	const merged = Array.from(existingSet)
+	merged.sort((a, b) => a.localeCompare(b))
+	const before = lines.slice(0, updatedIdx + 1)
+	const after = lines.slice(j)
+	return [...before, ...merged.map((s) => `  ${s}`), ...after].join("\n")
 }
 
 async function appendChangelog(entries) {
-  if (entries.length === 0) return
-  const changelogPath = path.join(repoRoot, 'CHANGELOG.md')
-  let existing = ''
-  try { existing = await fsp.readFile(changelogPath, 'utf8') } catch {}
-  existing = ensureChangelogHeader(existing)
-  const dateStr = today()
-  const { start, end } = findDaySectionBounds(existing, dateStr)
-  const uniqueEntries = dedupeEntries(entries)
-  const dateHeader = `## ${dateStr}`
-  if (start === -1) {
-    const blockLines = [dateHeader, ...buildUpdatedBlockLines(uniqueEntries)]
-    const newContent = existing.trimEnd() + '\n\n' + blockLines.join('\n') + '\n'
-    await fsp.writeFile(changelogPath, newContent, 'utf8')
-    return
-  }
-  const dayBlock = existing.slice(start, end)
-  const updatedDayBlock = injectOrMergeUpdatedBlock(dayBlock, uniqueEntries)
-  const newContent = existing.slice(0, start) + updatedDayBlock + existing.slice(end)
-  await fsp.writeFile(changelogPath, newContent, 'utf8')
+	if (entries.length === 0) return
+	const changelogPath = path.join(repoRoot, "CHANGELOG.md")
+	let existing = ""
+	try {
+		existing = await fsp.readFile(changelogPath, "utf8")
+	} catch {}
+	existing = ensureChangelogHeader(existing)
+	const dateStr = today()
+	const { start, end } = findDaySectionBounds(existing, dateStr)
+	const uniqueEntries = dedupeEntries(entries)
+	const dateHeader = `## ${dateStr}`
+	if (start === -1) {
+		const blockLines = [dateHeader, ...buildUpdatedBlockLines(uniqueEntries)]
+		const newContent = `${existing.trimEnd()}\n\n${blockLines.join("\n")}\n`
+		await fsp.writeFile(changelogPath, newContent, "utf8")
+		return
+	}
+	const dayBlock = existing.slice(start, end)
+	const updatedDayBlock = injectOrMergeUpdatedBlock(dayBlock, uniqueEntries)
+	const newContent =
+		existing.slice(0, start) + updatedDayBlock + existing.slice(end)
+	await fsp.writeFile(changelogPath, newContent, "utf8")
 }
 
 function isPathIgnored(absPath) {
-  const relPath = rel(absPath)
-  if (relPath.includes('/node_modules/') || relPath.includes('/.git/') || relPath.includes('/.turbo/') || relPath.includes('/dist/') || relPath.includes('/build/')) return true
-  const base = path.basename(absPath)
-  if (IGNORED_BASENAMES.has(base)) return true
-  if (relPath.endsWith('/' + SCRIPT_RELATIVE_PATH)) return true
-  return false
+	const relPath = rel(absPath)
+	if (
+		relPath.includes("/node_modules/") ||
+		relPath.includes("/.git/") ||
+		relPath.includes("/.turbo/") ||
+		relPath.includes("/dist/") ||
+		relPath.includes("/build/")
+	)
+		return true
+	const base = path.basename(absPath)
+	if (IGNORED_BASENAMES.has(base)) return true
+	if (relPath.endsWith(`/${SCRIPT_RELATIVE_PATH}`)) return true
+	return false
 }
 
 async function runOnce() {
-  const changedDirs = await walkAndGenerate(repoRoot)
-  await appendChangelog(changedDirs.map(d => ({ dir: d, reason: 'Generated/updated function.md' })))
-  return changedDirs
+	const changedDirs = await walkAndGenerate(repoRoot)
+	await appendChangelog(
+		changedDirs.map((d) => ({
+			dir: d,
+			reason: "Generated/updated function.md",
+		})),
+	)
+	return changedDirs
 }
 
 async function watchAndRun() {
-  await runOnce()
-  const pending = new Map()
-  let timer = null
-  function scheduleFlush() {
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(async () => {
-      const dirs = Array.from(pending.keys())
-      pending.clear()
-      const uniqueDirs = Array.from(new Set(dirs))
-      const changedAll = []
-      for (const dirRel of uniqueDirs) {
-        const dirAbs = path.join(repoRoot, dirRel)
-        try {
-          const stat = await fsp.stat(dirAbs).catch(() => null)
-          if (stat && stat.isDirectory()) {
-            const changed = await ensureFunctionMdFor(dirAbs)
-            if (changed) changedAll.push(dirRel)
-          }
-        } catch {}
-      }
-      await appendChangelog(changedAll.map(d => ({ dir: d, reason: 'Auto-updated via watcher' })))
-    }, 500)
-  }
+	await runOnce()
+	const pending = new Map()
+	let timer = null
+	function scheduleFlush() {
+		if (timer) clearTimeout(timer)
+		timer = setTimeout(async () => {
+			const dirs = Array.from(pending.keys())
+			pending.clear()
+			const uniqueDirs = Array.from(new Set(dirs))
+			const changedAll = []
+			for (const dirRel of uniqueDirs) {
+				const dirAbs = path.join(repoRoot, dirRel)
+				try {
+					const stat = await fsp.stat(dirAbs).catch(() => null)
+					if (stat?.isDirectory()) {
+						const changed = await ensureFunctionMdFor(dirAbs)
+						if (changed) changedAll.push(dirRel)
+					}
+				} catch {}
+			}
+			await appendChangelog(
+				changedAll.map((d) => ({ dir: d, reason: "Auto-updated via watcher" })),
+			)
+		}, 500)
+	}
 
-  try {
-    const watcher = fs.watch(repoRoot, { recursive: true }, (eventType, filename) => {
-      if (!filename) return
-      const abs = path.join(repoRoot, filename)
-      if (isPathIgnored(abs)) return
-      const dirRel = '/' + toPosix(path.dirname(filename))
-      pending.set(dirRel === '/.' ? '/' : dirRel, 'change')
-      scheduleFlush()
-    })
-    watcher.on('error', () => {})
-  } catch {
-    console.warn('fs.watch recursive not supported; fallback to periodic regeneration.')
-    setInterval(runOnce, 5000)
-  }
+	try {
+		const watcher = fs.watch(
+			repoRoot,
+			{ recursive: true },
+			(eventType, filename) => {
+				if (!filename) return
+				const abs = path.join(repoRoot, filename)
+				if (isPathIgnored(abs)) return
+				const dirRel = `/${toPosix(path.dirname(filename))}`
+				pending.set(dirRel === "/." ? "/" : dirRel, "change")
+				scheduleFlush()
+			},
+		)
+		watcher.on("error", () => {})
+	} catch {
+		console.warn(
+			"fs.watch recursive not supported; fallback to periodic regeneration.",
+		)
+		setInterval(runOnce, 5000)
+	}
 }
 
 async function main() {
-  const args = new Set(process.argv.slice(2))
-  const watch = args.has('--watch')
-  const normalize = args.has('--normalize')
-  if (normalize) {
-    // simple normalize: ensure header only (skip legacy merge for brevity)
-    const changelogPath = path.join(repoRoot, 'CHANGELOG.md')
-    let content = ''
-    try { content = await fsp.readFile(changelogPath, 'utf8') } catch {}
-    content = ensureChangelogHeader(content)
-    await fsp.writeFile(changelogPath, content, 'utf8')
-    console.log('Changelog normalized header ensured.')
-    return
-  }
-  if (watch) { await watchAndRun(); await new Promise(() => {}) } else {
-    const changed = await runOnce()
-    if (changed.length === 0) { console.log('No documentation changes needed.') } else { console.log('Updated docs for:', changed.join(', ')) }
-  }
+	const args = new Set(process.argv.slice(2))
+	const watch = args.has("--watch")
+	const normalize = args.has("--normalize")
+	if (normalize) {
+		// simple normalize: ensure header only (skip legacy merge for brevity)
+		const changelogPath = path.join(repoRoot, "CHANGELOG.md")
+		let content = ""
+		try {
+			content = await fsp.readFile(changelogPath, "utf8")
+		} catch {}
+		content = ensureChangelogHeader(content)
+		await fsp.writeFile(changelogPath, content, "utf8")
+		console.log("Changelog normalized header ensured.")
+		return
+	}
+	if (watch) {
+		await watchAndRun()
+		await new Promise(() => {})
+	} else {
+		const changed = await runOnce()
+		if (changed.length === 0) {
+			console.log("No documentation changes needed.")
+		} else {
+			console.log("Updated docs for:", changed.join(", "))
+		}
+	}
 }
 
-main().catch((e) => { console.error(e); process.exit(1) })
-
-
+main().catch((e) => {
+	console.error(e)
+	process.exit(1)
+})
