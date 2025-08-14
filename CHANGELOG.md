@@ -11,12 +11,18 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Created this `CHANGELOG.md` and established update workflow.
 - New UI utilities: `.container`, `.container-narrow`, `.section`, `.btn*`, `.card`, `.chip`, `.link`, `.reveal`.
 - Accessibility: focus-visible rings, mobile menu a11y, skip link.
-- Dismissible PromoBanner; reveal-on-scroll animations (reduced-motion aware).
+- Shared data/components: pricing, FAQ, contact form, deposit banner.
+- Reveal-on-scroll animations (reduced-motion aware).
 - Icons: added `icons/ArrowRight.astro`, `icons/Check.astro`.
 - Umami analytics with custom events; JSON-LD Organization + Article on blog posts.
 - Unified page containers; consistent cards/buttons across pages.
 ### Changed
 - Centralized `withBase` usage; standardized containers across site.
+- Unified pricing copy across pages; removed duplicate meta descriptions.
+- Replaced per-page forms/FAQs with shared components.
+- Switched to `/embed/calculator/` as the single embed target; simplified `/calculator/`.
+- Footer: added Terms link.
+- Updated robots sitemap to production domain.
 - `Base.astro`: OG image override; analytics snippet; JSON-LD organization.
 - Pages: refactored to utility classes; consistent spacing and CTAs.
 - Config: set `site` to `https://scrapyardsites.com`.

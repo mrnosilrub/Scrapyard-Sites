@@ -6,7 +6,7 @@ const {
 } = Astro.props
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
-import PromoBanner from "../components/PromoBanner.astro"
+import DepositBanner from "../components/DepositBanner.astro"
 import "../styles/globals.css"
 import faviconUrl from "../assets/favicon.svg?url"
 import heroUrl from "../assets/hero.jpg?url"
@@ -42,8 +42,8 @@ const ogImageUrl =
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900 font-sans">
     <a href="#main-content" class="absolute left-2 top-2 z-50 -translate-y-20 rounded bg-white px-3 py-2 text-zinc-900 shadow transition focus:translate-y-0">Skip to content</a>
-    <PromoBanner />
     <Header />
+    <DepositBanner />
     <main id="main-content">
       <slot />
     </main>

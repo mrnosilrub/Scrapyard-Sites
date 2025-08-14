@@ -1,0 +1,29 @@
+---
+import { PRICING_PLANS } from "../data/pricing"
+import { withBase } from "../lib/paths"
+interface Props { heading?: string; showDepositCta?: boolean; depositGoal?: string }
+const { heading = "Service Pricing", showDepositCta = false, depositGoal } = Astro.props as Props
+---
+<section class="section">
+  <div class="eyebrow">Pricing</div>
+  <h2 class="mt-1 text-2xl font-bold tracking-tight">{heading}</h2>
+  <div class="mt-6 grid gap-6 md:grid-cols-3">
+    {PRICING_PLANS.map((plan) => (
+      <div class="card p-6">
+        <h3 class="text-lg font-semibold">{plan.name}</h3>
+        <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700">
+          {plan.bullets.map((b) => (<li>{b}</li>))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  {showDepositCta && (
+    <div class="mt-6" id="deposit">
+      <a href={withBase('/pricing/#deposit')} class="btn btn-primary" aria-label="Pay deposit and reserve my build week" {...(depositGoal ? { 'data-goal': depositGoal } : {})}>Pay Deposit & Reserve My Build Week</a>
+      <p class="mt-2 text-sm text-zinc-600">50% deposit now, balance at launch. 90‑day warm lead guarantee.</p>
+    </div>
+  )}
+  
+</section>
+
+

@@ -1,8 +1,9 @@
 ---
 import Base from "../layouts/Base.astro"
-const base = import.meta.env.BASE_URL
-const withBase = (p: string) =>
-	p.startsWith("http") || p.startsWith("#") ? p : base + p.replace(/^\//, "")
+import { withBase } from "../lib/paths"
+import ContactForm from "../components/ContactForm.astro"
+import FAQ from "../components/FAQ.astro"
+import { DEFAULT_FAQ } from "../data/faq"
 ---
 <Base title="Contact — Scrapyard Sites">
   <section class="container py-16">
@@ -17,30 +18,13 @@ const withBase = (p: string) =>
       </ul>
     </div>
     <div class="container-narrow mt-8">
-      <form class="grid gap-4" action="https://formspree.io/f/xyyorkzz" method="POST">
-        <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
-        <input id="c-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" />
-        <label class="text-sm font-medium text-zinc-700" for="c-email">Email</label>
-        <input id="c-email" name="email" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Email" />
-        <label class="text-sm font-medium text-zinc-700" for="c-company">Yard/Company</label>
-        <input id="c-company" name="company" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Yard/Company" />
-        <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
-        <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message"></textarea>
-        <input type="hidden" name="_subject" value="New Reputation Scan request" />
-        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-        <button class="btn btn-primary px-4 py-2" data-goal="Form: Submit (Contact)">Schedule My 15‑Minute Scan</button>
-      </form>
+      <ContactForm submitLabel="Schedule My 15‑Minute Scan" goal="Form: Submit (Contact)" />
       <p class="mt-2 text-sm text-zinc-600">We’ll reply within 15 minutes during business hours.</p>
       <p class="mt-2 text-sm text-zinc-600">Not ready to chat? Try our <a href={withBase('/calculator/')} class="link">Risk Calculator</a>.</p>
     </div>
 
     <div class="mt-12">
-      <h2 class="text-xl font-semibold">FAQ</h2>
-      <div class="mt-4 space-y-2">
-        <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">What happens after I send?</summary><p class="mt-2 text-sm text-zinc-700">We’ll email or call to confirm your goals and schedule your build week.</p></details>
-        <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">How do you handle data?</summary><p class="mt-2 text-sm text-zinc-700">We keep your information confidential and never sell it.</p></details>
-        <details class="rounded-md border border-zinc-200 p-4"><summary class="cursor-pointer font-medium">Can I get pricing without a call?</summary><p class="mt-2 text-sm text-zinc-700">Yes — see our <a href={withBase('/pricing/')} class="text-brand-orange">pricing page</a>.</p></details>
-      </div>
+      <FAQ items={DEFAULT_FAQ} />
     </div>
   </section>
 </Base>
