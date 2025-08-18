@@ -15,7 +15,17 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: "1.5rem", // 24px
+			padding: {
+				DEFAULT: "2.25rem", // 36px for mobile
+				sm: "2.25rem", // 36px for mobile (larger)
+				md: "4rem", // 64px for tablet
+				lg: "8rem", // 128px for desktop
+			},
+			screens: {
+				sm: "412px",
+				md: "768px",
+				lg: "1200px",
+			},
 		},
 		extend: {
 			fontFamily: {
@@ -43,6 +53,15 @@ export default {
 			},
 			boxShadow: {
 				header: "0 1px 2px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04)",
+			},
+			spacing: {
+				"viewport-mobile": "2.25rem", // 36px
+				"viewport-tablet": "4rem", // 64px
+				"viewport-desktop": "8rem", // 128px
+			},
+			screens: {
+				"mobile-sm": "360px",
+				"mobile-lg": "412px",
 			},
 		},
 	},
