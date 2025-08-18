@@ -14,21 +14,44 @@ import { withBase } from "../lib/paths"
 
   <section class="band bg-brand-orange/5">
     <div class="section">
-    <div class="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-12 lg:items-center reveal-immediate px-4 sm:px-6 lg:px-8">
-      <div class="w-full max-w-sm mx-auto lg:mx-0">
-        <img src={founderAsset} alt="Founder" class="aspect-square w-full rounded-lg object-cover" loading="lazy" />
-        <div class="mt-2 eyebrow text-left">Elias Burlison</div>
+    <div class="mt-6 reveal-immediate px-4 sm:px-6 lg:px-8">
+      <!-- Mobile: Title first, then image and content -->
+      <div class="lg:hidden">
+        <h2 class="text-2xl font-bold tracking-tight mb-6">My Insider Edge</h2>
+        <div class="w-full max-w-sm mx-auto mb-6">
+          <img src={founderAsset} alt="Founder" class="aspect-square w-full rounded-lg object-cover" loading="lazy" />
+          <div class="mt-2 eyebrow text-left">Elias Burlison</div>
+        </div>
+        <div class="grid gap-6">
+          <p class="text-zinc-700">
+            I work in scrap metals operations. I've built this offering around what yards actually need: fast mobile access, clear materials lists that reduce tire-kickers, and quote forms that reach the right person the first time.
+          </p>
+          <p class="text-zinc-700">
+            I ship quickly, I answer the phone, and I measure results in calls and loads—not pageviews.
+          </p>
+          <div>
+            <a href={withBase('/contact/')} class="btn btn-primary">Book a 15-minute call</a>
+          </div>
+        </div>
       </div>
-      <div class="grid gap-6">
-        <h2 class="mt-1 text-2xl font-bold tracking-tight">My Insider Edge</h2>
-        <p class="text-zinc-700">
-          I work in scrap metals operations. I’ve built this offering around what yards actually need: fast mobile access, clear materials lists that reduce tire-kickers, and quote forms that reach the right person the first time.
-        </p>
-        <p class="text-zinc-700">
-          I ship quickly, I answer the phone, and I measure results in calls and loads—not pageviews.
-        </p>
-        <div>
-          <a href={withBase('/contact/')} class="btn btn-primary">Book a 15-minute call</a>
+      
+      <!-- Desktop: Original layout -->
+      <div class="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+        <div class="w-full max-w-sm mx-auto lg:mx-0">
+          <img src={founderAsset} alt="Founder" class="aspect-square w-full rounded-lg object-cover" loading="lazy" />
+          <div class="mt-2 eyebrow text-left">Elias Burlison</div>
+        </div>
+        <div class="grid gap-6">
+          <h2 class="mt-1 text-2xl font-bold tracking-tight">My Insider Edge</h2>
+          <p class="text-zinc-700">
+            I work in scrap metals operations. I've built this offering around what yards actually need: fast mobile access, clear materials lists that reduce tire-kickers, and quote forms that reach the right person the first time.
+          </p>
+          <p class="text-zinc-700">
+            I ship quickly, I answer the phone, and I measure results in calls and loads—not pageviews.
+          </p>
+          <div>
+            <a href={withBase('/contact/')} class="btn btn-primary">Book a 15-minute call</a>
+          </div>
         </div>
       </div>
     </div>
