@@ -147,6 +147,8 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+		/* Account for iOS Safari bottom bar */
+		padding-bottom: env(safe-area-inset-bottom, 0);
 	}
 
 	.mobile-menu-overlay.menu-open .menu-content {
