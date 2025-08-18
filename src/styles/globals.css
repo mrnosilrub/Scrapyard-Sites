@@ -312,16 +312,27 @@
 		will-change: transform, opacity;
 	}
 
+	/* Position hamburger lines with absolute positioning */
+	.hamburger-line:nth-child(1) {
+		transform: translateY(-6px);
+	}
+	.hamburger-line:nth-child(2) {
+		transform: translateY(0);
+	}
+	.hamburger-line:nth-child(3) {
+		transform: translateY(6px);
+	}
+
 	/* Hamburger to X transformation - improved positioning and timing */
 	body.menu-open .hamburger-line:nth-child(1) {
-		transform: translateY(6px) rotate(45deg);
+		transform: translateY(0) rotate(45deg);
 	}
 	body.menu-open .hamburger-line:nth-child(2) {
 		opacity: 0;
 		transform: scaleX(0);
 	}
 	body.menu-open .hamburger-line:nth-child(3) {
-		transform: translateY(-6px) rotate(-45deg);
+		transform: translateY(0) rotate(-45deg);
 	}
 
 	/* Mobile menu content stagger animation */
