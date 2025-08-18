@@ -252,10 +252,9 @@
 	.faq-content {
 		display: grid;
 		grid-template-rows: 0fr;
-		transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 		opacity: 0;
-		transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity
-			0.35s cubic-bezier(0.4, 0, 0.2, 1);
+		transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+			opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.faq-details[open] .faq-content {
 		grid-template-rows: 1fr;
@@ -306,6 +305,9 @@
 	.hamburger-icon {
 		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
+	body.menu-open .hamburger-icon {
+		transform: rotate(180deg);
+	}
 	.hamburger-line {
 		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		transform-origin: center;
@@ -313,13 +315,16 @@
 
 	/* Hamburger to X transformation */
 	body.menu-open .hamburger-line:nth-child(1) {
-		transform: translateY(6px) rotate(45deg);
+		transform: translateY(4px) rotate(45deg);
+		top: 11px !important;
 	}
 	body.menu-open .hamburger-line:nth-child(2) {
 		opacity: 0;
+		transform: scaleX(0);
 	}
 	body.menu-open .hamburger-line:nth-child(3) {
-		transform: translateY(-6px) rotate(-45deg);
+		transform: translateY(-4px) rotate(-45deg);
+		top: 11px !important;
 	}
 
 	/* Mobile menu content stagger animation */
