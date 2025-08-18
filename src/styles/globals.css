@@ -403,4 +403,13 @@
 		right: 0;
 		background: linear-gradient(to left, white, transparent);
 	}
+
+	/* Dynamic marquee - when desktop layout switches to marquee due to wrapping */
+	#features-marquee {
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	#features-list {
+		transition: opacity 0.3s ease-in-out;
+	}
 }
