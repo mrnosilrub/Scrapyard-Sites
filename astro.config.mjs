@@ -9,19 +9,19 @@ export default defineConfig({
 	base: undefined,
 	trailingSlash: "always",
 	integrations: [tailwind(), mdx(), sitemap()],
-	build: { 
+	build: {
 		inlineStylesheets: "auto",
-		assets: "_astro"
+		assets: "_astro",
 	},
 	vite: {
 		build: {
 			rollupOptions: {
 				output: {
-					assetFileNames: 'assets/[name].[hash][extname]',
-					chunkFileNames: 'assets/[name].[hash].js',
-					entryFileNames: 'assets/[name].[hash].js'
-				}
-			}
-		}
+					assetFileNames: "assets/[name].[hash][extname]",
+					chunkFileNames: "assets/[name].[hash].js",
+					entryFileNames: "assets/[name].[hash].js",
+				},
+			},
+		},
 	},
 })
