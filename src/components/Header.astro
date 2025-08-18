@@ -40,16 +40,16 @@ const ctaHref = calendlyUrl || withBase("/contact/")
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0 z-40" style="padding-top: 4rem; z-index: 45;" role="dialog" aria-modal="true" aria-label="Site Navigation">
-  <div class="menu-content shadow-md h-full flex flex-col" style="position: relative; z-index: 46;">
+<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0" style="padding-top: 4rem; z-index: 45;" role="dialog" aria-modal="true" aria-label="Site Navigation">
+  <div class="menu-content shadow-md flex flex-col" style="position: relative; z-index: 46; height: calc(100% - 4rem);">
     <nav class="flex-1 overflow-y-auto p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
       <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
       <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
       <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
       <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
     </nav>
-    <div class="p-8 border-t border-zinc-100" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));">
-      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3">
+    <div class="p-8 border-t border-zinc-100" style="padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0));">
+      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3 text-center" data-goal="CTA: Book Discovery (Mobile Menu)">
         Book a 15-minute call
       </a>
     </div>
@@ -81,8 +81,15 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         document.body.style.width = '';
         document.body.style.overflow = '';
         
-        // Restore scroll position without animation to prevent jumping
-        window.scrollTo(0, scrollPosition);
+        // Use requestAnimationFrame to ensure styles are applied before scrolling
+        // This prevents the scroll jumping issue
+        requestAnimationFrame(function() {
+          window.scrollTo({
+            top: scrollPosition,
+            left: 0,
+            behavior: 'instant'
+          });
+        });
       }
       
       // Handle menu-open class immediately for hamburger animation
@@ -92,7 +99,9 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         if (open) {
           // Show menu container first
           overlay.classList.add('menu-showing');
-          // Then animate after next frame
+          // Force a reflow to ensure the element is rendered
+          overlay.offsetHeight;
+          // Then animate after ensuring the element is visible
           requestAnimationFrame(function() {
             overlay.classList.add('menu-open');
           });

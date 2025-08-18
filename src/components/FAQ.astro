@@ -60,19 +60,37 @@ const detailsClass = tinted
     details.forEach(detail => {
       const summary = detail.querySelector('summary');
       const content = detail.querySelector('.faq-content');
+      let isAnimating = false;
       
       // Prevent default toggle to control animation
       summary.addEventListener('click', function(e) {
         e.preventDefault();
         
+        // Prevent multiple clicks during animation
+        if (isAnimating) return;
+        
         // Toggle the open state
         if (detail.hasAttribute('open')) {
-          // Closing animation - don't use overflow hidden as it causes snapping
-          // The CSS grid animation handles the smooth transition
+          // Closing animation
+          isAnimating = true;
+          
+          // Start the closing animation by removing the open attribute
+          // The CSS transition will handle the smooth animation
           detail.removeAttribute('open');
+          
+          // Reset animation flag after transition completes
+          setTimeout(function() {
+            isAnimating = false;
+          }, 300); // Match CSS transition duration
         } else {
           // Opening animation
+          isAnimating = true;
           detail.setAttribute('open', '');
+          
+          // Reset animation flag after transition completes
+          setTimeout(function() {
+            isAnimating = false;
+          }, 300); // Match CSS transition duration
         }
       });
     });
