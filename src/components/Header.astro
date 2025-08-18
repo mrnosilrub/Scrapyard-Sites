@@ -29,37 +29,34 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         </a>
       </div>
 
-      <label for="nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Open Menu" role="button" aria-controls="mobile-nav" aria-expanded="false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      <label for="nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100 hamburger-icon" aria-label="Open Menu" role="button" aria-controls="mobile-nav" aria-expanded="false">
+        <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+          <div class="w-5 h-0.5 bg-current hamburger-line"></div>
+          <div class="w-5 h-0.5 bg-current hamburger-line"></div>
+          <div class="w-5 h-0.5 bg-current hamburger-line"></div>
+        </div>
       </label>
     </div>
   </div>
+</header>
 
-      <div id="mobile-nav" class="fixed inset-0 z-50 hidden bg-white peer-checked:block" role="dialog" aria-modal="true" aria-label="Site Navigation">
+<div id="mobile-nav" class="mobile-menu-overlay fixed left-0 right-0 z-30" style="top: 4rem; height: calc(100vh - 4rem);" role="dialog" aria-modal="true" aria-label="Site Navigation">
+  <div class="menu-content bg-white shadow-md h-full">
     <div class="flex h-full flex-col">
-      <div class="container h-16 flex items-center justify-between shadow-header">
-        <a href={withBase('/')} class="flex items-center gap-2">
-          <img src={logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
-          <span class="text-lg font-semibold tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
-        </a>
-        <label for="nav-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100" aria-label="Close Menu" role="button" aria-controls="mobile-nav" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-        </label>
-      </div>
-      <nav class="flex-1 p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
-        <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
-        <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
-        <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
-        <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
-      </nav>
-      <div class="p-8">
-        <a href={ctaHref} class="btn btn-primary w-full px-4 py-3">
-          Book a 15-minute call
-        </a>
-      </div>
+    <nav class="flex-1 p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
+      <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
+      <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
+      <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
+      <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
+    </nav>
+    <div class="p-8">
+      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3">
+        Book a 15-minute call
+      </a>
     </div>
   </div>
-</header>
+  </div>
+</div>
 
 <script is:inline>
   (function() {
@@ -67,29 +64,52 @@ const ctaHref = calendlyUrl || withBase("/contact/")
     var overlay = document.getElementById('mobile-nav');
     var toggles = document.querySelectorAll("label[for='nav-toggle']");
 
-    function setState() {
+    function setState(e) {
       var open = !!(checkbox && checkbox.checked);
       toggles.forEach(function(el){ el.setAttribute('aria-expanded', open ? 'true' : 'false'); });
       document.documentElement.classList.toggle('overflow-hidden', open);
       document.body.classList.toggle('overflow-hidden', open);
-      if (open && overlay) {
+      document.body.classList.toggle('menu-open', open);
+      
+      if (overlay) {
+        if (open) {
+          // Show menu container first
+          overlay.classList.add('menu-showing');
+          // Then animate after next frame
+          requestAnimationFrame(function() {
+            overlay.classList.add('menu-open');
+          });
+        } else {
+          // Remove animation class first
+          overlay.classList.remove('menu-open');
+          // Then hide container after animation
+          setTimeout(function() {
+            overlay.classList.remove('menu-showing');
+          }, 300);
+        }
+      }
+      
+      // Only focus if keyboard was used to open (not click)
+      if (open && overlay && e && e.type === 'keydown') {
         var first = overlay.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
         if (first && typeof first.focus === 'function') first.focus();
       }
     }
 
+    // Initialize the menu state - handled by CSS now
+
     if (checkbox) checkbox.addEventListener('change', setState);
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && checkbox && checkbox.checked) {
         checkbox.checked = false;
-        setState();
+        setState(e);
       }
     });
     if (overlay) overlay.addEventListener('click', function(e){
       var t = e.target;
       if (t && t.tagName === 'A' && checkbox) {
         checkbox.checked = false;
-        setState();
+        setState(e);
       }
     });
     setState();
