@@ -48,8 +48,8 @@ const ctaHref = calendlyUrl || withBase("/contact/")
       <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
       <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
     </nav>
-    <div class="p-8 border-t border-zinc-100" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0) + 1rem); margin-bottom: env(safe-area-inset-bottom, 0);">
-      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3" style="margin-bottom: env(safe-area-inset-bottom, 0);">
+    <div class="p-8 border-t border-zinc-100" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));">
+      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3">
         Book a 15-minute call
       </a>
     </div>
@@ -81,13 +81,8 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         document.body.style.width = '';
         document.body.style.overflow = '';
         
-        // Restore scroll position smoothly without causing scroll events
-        if (scrollPosition > 0) {
-          window.scrollTo({
-            top: scrollPosition,
-            behavior: 'instant'
-          });
-        }
+        // Restore scroll position without animation to prevent jumping
+        window.scrollTo(0, scrollPosition);
       }
       
       // Handle menu-open class immediately for hamburger animation
