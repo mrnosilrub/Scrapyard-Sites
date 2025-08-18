@@ -48,8 +48,8 @@ const ctaHref = calendlyUrl || withBase("/contact/")
       <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
       <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
     </nav>
-    <div class="p-8 border-t border-zinc-100" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0) + 1rem);">
-      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3">
+    <div class="p-8 border-t border-zinc-100" style="padding-bottom: max(2rem, env(safe-area-inset-bottom, 0) + 1rem); margin-bottom: env(safe-area-inset-bottom, 0);">
+      <a href={ctaHref} class="btn btn-primary w-full px-4 py-3" style="margin-bottom: env(safe-area-inset-bottom, 0);">
         Book a 15-minute call
       </a>
     </div>
@@ -75,19 +75,19 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         document.body.style.top = '-' + scrollPosition + 'px';
         document.body.style.width = '100%';
       } else {
-        // Store the scroll position to restore later
-        var savedScrollPosition = scrollPosition;
-        
-        // Reset body styles
+        // Reset body styles first
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.style.overflow = '';
         
-        // Restore scroll position after a small delay to prevent jump
-        requestAnimationFrame(function() {
-          window.scrollTo(0, savedScrollPosition);
-        });
+        // Restore scroll position smoothly without causing scroll events
+        if (scrollPosition > 0) {
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'instant'
+          });
+        }
       }
       
       // Handle menu-open class immediately for hamburger animation
