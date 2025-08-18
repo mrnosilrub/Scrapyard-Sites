@@ -30,6 +30,10 @@
 	.section-narrow {
 		@apply mx-auto max-w-3xl px-6 md:px-12 py-8 md:py-12;
 	}
+	/* Container for centering content within a section that already has padding */
+	.content-narrow {
+		@apply mx-auto max-w-3xl;
+	}
 	/* Mobile section padding - standardized 24px horizontal padding from viewport edges */
 	/* Note: Do not use with .container class as it already includes padding */
 	.mobile-section-padding {
