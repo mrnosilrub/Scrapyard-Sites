@@ -13,6 +13,10 @@ export default {
 		"hamburger-line",
 	],
 	theme: {
+		container: {
+			center: true,
+			padding: "1.5rem", // 24px
+		},
 		extend: {
 			fontFamily: {
 				sans: [
