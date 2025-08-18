@@ -46,14 +46,23 @@ const detailsClass = tinted
     
     faqDetails.forEach(details => {
       const chevron = details.querySelector('.faq-chevron');
+      const content = details.querySelector('.faq-content');
       
-      details.addEventListener('toggle', function() {
+      // Set initial state
+      if (!details.open && content) {
+        content.style.display = 'grid';
+      }
+      
+      details.addEventListener('toggle', function(e) {
+        // Use requestAnimationFrame to ensure smooth animation
         if (details.open) {
-          details.classList.add('faq-opening');
           chevron.style.transform = 'rotate(180deg)';
         } else {
-          details.classList.remove('faq-opening');
           chevron.style.transform = 'rotate(0deg)';
+          // Prevent snapping by keeping the content visible during animation
+          if (content) {
+            content.style.display = 'grid';
+          }
         }
       });
     });
