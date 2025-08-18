@@ -3,10 +3,13 @@ interface Props {
 	submitLabel?: string
 	goal?: string
 }
-const { submitLabel = "Schedule My 15‑Minute Scan", goal } =
+const { submitLabel = "Schedule my 15-minute call", goal } =
 	Astro.props as Props
+import { withBase } from "../lib/paths"
+const calendlyUrl = "https://calendly.com/elias-scrapyardsites/30min"
+const nextUrl = calendlyUrl
 ---
-<form class="grid gap-4" action="https://formspree.io/f/xyyorkzz" method="POST" novalidate>
+<form class="grid gap-4" action="https://formsubmit.co/elias@scrapyardsites.com" method="POST" novalidate>
   <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
   <input id="c-name" name="name" class="rounded-md border border-zinc-300 px-3 py-2" placeholder="Name" required />
   <label class="text-sm font-medium text-zinc-700" for="c-email">Email</label>
@@ -16,8 +19,31 @@ const { submitLabel = "Schedule My 15‑Minute Scan", goal } =
   <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
   <textarea id="c-message" name="message" class="rounded-md border border-zinc-300 px-3 py-2" rows="4" placeholder="Message" required></textarea>
   <input type="hidden" name="_subject" value="New Reputation Scan request" />
-  <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value={nextUrl} />
   <button class="btn btn-primary px-4 py-2" {...(goal ? { 'data-goal': goal } : {})}>{submitLabel}</button>
 </form>
+
+<script is:inline define:vars={{ calendlyUrl }}>
+  (function(){
+    try {
+      var form = document.currentScript.previousElementSibling;
+      if (!form || form.tagName !== 'FORM') return;
+      if (!calendlyUrl) return; // rely on server-side _next when no Calendly URL
+      
+      form.addEventListener('submit', function(e){
+        try {
+          e.preventDefault();
+          var fd = new FormData(form);
+          fetch(form.action, { method: 'POST', body: fd, mode: 'no-cors' })
+            .catch(function(){})
+            .finally(function(){ window.location.href = calendlyUrl; });
+        } catch {
+          window.location.href = calendlyUrl;
+        }
+      });
+    } catch {}
+  })();
+</script>
 
 

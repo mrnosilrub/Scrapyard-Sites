@@ -1,5 +1,4 @@
 ---
-import DepositBanner from "../components/DepositBanner.astro"
 import FAQ from "../components/FAQ.astro"
 import Hero from "../components/Hero.astro"
 import PricingTable from "../components/PricingTable.astro"
@@ -7,7 +6,7 @@ import { DEFAULT_FAQ } from "../data/faq"
 import Base from "../layouts/Base.astro"
 import { withBase } from "../lib/paths"
 ---
-<Base title="Pricing — Scrapyard Sites">
+<Base title="Pricing — Scrapyard Sites" description="Launch a scrapyard website in 7–10 days. Materials pages, tap-to-call, quote forms, and a 90-day warm-lead guarantee.">
   <Hero
     title="Invest in Your Reputation"
     body="Choose from two flat packages and a simple care plan—no hidden fees, no surprises. Each plan builds credibility, attracts qualified sellers and keeps you visible in local search."
@@ -15,11 +14,14 @@ import { withBase } from "../lib/paths"
     primaryLabel="Explore Packages"
   />
 
-  <section class="section" id="packages">
-    <PricingTable heading="Service Pricing" showDepositCta={true} depositGoal="CTA: Pay Deposit (Pricing)" />
+  <section class="band bg-brand-orange/5" id="packages">
+    <div class="section pt-0 pb-0">
+      <PricingTable heading="Service Pricing" showDepositCta={true} depositGoal="CTA: Pay Deposit (Pricing)" />
+    </div>
   </section>
 
-  <section class="section">
+  <section class="band">
+    <div class="section">
     <div class="eyebrow">Details</div>
     <h2 class="mt-1 text-2xl font-bold tracking-tight">How It Works & Extras</h2>
     <div class="mt-4 grid gap-6 lg:grid-cols-2">
@@ -42,11 +44,11 @@ import { withBase } from "../lib/paths"
         </ul>
       </div>
     </div>
+    </div>
   </section>
 
-  <section class="section">
+  <section class="band bg-brand-orange/5">
     <FAQ items={DEFAULT_FAQ} />
   </section>
-  <DepositBanner />
 </Base>
 

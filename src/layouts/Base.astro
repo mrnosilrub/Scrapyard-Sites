@@ -3,16 +3,20 @@ const {
 	title = "Scrapyard Sites",
 	description = "Scrapyard websites built for credibility, qualification, visibility and reliability.",
 	ogImage,
+	footerTinted = false,
 } = Astro.props
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import "../styles/globals.css"
-import faviconUrl from "../assets/favicon.svg?url"
 import heroUrl from "../assets/hero.jpg?url"
 import { withBase } from "../lib/paths"
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
-const ogImageUrl =
-	typeof ogImage === "string" ? ogImage : (ogImage?.src ?? heroUrl)
+const ogImageUrl = ogImage
+	? typeof ogImage === "string"
+		? ogImage
+		: ogImage.src
+	: new URL("/og-default.jpg", Astro.site).toString()
+const absoluteLogoUrl = new URL("/apple-touch-icon.png", Astro.site).toString()
 ---
 <html lang="en">
   <head>
@@ -21,21 +25,40 @@ const ogImageUrl =
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f97316" />
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Scrapyard Sites" />
     <meta property="og:image" content={ogImageUrl} />
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <link rel="icon" href={faviconUrl} />
     <script defer src="https://cloud.umami.is/script.js" data-website-id="05311cc2-11da-4d7c-b0bb-7de8ec3277a1"></script>
     <script type="application/ld+json" is:inline>{JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Scrapyard Sites',
       url: Astro.site,
-      logo: faviconUrl,
+      logo: absoluteLogoUrl,
       sameAs: [
         'https://www.linkedin.com/company/scrapyardsites',
         'https://x.com/scrapyardsites'
@@ -54,7 +77,7 @@ const ogImageUrl =
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+    <Footer tinted={footerTinted} />
     <script is:inline>
       (function(){
         if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

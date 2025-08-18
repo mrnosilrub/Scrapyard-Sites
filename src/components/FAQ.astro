@@ -3,11 +3,18 @@ import type { FaqItem } from "../data/faq"
 interface Props {
 	items: FaqItem[]
 	heading?: string
+	noTopPadding?: boolean
+	noBottomPadding?: boolean
 }
-const { items, heading = "FAQ" } = Astro.props as Props
+const {
+	items,
+	heading = "FAQ",
+	noTopPadding = false,
+	noBottomPadding = false,
+} = Astro.props as Props
+const sectionClass = `section${noTopPadding ? " pt-0" : ""}${noBottomPadding ? " pb-0" : ""}`
 ---
-<section class="section" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="eyebrow">FAQ</div>
+<section class={sectionClass} itemscope itemtype="https://schema.org/FAQPage">
   <h2 class="mt-1 text-2xl font-bold tracking-tight">{heading}</h2>
   <div class="mt-4 space-y-2">
     {items.map((it) => (

@@ -1,28 +1,28 @@
 ---
+interface Props {
+	tinted?: boolean
+}
+const { tinted = false } = Astro.props as Props
 const year = new Date().getFullYear()
 import { withBase } from "../lib/paths"
 ---
-<footer class="mt-24 border-t border-zinc-200 bg-white">
+<footer class={"border-t border-zinc-200 " + (tinted ? "bg-brand-orange/5" : "bg-white")}>
   <div class="container py-12">
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-700">Pages</h3>
         <ul class="mt-4 space-y-2 text-sm">
           <li><a href={withBase('/')} class="hover:text-brand-orange">Home</a></li>
-          <li><a href={withBase('/about/')} class="hover:text-brand-orange">About</a></li>
-          
           <li><a href={withBase('/pricing/')} class="hover:text-brand-orange">Pricing</a></li>
-          
+          <li><a href={withBase('/about/')} class="hover:text-brand-orange">About</a></li>
           <li><a href={withBase('/contact/')} class="hover:text-brand-orange">Contact</a></li>
-          <li><a href={withBase('/privacy/')} class="hover:text-brand-orange">Privacy</a></li>
-          <li><a href={withBase('/terms-of-service/')} class="hover:text-brand-orange">Terms</a></li>
         </ul>
       </div>
       <div class="lg:col-span-2">
         <p class="text-sm text-zinc-600">© {year} Scrapyard Sites — All rights reserved.</p>
-        <div class="mt-2 flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
-          <a href="mailto:hello@scrapyardsites.com" class="inline-flex items-center gap-2 link"><span aria-hidden="true">✉</span> hello@scrapyardsites.com</a>
-          <a href="tel:19493568762" class="inline-flex items-center gap-2 link"><span aria-hidden="true">☎</span> 949‑356‑8762</a>
+        <div class="mt-2 flex flex-col gap-3 text-sm">
+          <a href="mailto:hello@scrapyardsites.com" class="inline-flex items-center gap-2 link">hello@scrapyardsites.com</a>
+          <a href="tel:19493568762" class="inline-flex items-center gap-2 link">949‑356‑8762</a>
         </div>
       </div>
     </div>

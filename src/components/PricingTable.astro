@@ -15,20 +15,28 @@ const {
 <section class="section">
   <div class="eyebrow">Pricing</div>
   <h2 class="mt-1 text-2xl font-bold tracking-tight">{heading}</h2>
-  <div class="mt-6 grid gap-6 md:grid-cols-3">
+  <div class="mt-6 grid gap-6 md:grid-cols-2">
     {PRICING_PLANS.map((plan) => (
       <div class="card p-6">
         <h3 class="text-lg font-semibold">{plan.name}</h3>
         <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-zinc-700">
           {plan.bullets.map((b) => (<li>{b}</li>))}
         </ul>
+        <div class="mt-4">
+          <div class="text-xs text-zinc-600"><a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" target="_blank" rel="noopener noreferrer" class="link">Pay deposit</a></div>
+        </div>
       </div>
     ))}
+    <div class="card p-6 md:col-span-2">
+      <h3 class="text-lg font-semibold">90-Day Warm-Lead Guarantee</h3>
+      <p class="mt-2 text-sm text-zinc-700">If you don’t see a measurable increase in warm inquiries (calls with ≥20s duration or completed quote forms) within 90 days of launch, I’ll work at no charge until you do.</p>
+      <p class="mt-2 text-xs text-zinc-600"><span class="font-medium">What counts?</span> Warm lead = call ≥20s or submitted form with name + phone. We measure via your call logs and form submissions.</p>
+    </div>
   </div>
   {showDepositCta && (
     <div class="mt-6" id="deposit">
-      <a href={withBase('/pricing/#deposit')} class="btn btn-primary" aria-label="Pay deposit and reserve my build week" {...(depositGoal ? { 'data-goal': depositGoal } : {})}>Pay Deposit & Reserve My Build Week</a>
-      <p class="mt-2 text-sm text-zinc-600">50% deposit now, balance at launch. 90‑day warm lead guarantee.</p>
+      <a href={withBase('/contact/')} class="btn btn-primary" aria-label="Book a 15-minute call" {...(depositGoal ? { 'data-goal': depositGoal } : {})}>Book a 15-minute call</a>
+      <p class="mt-2 text-sm text-zinc-600">Prefer to skip the call? <a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" target="_blank" rel="noopener noreferrer" class="link">Pay deposit</a> to reserve your build week.</p>
     </div>
   )}
   

@@ -6,7 +6,7 @@ Keep only 4 nav items: Home · Pricing · About · Contact (+ a CTA button on th
 Hide/delete anything half-built (calculators, demo placeholders, WIP pages).
 
 1) Header cleanup
-Put your phone top-right and make it tap-to-call: tel:+1XXXXXXXXXX.
+Put your phone top-right and make it tap-to-call: tel:+1 (949) 356-8762.
 Add one CTA button: “Book a 15-min Call”.
 Remove any secondary CTAs (“Pay deposit” stays only on Pricing).
 Microcopy (header tagline under logo, optional):
@@ -44,7 +44,7 @@ Hiring funnel (short app w/ file upload)
 Photo galleries & reviews embed
 Monthly content updates (N/A if not offered — remove)
 Card button (both): Book a 15-minute call
-Keep Pay Deposit as a small link at the bottom of each card (only if you’re ready to take it).
+Keep Pay Deposit as a small link (https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00).
 
 5) Guarantee (define it simply)
 Add a small block under Pricing:
@@ -65,8 +65,7 @@ I work in scrap and metals operations. I’ve built this offering around what ya
 I ship quickly, I answer the phone, and I measure results in calls and loads—not pageviews.
 
 8) Contact section (keep simple)
-Show phone, email, and the Book a 15-minute call button.
-If your contact form isn’t 100% wired and tested, remove it for now. (Add it back when you’ve tested delivery.)
+Wire the existing Schedule My 15 Minute Scan button to a formsubmit link that sends to hello@scrapyardsites.com and skip the honeypot redirect, directing to the calendy link in step 0 after it submits. This should also apply to the contact section on the home page.
 
 9) Navigation + footer tidy
 Nav: Home, Pricing, About, Contact, [Book Call].
@@ -79,7 +78,7 @@ Fix: make every CTA read “Book a 15-minute call”
 Remove/hide any page or link that isn’t complete
 
 11) Tracking & SEO basics (fast wins)
-Title tag: Scrapyard Sites — Websites that drive more calls and loads
+Title tag: Scrapyard Sites — Your competition has a website. Do you?
 Meta description: Launch a scrapyard website in 7–10 days. Materials pages, tap-to-call, quote forms, and a 90-day warm-lead guarantee.
 Open Graph image: use your logo or a simple banner; set og:title, og:description.
 If you already run analytics, keep it; if not, skip for MVP (add later).

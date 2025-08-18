@@ -2,8 +2,7 @@
 import logoUrl from "../assets/logo.svg?url"
 import { withBase } from "../lib/paths"
 const currentPath = Astro.url.pathname
-const calendlyUrl = import.meta.env.PUBLIC_CALENDLY_URL
-const ctaHref = calendlyUrl || withBase("/contact/")
+const ctaHref = "https://calendly.com/elias-scrapyardsites/30min"
 ---
 <header class="sticky top-0 z-40 bg-white shadow-header">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />

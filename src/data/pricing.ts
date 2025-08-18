@@ -8,37 +8,25 @@ export interface PricingPlan {
 
 export const PRICING_PLANS: PricingPlan[] = [
 	{
-		name: "Standard Launch — $2,499",
-		price: "$2,499",
+		name: "Standard — $2,499 + $99/mo",
+		price: "$2,499 + $99/mo",
 		bullets: [
-			"One‑page site with professional copy and design",
-			"Contact form routed to your inbox",
-			"Google Maps embed",
-			"Basic on‑site SEO",
-			"30 days of updates post‑launch",
-			"Launch in 7 days",
+			"Tap‑to‑call header & sticky mobile actions",
+			"‘Materials we accept’ page (fewer bad leads)",
+			"Quote/Contact forms wired to your inbox",
+			"Google Business Profile basics",
+			"Hosting, SSL, backups, updates",
 		],
 	},
 	{
-		name: "Premium Launch — $5,499",
-		price: "$5,499",
+		name: "Premium — $5,499 + $199/mo",
+		price: "$5,499 + $199/mo",
 		bullets: [
-			"Multi‑page site with professional copy",
-			"Forms on key pages",
-			"Location pages with maps and local SEO",
-			"Structured data (schema)",
-			"60 days of updates post‑launch",
-			"Launch in 10 days",
-		],
-	},
-	{
-		name: "Care Plan — $99/mo",
-		price: "$99/mo",
-		bullets: [
-			"Unlimited edits with 24‑hour turnaround",
-			"Security patches and backups",
-			"Uptime monitoring",
-			"Quarterly performance reports",
+			"Everything in Standard",
+			"Multi‑location, multi‑materials pages",
+			"Hiring funnel (short app w/ file upload)",
+			"Photo galleries & reviews embed",
+			"Monthly content updates",
 		],
 	},
 ]

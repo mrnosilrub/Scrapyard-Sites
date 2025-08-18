@@ -1,74 +1,39 @@
 ---
 import founderAsset from "../assets/founder.jpg?url"
-import DepositBanner from "../components/DepositBanner.astro"
 import Hero from "../components/Hero.astro"
-import Check from "../components/icons/Check.astro"
-import Clock from "../components/icons/Clock.astro"
-import Globe from "../components/icons/Globe.astro"
-import Shield from "../components/icons/Shield.astro"
 import Base from "../layouts/Base.astro"
+import { withBase } from "../lib/paths"
 ---
-<Base title="About — Scrapyard Sites">
+<Base title="About — Scrapyard Sites" description="Launch a scrapyard website in 7–10 days. Materials pages, tap-to-call, quote forms, and a 90-day warm-lead guarantee.">
   <Hero
-    title="From the Sample Desk to the Keyboard"
-    body="I’m a scrap‑industry R&D analyst who builds websites for scrapyards. When suppliers can’t load your site, you lose the foot‑tons they’re ready to drop—so I created Scrapyard Sites to fix that gap with the same methodical approach I use on the production floor: measure, improve, and lock‑in."
-    primaryHref="/contact/"
-    primaryLabel="Book a Discovery Call"
+    title="About Me"
+    body="I build scrapyard websites from a scrap‑operations mindset—fast mobile access, clear materials lists, and quote forms that reach the right person."
+    primaryHref="https://calendly.com/elias-scrapyardsites/30min"
+    primaryLabel="Book a 15-minute call"
   />
-
-  <section class="section">
-    <div class="eyebrow">About</div>
-    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-      <img src={founderAsset} alt="Founder" class="aspect-square w-full max-w-sm rounded-lg object-cover mx-auto lg:mx-0" loading="lazy" />
-      <div class="prose prose-zinc max-w-none">
-        <h2>Our Story</h2>
-        <p>
-          We bring ISO‑9001 discipline and real‑world scrap operations experience (LIBS, data/ops) to web, applying a
-          simple loop: measure, improve, lock‑in. That means faster, more credible websites that convert browsers into
-          booked loads.
-        </p>
-        <p>
-          We obsess over the details that build trust: uptime, SSL, schema, fast forms and performance budgets that keep
-          pages light and responsive on the yard’s Wi‑Fi.
-        </p>
-      </div>
-    </div>
-  </section>
 
   <section class="band bg-brand-orange/5">
     <div class="section">
-      <div class="eyebrow">Pillars</div>
-      <h2 class="mt-1 text-2xl font-bold tracking-tight">Our Reputation Shields</h2>
-      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-lg border border-zinc-200 p-5"><Shield class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Credibility</h3><p class="mt-1 text-sm text-zinc-600">Sub‑2‑second load times, SSL, and real yard photos build instant trust.</p></div>
-        <div class="rounded-lg border border-zinc-200 p-5"><Check class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Qualification</h3><p class="mt-1 text-sm text-zinc-600">Copy is written around the questions sellers actually ask—grades, pricing cadence, pick‑up radius.</p></div>
-        <div class="rounded-lg border border-zinc-200 p-5"><Globe class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Visibility</h3><p class="mt-1 text-sm text-zinc-600">Local SEO schema and keyword research help you appear above chain recyclers in the map pack.</p></div>
-        <div class="rounded-lg border border-zinc-200 p-5"><Clock class="h-6 w-6 text-brand-orange" /><h3 class="mt-2 font-semibold">Reliability</h3><p class="mt-1 text-sm text-zinc-600">Care plans with monitoring, backups and edits ensure your site never rusts.</p></div>
+    <div class="mt-6 grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div class="w-full max-w-sm mx-auto lg:mx-0 text-center">
+        <img src={founderAsset} alt="Founder" class="aspect-square w-full rounded-lg object-cover" loading="lazy" />
+        <div class="mt-2 eyebrow">Elias Burlison</div>
+      </div>
+      <div class="grid gap-6">
+        <h2 class="mt-1 text-2xl font-bold tracking-tight">My Insider Edge</h2>
+        <p class="text-zinc-700">
+          I work in scrap and metals operations. I’ve built this offering around what yards actually need: fast mobile access, clear materials lists that reduce tire-kickers, and quote forms that reach the right person the first time.
+        </p>
+        <p class="text-zinc-700">
+          I ship quickly, I answer the phone, and I measure results in calls and loads—not pageviews.
+        </p>
+        <div>
+          <a href={withBase('/contact/')} class="btn btn-primary">Book a 15-minute call</a>
+        </div>
       </div>
     </div>
+    </div>
   </section>
-
-  <section class="section">
-    <div class="eyebrow">Values</div>
-    <h2 class="mt-1 text-2xl font-bold tracking-tight">Our Core Values</h2>
-    <ul class="mt-4 grid gap-4 sm:grid-cols-3 text-sm text-zinc-700">
-      <li><span class="font-semibold">Honesty</span> — say what we’ll do, do what we say.</li>
-      <li><span class="font-semibold">Accountability</span> — decisions backed by data.</li>
-      <li><span class="font-semibold">Continuous Improvement</span> — we ship, we learn, we improve.</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <div class="eyebrow">Why Us</div>
-    <h2 class="mt-1 text-2xl font-bold tracking-tight">Why Choose Scrapyard Sites?</h2>
-    <ul class="mt-4 list-disc pl-6 text-zinc-700">
-      <li>Industry Expertise</li>
-      <li>Proven Process</li>
-      <li>Reputation‑First Design</li>
-      <li>90‑day warm lead guarantee</li>
-    </ul>
-  </section>
-
-  <DepositBanner />
+  
 </Base>
 
