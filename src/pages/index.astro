@@ -64,16 +64,29 @@ import { withBase } from "../lib/paths"
 
           <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-md mx-auto sm:max-w-none">
         <Card>
-          <div class="flex items-center justify-center gap-2 text-2xl font-bold"><span>7 Days</span></div>
-          <div class="mt-1 text-center text-sm text-zinc-600">to launch a high‑converting yard site</div>
+          <div class="stat-card" data-delay="0">
+            <div class="flex items-center justify-center gap-2 text-2xl font-bold">
+              <span class="counter-number text-brand-orange" data-target="7">0</span>
+              <span class="counter-suffix">Days</span>
+            </div>
+            <div class="mt-1 text-center text-sm text-zinc-600 stat-description">to launch a high‑converting yard site</div>
+          </div>
         </Card>
         <Card>
-          <div class="flex items-center justify-center gap-2 text-2xl font-bold"><span>24/7</span></div>
-          <div class="mt-1 text-center text-sm text-zinc-600">quote form captures every lead</div>
+          <div class="stat-card" data-delay="200">
+            <div class="flex items-center justify-center gap-2 text-2xl font-bold">
+              <span><span class="counter-number text-brand-orange" data-target="24">0</span><span class="counter-suffix">/7</span></span>
+            </div>
+            <div class="mt-1 text-center text-sm text-zinc-600 stat-description">quote form captures every lead</div>
+          </div>
         </Card>
         <Card>
-          <div class="flex items-center justify-center gap-2 text-2xl font-bold"><span>100%</span></div>
-          <div class="mt-1 text-center text-sm text-zinc-600">tailored to your yard & customers</div>
+          <div class="stat-card" data-delay="400">
+            <div class="flex items-center justify-center gap-2 text-2xl font-bold">
+              <span><span class="counter-number text-brand-orange" data-target="100">0</span><span class="counter-suffix">%</span></span>
+            </div>
+            <div class="mt-1 text-center text-sm text-zinc-600 stat-description">tailored to your yard & customers</div>
+          </div>
         </Card>
       </div>
 
@@ -232,6 +245,43 @@ import { withBase } from "../lib/paths"
   .faq-details.faq-open .faq-content > div {
     transform: translateY(0);
   }
+
+  /* Statistics Counter Animation Styles */
+  .stat-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .stat-card.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  .counter-number {
+    font-variant-numeric: tabular-nums;
+    transition: all 0.3s ease;
+  }
+  
+  .counter-suffix {
+    transition: all 0.3s ease;
+  }
+  
+  .stat-description {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .stat-card.animate .stat-description {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Pulsing effect during counting */
+  .counter-number.counting {
+    transform: scale(1.1);
+  }
 </style>
 
 <script>
@@ -271,6 +321,58 @@ import { withBase } from "../lib/paths"
       });
     });
   });
+
+  // Statistics Counter Animation
+  function animateCounter(element, target, duration = 1500) {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    
+    element.classList.add('counting');
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+        element.classList.remove('counting');
+      }
+      element.textContent = Math.floor(current);
+    }, 16);
+  }
+
+  // Initialize statistics animation
+  function initStatsAnimation() {
+    const statCards = document.querySelectorAll('.stat-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const delay = parseInt(card.dataset.delay) || 0;
+          
+          setTimeout(() => {
+            card.classList.add('animate');
+            
+            // Start counter animation after reveal animation begins
+            setTimeout(() => {
+              const counterElement = card.querySelector('.counter-number');
+              const target = parseInt(counterElement.dataset.target);
+              animateCounter(counterElement, target);
+            }, 300);
+            
+          }, delay);
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    statCards.forEach(card => observer.observe(card));
+  }
+
+  // Initialize animations when DOM is ready
+  document.addEventListener('DOMContentLoaded', initStatsAnimation);
 
   // Function to check if the features list has wrapped to multiple lines
   function checkFeaturesWrap() {
