@@ -67,21 +67,12 @@ const detailsClass = tinted
         
         // Toggle the open state
         if (detail.hasAttribute('open')) {
-          // Closing animation
-          detail.style.overflow = 'hidden';
-          requestAnimationFrame(() => {
-            detail.removeAttribute('open');
-            setTimeout(() => {
-              detail.style.overflow = '';
-            }, 300);
-          });
+          // Closing animation - don't use overflow hidden as it causes snapping
+          // The CSS grid animation handles the smooth transition
+          detail.removeAttribute('open');
         } else {
           // Opening animation
           detail.setAttribute('open', '');
-          detail.style.overflow = 'hidden';
-          setTimeout(() => {
-            detail.style.overflow = '';
-          }, 300);
         }
       });
     });
