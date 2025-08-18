@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Variant 6: Dark header, Gray left, Orange right -->
-<svg width="800px" height="800px" viewBox="1.2 1.2 21.6 21.6" xmlns="http://www.w3.org/2000/svg">
-<rect width="24" height="24" fill="#FFFFFF"/>
-<path d="M21,4a1,1,0,0,0-1-1H4A1,1,0,0,0,3,4V8.5H21Z" fill="#2B2B2B"/>
-<path d="M3,20V9.5H8.5V21H4A1,1,0,0,1,3,20Z" fill="#5E6367"/>
-<path d="M20,21a1,1,0,0,0,1-1V9.5H9.5V21Z" fill="#D75E02"/>
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20,3a1,1,0,0,1,1,1V7.5H3V4A1,1,0,0,1,4,3Z" fill="#2B2B2B"/>
+<path d="M3,19V8.5H8.5V20H4A1,1,0,0,1,3,19Z" fill="#5E6367"/>
+<path d="M21,20a1,1,0,0,1-1,1H9.5V8.5H21V20Z" fill="#D75E02"/>
 </svg>
