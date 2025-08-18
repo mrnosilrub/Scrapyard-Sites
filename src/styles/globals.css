@@ -7,6 +7,13 @@
 	html {
 		scroll-behavior: smooth;
 	}
+	
+	/* Prevent scroll when menu is open */
+	body.menu-open {
+		overflow: hidden !important;
+		position: fixed !important;
+		width: 100% !important;
+	}
 
 	/* Ensure text remains readable at high zoom levels */
 	*:not(.marquee-content):not(.marquee-wrapper):not(.marquee-container *) {
@@ -232,7 +239,7 @@
 
 	/* FAQ Accordion animations */
 	.faq-details {
-		transition: all 0.2s ease-out;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.faq-details summary {
 		list-style: none;
@@ -253,16 +260,18 @@
 		max-height: 0;
 		opacity: 0;
 		overflow: hidden;
-		transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s
+		transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s
 			cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.faq-details[open] .faq-content {
-		max-height: 200px; /* Reasonable max height for FAQ content */
+		max-height: 500px; /* Increased to prevent clipping and smooth animation */
 		opacity: 1;
+		transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s
+			cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.faq-content > div {
-		transform: translateY(-4px);
-		transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.05s; /* Slight delay */
+		transform: translateY(-8px);
+		transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s; /* Smoother delay */
 	}
 	.faq-details[open] .faq-content > div {
 		transform: translateY(0);
@@ -278,6 +287,10 @@
 		min-height: 100vh;
 		/* Hide any overflow during animation */
 		overflow: hidden;
+		/* Prevent touch events from passing through */
+		touch-action: none;
+		/* Smooth transitions */
+		will-change: opacity;
 	}
 
 	.mobile-menu-overlay.menu-showing {
