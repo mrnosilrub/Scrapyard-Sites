@@ -6,7 +6,7 @@ const { tinted = false } = Astro.props as Props
 const year = new Date().getFullYear()
 import { withBase } from "../lib/paths"
 ---
-<footer class={"border-t border-zinc-200 " + (tinted ? "bg-brand-orange/5" : "bg-white")}>
+<footer class={"border-t border-zinc-200 px-6 " + (tinted ? "bg-brand-orange/5" : "bg-white")}>
   <div class="container py-12">
     <div class="flex flex-col gap-8 text-left">
       <div>

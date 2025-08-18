@@ -19,16 +19,16 @@
 		@apply text-xs font-semibold uppercase tracking-wider text-zinc-700;
 	}
 	.container {
-		@apply mx-auto max-w-7xl px-6;
+		@apply mx-auto max-w-7xl;
 	}
 	.container-narrow {
-		@apply mx-auto max-w-3xl px-6;
+		@apply mx-auto max-w-3xl;
 	}
 	.section {
-		@apply mx-auto max-w-7xl px-6 py-12 md:py-16;
+		@apply mx-auto max-w-7xl py-12 md:py-16;
 	}
 	.section-narrow {
-		@apply mx-auto max-w-3xl px-6 py-8 md:py-12;
+		@apply mx-auto max-w-3xl py-8 md:py-12;
 	}
 	/* Container for centering content within a section that already has padding */
 	.content-narrow {
@@ -61,7 +61,7 @@
 
 	/* Banded section separator */
 	.band {
-		@apply border-y border-zinc-100;
+		@apply border-y border-zinc-100 px-6;
 	}
 
 	/* Chips */
