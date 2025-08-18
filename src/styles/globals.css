@@ -253,8 +253,8 @@
 		max-height: 0;
 		opacity: 0;
 		overflow: hidden;
-		transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-		           opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+		transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s
+			cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.faq-details[open] .faq-content {
 		max-height: 200px; /* Reasonable max height for FAQ content */
@@ -305,7 +305,7 @@
 	.hamburger-icon {
 		transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 	}
-	
+
 	.hamburger-line {
 		transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 		transform-origin: center center;
@@ -328,8 +328,8 @@
 	.mobile-nav-item {
 		opacity: 0;
 		transform: translateX(-16px);
-		transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-		           transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform
+			0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 		will-change: opacity, transform;
 	}
 	.mobile-menu-overlay.menu-open .mobile-nav-item {
