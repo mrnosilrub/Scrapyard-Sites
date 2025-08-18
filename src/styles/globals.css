@@ -302,13 +302,15 @@
 	.mobile-menu-overlay .menu-content {
 		transform: translateY(-100%);
 		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-		height: 100%;
 		display: flex;
 		flex-direction: column;
 		/* Background is here, not on overlay */
 		background-color: white;
 		/* Ensure content is always visible during animation */
 		will-change: transform;
+		/* Ensure it fills the entire viewport */
+		min-height: 100vh;
+		min-height: 100dvh;
 	}
 
 	.mobile-menu-overlay.menu-open .menu-content {

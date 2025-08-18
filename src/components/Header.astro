@@ -40,15 +40,17 @@ const ctaHref = calendlyUrl || withBase("/contact/")
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0" style="padding-top: 4rem; z-index: 45;" role="dialog" aria-modal="true" aria-label="Site Navigation">
-  <div class="menu-content shadow-md flex flex-col" style="position: relative; z-index: 46; height: calc(100% - 4rem - env(safe-area-inset-bottom, 0));">
+<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0" style="z-index: 45;" role="dialog" aria-modal="true" aria-label="Site Navigation">
+  <div class="menu-content shadow-md flex flex-col" style="position: relative; z-index: 46; height: 100vh; height: 100dvh;">
+    <!-- Header spacer to push content below the sticky header -->
+    <div class="h-16"></div>
     <nav class="flex-1 overflow-y-auto p-6 text-lg font-medium space-y-5" aria-label="Mobile Navigation">
       <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
       <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
       <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
       <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
     </nav>
-    <div class="p-6 border-t border-zinc-100" style="padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));">
+    <div class="p-6 border-t border-zinc-100" style="padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0)); margin-bottom: env(safe-area-inset-bottom, 0);">
       <a href={ctaHref} class="btn btn-primary w-full px-4 py-3 text-center" data-goal="CTA: Book Discovery (Mobile Menu)">
         Book a 15-minute call
       </a>

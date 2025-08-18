@@ -70,3 +70,4 @@ if command -v convert &> /dev/null; then
 else
     echo "ImageMagick is not installed. Please install it first or use the manual methods above."
 fi
+

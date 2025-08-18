@@ -54,3 +54,4 @@ You need to create these files from your logo:
 - PNG fallbacks ensure compatibility with all browsers
 
 Once you generate the missing PNG files, your favicon setup will be complete!
+
