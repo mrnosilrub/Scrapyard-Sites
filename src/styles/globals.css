@@ -235,10 +235,12 @@
 
 	/* FAQ Accordion animations */
 	.faq-details {
-		transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: border-color 0.3s ease, background-color 0.3s ease;
 	}
 	.faq-details summary {
 		list-style: none;
+		user-select: none;
+		-webkit-user-select: none;
 	}
 	.faq-details summary::-webkit-details-marker {
 		display: none;
@@ -251,27 +253,24 @@
 		user-select: none;
 	}
 
-	/* Smooth drawer animation using max-height */
+	/* Smooth drawer animation using grid for auto height */
 	.faq-content {
-		max-height: 0;
+		display: grid;
+		grid-template-rows: 0fr;
 		opacity: 0;
-		overflow: hidden;
-		transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity
-			0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+		transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out;
 	}
 	.faq-details[open] .faq-content {
-		max-height: 500px;
+		grid-template-rows: 1fr;
 		opacity: 1;
-		transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity
-			0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 	}
 	.faq-content > div {
-		transform: translateY(-8px);
-		transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
+		overflow: hidden;
+		transform: translateY(-4px);
+		transition: transform 0.3s ease-out;
 	}
 	.faq-details[open] .faq-content > div {
 		transform: translateY(0);
-		transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 	}
 
 	/* Mobile Menu Animations */
@@ -286,8 +285,6 @@
 		overflow: hidden;
 		/* Prevent touch events from passing through */
 		touch-action: none;
-		/* Smooth transitions */
-		will-change: opacity;
 	}
 
 	.mobile-menu-overlay.menu-showing {
@@ -296,7 +293,7 @@
 
 	.mobile-menu-overlay .menu-content {
 		transform: translateY(-100%);
-		transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: transform 0.3s ease-out;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -304,7 +301,6 @@
 		background-color: white;
 		/* Account for iOS Safari bottom bar */
 		padding-bottom: env(safe-area-inset-bottom, 0);
-		will-change: transform;
 	}
 
 	.mobile-menu-overlay.menu-open .menu-content {
@@ -313,13 +309,12 @@
 
 	/* Hamburger Menu Icon Animation */
 	.hamburger-icon {
-		transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: transform 0.3s ease-out;
 	}
 
 	.hamburger-line {
-		transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		transform-origin: center center;
-		will-change: transform, opacity;
+		transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+		transform-origin: center;
 	}
 
 	/* Position hamburger lines with absolute positioning */
@@ -348,26 +343,24 @@
 	/* Mobile menu content stagger animation */
 	.mobile-nav-item {
 		opacity: 0;
-		transform: translateX(-16px);
-		transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform
-			0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-		will-change: opacity, transform;
+		transform: translateX(-8px);
+		transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 	}
 	.mobile-menu-overlay.menu-open .mobile-nav-item {
 		opacity: 1;
 		transform: translateX(0);
 	}
 	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(1) {
-		transition-delay: 0.05s;
-	}
-	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(2) {
 		transition-delay: 0.1s;
 	}
-	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(3) {
+	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(2) {
 		transition-delay: 0.15s;
 	}
-	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(4) {
+	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(3) {
 		transition-delay: 0.2s;
+	}
+	.mobile-menu-overlay.menu-open .mobile-nav-item:nth-child(4) {
+		transition-delay: 0.25s;
 	}
 
 	/* Remove focus outline when menu opens but keep for keyboard nav */

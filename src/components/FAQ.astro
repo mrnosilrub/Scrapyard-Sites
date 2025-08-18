@@ -43,11 +43,48 @@ const detailsClass = tinted
 <style>
   /* FAQ chevron animation */
   .faq-chevron {
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.3s ease-out;
+    transform-origin: center;
   }
   
   .faq-details[open] .faq-chevron {
     transform: rotate(180deg);
   }
 </style>
+
+<script>
+  // Enhance FAQ animations for smoother transitions
+  document.addEventListener('DOMContentLoaded', function() {
+    const details = document.querySelectorAll('.faq-details');
+    
+    details.forEach(detail => {
+      const summary = detail.querySelector('summary');
+      const content = detail.querySelector('.faq-content');
+      
+      // Prevent default toggle to control animation
+      summary.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Toggle the open state
+        if (detail.hasAttribute('open')) {
+          // Closing animation
+          detail.style.overflow = 'hidden';
+          requestAnimationFrame(() => {
+            detail.removeAttribute('open');
+            setTimeout(() => {
+              detail.style.overflow = '';
+            }, 300);
+          });
+        } else {
+          // Opening animation
+          detail.setAttribute('open', '');
+          detail.style.overflow = 'hidden';
+          setTimeout(() => {
+            detail.style.overflow = '';
+          }, 300);
+        }
+      });
+    });
+  });
+</script>
 
