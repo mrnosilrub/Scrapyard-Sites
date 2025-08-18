@@ -248,22 +248,21 @@
 		user-select: none;
 	}
 
-	/* Smooth drawer animation using grid */
+	/* Smooth drawer animation using max-height */
 	.faq-content {
-		display: grid;
-		grid-template-rows: 0fr;
+		max-height: 0;
 		opacity: 0;
-		transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity
-			0.35s cubic-bezier(0.4, 0, 0.2, 1);
+		overflow: hidden;
+		transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+		           opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.faq-details[open] .faq-content {
-		grid-template-rows: 1fr;
+		max-height: 200px; /* Reasonable max height for FAQ content */
 		opacity: 1;
 	}
 	.faq-content > div {
-		overflow: hidden;
 		transform: translateY(-4px);
-		transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+		transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.05s; /* Slight delay */
 	}
 	.faq-details[open] .faq-content > div {
 		transform: translateY(0);
