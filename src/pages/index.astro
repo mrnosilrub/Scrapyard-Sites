@@ -26,16 +26,16 @@ import { withBase } from "../lib/paths"
 
   <section class="band border-y border-zinc-200 bg-white">
     <div class="container py-3">
-      <!-- Desktop/tablet layout - shows as flex items -->
-      <ul class="hidden sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-700">
+      <!-- Desktop/tablet layout - shows as flex items, switches to marquee when wrapped -->
+      <ul id="features-list" class="hidden sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-700">
         <li class="inline-flex items-center gap-2"><Shield class="h-4 w-4 text-brand-orange" /> <span>Industry experience in yards & metals</span></li>
         <li class="inline-flex items-center gap-2"><Clock class="h-4 w-4 text-brand-orange" /> <span>7–10 day launch window</span></li>
         <li class="inline-flex items-center gap-2"><Globe class="h-4 w-4 text-brand-orange" /> <span>Mobile‑first, sub‑2s load time</span></li>
         <li class="inline-flex items-center gap-2"><Check class="h-4 w-4 text-brand-orange" /> <span>90‑day warm‑lead guarantee</span></li>
       </ul>
       
-      <!-- Mobile marquee layout - single scrolling line -->
-      <div class="sm:hidden marquee-container text-sm text-zinc-700">
+      <!-- Marquee layout - shown when mobile or when desktop content wraps -->
+      <div id="features-marquee" class="sm:hidden marquee-container text-sm text-zinc-700">
         <div class="marquee-wrapper">
           <div class="marquee-content">
             <span class="inline-flex items-center gap-2 mr-8"><Shield class="h-4 w-4 text-brand-orange" /> Industry experience in yards & metals</span>
@@ -166,4 +166,67 @@ import { withBase } from "../lib/paths"
   
 </Base>
 
+<script>
+  // Function to check if the features list has wrapped to multiple lines
+  function checkFeaturesWrap() {
+    const featuresList = document.getElementById('features-list');
+    const featuresMarquee = document.getElementById('features-marquee');
+    
+    if (!featuresList || !featuresMarquee) return;
+    
+    // Only check on larger screens (sm and above)
+    const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+    if (isSmallScreen) {
+      // On mobile, keep original behavior
+      featuresList.style.display = 'none';
+      featuresMarquee.classList.remove('sm:hidden');
+      featuresMarquee.style.display = 'block';
+      return;
+    }
+    
+    // Get all list items
+    const listItems = featuresList.querySelectorAll('li');
+    if (listItems.length === 0) return;
+    
+    // Reset to normal state first to measure properly
+    featuresList.style.display = 'flex';
+    featuresMarquee.style.display = 'none';
+    
+    // Check if any list item is on a different line than the first one
+    const firstItemTop = listItems[0].getBoundingClientRect().top;
+    let hasWrapped = false;
+    
+    for (let i = 1; i < listItems.length; i++) {
+      const itemTop = listItems[i].getBoundingClientRect().top;
+      // Allow for small differences due to rounding
+      if (Math.abs(itemTop - firstItemTop) > 5) {
+        hasWrapped = true;
+        break;
+      }
+    }
+    
+    // Switch between layouts based on wrapping
+    if (hasWrapped) {
+      featuresList.style.display = 'none';
+      featuresMarquee.classList.remove('sm:hidden');
+      featuresMarquee.style.display = 'block';
+    } else {
+      featuresList.style.display = 'flex';
+      featuresMarquee.classList.add('sm:hidden');
+      featuresMarquee.style.display = 'none';
+    }
+  }
+  
+  // Check on load with a small delay to ensure layout is complete
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(checkFeaturesWrap, 100);
+  });
+  
+  // Check on resize with debouncing
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(checkFeaturesWrap, 100);
+  });
+</script>
 
