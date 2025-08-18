@@ -41,7 +41,7 @@ const ctaHref = calendlyUrl || withBase("/contact/")
 </header>
 
 <div id="mobile-nav" class="mobile-menu-overlay fixed inset-0 z-40" style="padding-top: 4rem;" role="dialog" aria-modal="true" aria-label="Site Navigation">
-  <div class="menu-content bg-white shadow-md h-full flex flex-col">
+  <div class="menu-content shadow-md h-full flex flex-col">
     <nav class="flex-1 overflow-y-auto p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
       <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
       <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
@@ -95,10 +95,10 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         } else {
           // Remove animation class first
           overlay.classList.remove('menu-open');
-          // Then hide container after animation
+          // Then hide container after animation completes
           setTimeout(function() {
             overlay.classList.remove('menu-showing');
-          }, 300);
+          }, 280);
         }
       }
       

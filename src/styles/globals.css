@@ -133,11 +133,13 @@
 	/* Mobile Menu Animations */
 	.mobile-menu-overlay {
 		display: none;
-		opacity: 1;
-		background-color: white;
+		/* Transparent overlay container */
+		background-color: transparent;
 		/* Ensure it covers everything including Safari bars */
 		min-height: 100vh;
 		min-height: -webkit-fill-available;
+		/* Hide any overflow during animation */
+		overflow: hidden;
 	}
 
 	.mobile-menu-overlay.menu-showing {
@@ -150,6 +152,8 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+		/* Background is here, not on overlay */
+		background-color: white;
 		/* Account for iOS Safari bottom bar */
 		padding-bottom: env(safe-area-inset-bottom, 0);
 	}
