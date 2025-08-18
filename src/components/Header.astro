@@ -2,6 +2,8 @@
 import logoUrl from "../assets/logo.svg?url"
 import { withBase } from "../lib/paths"
 const currentPath = Astro.url.pathname
+const calendlyUrl = import.meta.env.PUBLIC_CALENDLY_URL
+const ctaHref = calendlyUrl || withBase("/contact/")
 ---
 <header class="sticky top-0 z-40 bg-white shadow-header">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
@@ -15,17 +17,15 @@ const currentPath = Astro.url.pathname
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium" role="navigation" aria-label="Primary">
-        <a href={withBase('/services/')} aria-current={currentPath.startsWith(withBase('/services/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/services/')) ? 'text-brand-orange' : ''}`}>Services</a>
-        <a href={withBase('/process/')} aria-current={currentPath.startsWith(withBase('/process/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/process/')) ? 'text-brand-orange' : ''}`}>Process</a>
+        <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
         <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
-        <a href={withBase('/calculator/')} aria-current={currentPath.startsWith(withBase('/calculator/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/calculator/')) ? 'text-brand-orange' : ''}`}>Calculator</a>
         <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
         <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
       </nav>
 
       <div class="hidden md:flex">
-        <a href={withBase('/contact/')} class="btn btn-primary px-4 py-2" data-goal="CTA: Book Discovery (Header)">
-          Book a Discovery Call
+        <a href={ctaHref} class="btn btn-primary px-4 py-2" data-goal="CTA: Book Discovery (Header)">
+          Book a 15-minute call
         </a>
       </div>
 
@@ -47,16 +47,14 @@ const currentPath = Astro.url.pathname
         </label>
       </div>
       <nav class="flex-1 p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
-        <a href={withBase('/services/')} aria-current={currentPath.startsWith(withBase('/services/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/services/')) ? 'text-brand-orange' : ''}`}>Services</a>
-        <a href={withBase('/process/')} aria-current={currentPath.startsWith(withBase('/process/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/process/')) ? 'text-brand-orange' : ''}`}>Process</a>
+        <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
         <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
-        <a href={withBase('/calculator/')} aria-current={currentPath.startsWith(withBase('/calculator/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/calculator/')) ? 'text-brand-orange' : ''}`}>Calculator</a>
         <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
         <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
       </nav>
       <div class="p-8">
-        <a href={withBase('/contact/')} class="btn btn-primary w-full px-4 py-3">
-          Book a Discovery Call
+        <a href={ctaHref} class="btn btn-primary w-full px-4 py-3">
+          Book a 15-minute call
         </a>
       </div>
     </div>

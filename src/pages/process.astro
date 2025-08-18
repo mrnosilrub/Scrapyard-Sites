@@ -14,8 +14,6 @@ import { withBase } from "../lib/paths"
   <Hero
     title="How We Build Your Reputation"
     body="In just seven days, we transform an outdated or invisible scrapyard site into a trusted digital storefront—built for compliance, local visibility, and lasting credibility."
-    primaryHref="/contact/"
-    primaryLabel="Book a Discovery Call"
   />
 
   <section class="band bg-brand-orange/5" id="credibility">
@@ -33,30 +31,7 @@ import { withBase } from "../lib/paths"
 
   <PricingTable />
 
-  <section class="section">
-    <div class="eyebrow">Tools</div>
-    <h2 class="mt-1 text-2xl font-bold tracking-tight">Reputation Risk Calculator</h2>
-    <div class="mt-6">
-        <div class="container-narrow">
-        <iframe id="calculator-embed" src={withBase('/embed/calculator/')} title="Reputation Risk Calculator" class="w-full rounded-lg border border-zinc-200" style="height: 420px;"></iframe>
-      </div>
-      <script is:inline>
-        const iframe = document.getElementById('calculator-embed');
-        const onMsg = (e) => {
-          try {
-            const same = e.origin === window.location.origin;
-            if (!same || !e.data || e.data.type !== 'embedHeight' || e.data.id !== 'calculator') return;
-            if (iframe && e.data.height && Number.isFinite(e.data.height)) {
-              const min = 320, max = 900;
-              const h = Math.max(min, Math.min(max, e.data.height));
-              iframe.style.height = h + 'px';
-            }
-          } catch {}
-        };
-        window.addEventListener('message', onMsg);
-      </script>
-    </div>
-  </section>
+  
   <DepositBanner />
 
 </Base>
