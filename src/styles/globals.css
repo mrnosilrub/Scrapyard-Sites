@@ -30,6 +30,10 @@
 	.section-narrow {
 		@apply mx-auto max-w-3xl px-4 sm:px-6 md:px-12 py-8 md:py-12;
 	}
+	/* Mobile section padding - matches the Contact page "Schedule your 15 minute call" section */
+	.mobile-section-padding {
+		@apply px-4 sm:px-6 md:px-12;
+	}
 	.anchor-target {
 		scroll-margin-top: 6rem;
 	}
