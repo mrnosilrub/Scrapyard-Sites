@@ -219,7 +219,6 @@
 	}
 	.faq-details summary {
 		list-style: none;
-		pointer-events: none;
 	}
 	.faq-details summary::-webkit-details-marker {
 		display: none;
