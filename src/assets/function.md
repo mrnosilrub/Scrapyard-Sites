@@ -8,10 +8,11 @@ Brand and shared assets referenced across the site.
 - `favicon.svg`: SVG vector asset.
 - `founder.jpg`: Image/ico asset.
 - `hero.jpg`: Image/ico asset.
-- `logo.png`: Image/ico asset.
+- `logo-1080.png`: Image/ico asset.
 - `logo.svg`: SVG vector asset.
+- `old_logo.svg`: SVG vector asset.
 
 ## Subfolders
 - (none)
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

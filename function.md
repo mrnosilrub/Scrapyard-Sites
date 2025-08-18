@@ -5,6 +5,7 @@
 Repository root overview and index of top-level files and folders.
 
 ## Files
+- `FAVICON_CHECKLIST.md`: Markdown document.
 - `README.md`: Markdown document.
 - `astro.config.mjs`: Astro configuration.
 - `biome-report.json`: File.
@@ -12,11 +13,11 @@ Repository root overview and index of top-level files and folders.
 - `package.json`: Project metadata, scripts, and dependencies.
 - `pnpm-lock.yaml`: Dependency lockfile.
 - `tailwind.config.js`: Tailwind CSS configuration.
-- `wireframe.md`: Markdown document.
 
 ## Subfolders
+- `docs/`: Subfolder.
 - `public/`: Subfolder.
 - `scripts/`: Subfolder.
 - `src/`: Subfolder.
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

@@ -5,9 +5,10 @@
 Overview of /scripts folder.
 
 ## Files
+- `generate-favicons.sh`: File.
 - `update-docs.mjs`: File.
 
 ## Subfolders
 - (none)
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

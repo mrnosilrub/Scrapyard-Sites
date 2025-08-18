@@ -51,3 +51,25 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
   - `/src/pages/embed`: Generated/updated function.md
   - `/src/pages/privacy`: Generated/updated function.md
   - `/src/styles`: Generated/updated function.md
+
+## 2025-08-18
+- Updated: Auto-generated folder docs
+  - `/`: Generated/updated function.md
+  - `/docs`: Generated/updated function.md
+  - `/docs/pages`: Generated/updated function.md
+  - `/public`: Generated/updated function.md
+  - `/scripts`: Generated/updated function.md
+  - `/src`: Generated/updated function.md
+  - `/src/__tests__`: Generated/updated function.md
+  - `/src/assets`: Generated/updated function.md
+  - `/src/components`: Generated/updated function.md
+  - `/src/components/icons`: Generated/updated function.md
+  - `/src/content`: Generated/updated function.md
+  - `/src/data`: Generated/updated function.md
+  - `/src/layouts`: Generated/updated function.md
+  - `/src/lib`: Generated/updated function.md
+  - `/src/pages`: Generated/updated function.md
+  - `/src/pages/blog`: Generated/updated function.md
+  - `/src/pages/blog/posts`: Generated/updated function.md
+  - `/src/pages/privacy`: Generated/updated function.md
+  - `/src/styles`: Generated/updated function.md

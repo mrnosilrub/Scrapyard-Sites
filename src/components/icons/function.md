@@ -7,8 +7,13 @@ Overview of /src/components/icons folder.
 ## Files
 - `ArrowRight.astro`: Astro component.
 - `Check.astro`: Astro component.
+- `Clock.astro`: Astro component.
+- `Globe.astro`: Astro component.
+- `Mail.astro`: Astro component.
+- `Phone.astro`: Astro component.
+- `Shield.astro`: Astro component.
 
 ## Subfolders
 - (none)
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

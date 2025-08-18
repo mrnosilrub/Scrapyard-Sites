@@ -5,10 +5,17 @@
 Static assets that are copied as-is to the final build output.
 
 ## Files
+- `apple-touch-icon.png`: Image/ico asset.
 - `favicon.ico`: Image/ico asset.
+- `icon-16.png`: Image/ico asset.
+- `icon-192.png`: Image/ico asset.
+- `icon-32.png`: Image/ico asset.
+- `icon-512.png`: Image/ico asset.
+- `og-image.png`: Image/ico asset.
 - `robots.txt`: File.
+- `site.webmanifest`: File.
 
 ## Subfolders
-- `demos/`: Subfolder.
+- (none)
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

@@ -29,7 +29,7 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         </a>
       </div>
 
-      <label for="nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hover:bg-zinc-100 hamburger-icon" aria-label="Open Menu" role="button" aria-controls="mobile-nav" aria-expanded="false">
+      <label for="nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-700 hamburger-icon" aria-label="Open Menu" role="button" aria-controls="mobile-nav" aria-expanded="false">
         <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
           <div class="w-5 h-0.5 bg-current hamburger-line"></div>
           <div class="w-5 h-0.5 bg-current hamburger-line"></div>
@@ -75,13 +75,17 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         document.body.style.top = '-' + scrollPosition + 'px';
         document.body.style.width = '100%';
       } else {
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, scrollPosition);
+        // Delay removing body styles until after menu animation completes
+        setTimeout(function() {
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollPosition);
+        }, 300); // Match the menu animation duration
       }
       
+      // Handle menu-open class immediately for hamburger animation
       document.body.classList.toggle('menu-open', open);
       
       if (overlay) {
@@ -98,7 +102,7 @@ const ctaHref = calendlyUrl || withBase("/contact/")
           // Then hide container after animation completes
           setTimeout(function() {
             overlay.classList.remove('menu-showing');
-          }, 280);
+          }, 300);
         }
       }
       

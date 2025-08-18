@@ -6,7 +6,6 @@ Reusable UI components for pages and layouts.
 
 ## Files
 - `BetaInvite.astro`: Astro component.
-- `Calculator.astro`: Astro component.
 - `Card.astro`: Astro component.
 - `ContactForm.astro`: Astro component.
 - `DepositBanner.astro`: Astro component.
@@ -17,7 +16,6 @@ Reusable UI components for pages and layouts.
 - `PricingTable.astro`: Astro component.
 
 ## Subfolders
-- `demo/`: Subfolder.
 - `icons/`: Subfolder.
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

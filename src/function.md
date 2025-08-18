@@ -12,9 +12,10 @@ Application source: pages, layouts, components, styles, content, and assets.
 - `assets/`: Subfolder.
 - `components/`: Subfolder.
 - `content/`: Subfolder.
+- `data/`: Subfolder.
 - `layouts/`: Subfolder.
 - `lib/`: Subfolder.
 - `pages/`: Subfolder.
 - `styles/`: Subfolder.
 
-Last updated: 2025-08-13
+Last updated: 2025-08-18

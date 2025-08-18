@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer components {
+	/* Improve zoom accessibility */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Ensure text remains readable at high zoom levels */
+	*:not(.marquee-content):not(.marquee-wrapper):not(.marquee-container *) {
+		max-width: 100%;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
 	.eyebrow {
 		@apply text-xs font-semibold uppercase tracking-wider text-zinc-700;
 	}
@@ -24,14 +36,18 @@
 	.card {
 		@apply rounded-lg border border-zinc-200 bg-white p-5 transition-all duration-300;
 	}
-	.card:hover {
-		@apply shadow-lg border-zinc-300 -translate-y-1;
-	}
 	.card-tinted {
 		@apply rounded-lg border border-brand-orange/20 bg-brand-orange/5 p-5 transition-all duration-300;
 	}
-	.card-tinted:hover {
-		@apply shadow-lg border-brand-orange/30 -translate-y-1;
+
+	/* Card hover effects - only on devices with hover capability */
+	@media (hover: hover) {
+		.card:hover {
+			@apply shadow-lg border-zinc-300 -translate-y-1;
+		}
+		.card-tinted:hover {
+			@apply shadow-lg border-brand-orange/30 -translate-y-1;
+		}
 	}
 
 	/* Banded section separator */
@@ -48,30 +64,72 @@
 	.btn {
 		@apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
 	}
-	.btn:hover {
-		@apply scale-105;
-	}
 	.btn-primary {
-		@apply bg-brand-orange text-white shadow px-5 py-3 hover:opacity-95 hover:shadow-lg;
+		@apply bg-brand-orange text-white shadow px-5 py-3;
 	}
 	.btn-secondary {
-		@apply bg-white text-zinc-900 ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50 hover:shadow-md px-5 py-3;
+		@apply bg-white text-zinc-900 ring-1 ring-inset ring-zinc-300 px-5 py-3;
 	}
 	/* For buttons on dark/imagery backgrounds */
 	.btn-ghost-white {
-		@apply bg-white/10 text-white ring-1 ring-inset ring-white/40 hover:bg-white/20 hover:shadow-lg px-5 py-3;
+		@apply bg-white/10 text-white ring-1 ring-inset ring-white/40 px-5 py-3;
 	}
 	/* High-contrast button on brand background */
 	.btn-contrast {
-		@apply bg-white text-brand-orange hover:shadow-md px-5 py-3;
+		@apply bg-white text-brand-orange px-5 py-3;
+	}
+
+	/* Button hover effects - only on devices with hover capability */
+	@media (hover: hover) {
+		.btn:hover {
+			@apply scale-105;
+		}
+		.btn-primary:hover {
+			@apply opacity-95 shadow-lg;
+		}
+		.btn-secondary:hover {
+			@apply bg-zinc-50 shadow-md;
+		}
+		.btn-ghost-white:hover {
+			@apply bg-white/20 shadow-lg;
+		}
+		.btn-contrast:hover {
+			@apply shadow-md;
+		}
+	}
+
+	/* Mobile-friendly button click/active effects - works on all devices */
+	.btn:active {
+		@apply scale-98 opacity-90 transition-all duration-150;
+	}
+	.btn-primary:active {
+		@apply brightness-90;
+	}
+	.btn-secondary:active {
+		@apply bg-zinc-100;
+	}
+	.btn-ghost-white:active {
+		@apply bg-white/25;
+	}
+	.btn-contrast:active {
+		@apply bg-zinc-100;
 	}
 
 	/* Inline links */
 	.link {
 		@apply text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 rounded-sm transition-all duration-200;
 	}
-	.link:hover {
-		@apply text-brand-orange/80 scale-105;
+
+	/* Link hover effects - only on devices with hover capability */
+	@media (hover: hover) {
+		.link:hover {
+			@apply text-brand-orange/80 scale-105;
+		}
+
+		/* Link click/active effects - only on desktop */
+		.link:active {
+			@apply scale-95 text-brand-orange/90 transition-all duration-100;
+		}
 	}
 
 	/* Form animations */
@@ -84,10 +142,75 @@
 
 	/* Navigation links */
 	.nav-link {
-		@apply transition-all duration-200 hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm;
+		@apply transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm;
 	}
-	.nav-link:hover {
-		@apply scale-110;
+
+	/* Navigation link hover effects - only on devices with hover capability */
+	@media (hover: hover) {
+		.nav-link:hover {
+			@apply text-brand-orange scale-110;
+		}
+
+		/* Navigation link click/active effects - only on desktop */
+		.nav-link:active {
+			@apply scale-100 transition-transform duration-100;
+		}
+	}
+
+	/* Footer links */
+	.footer-link {
+		@apply transition-colors duration-200;
+	}
+	.footer-contact-link {
+		@apply transition-colors duration-200;
+	}
+
+	/* Footer link hover effects - only on devices with hover capability */
+	@media (hover: hover) {
+		.footer-link:hover {
+			@apply text-brand-orange;
+		}
+		.footer-contact-link:hover {
+			@apply text-brand-orange/80;
+		}
+
+		/* Footer link click/active effects - only on desktop */
+		.footer-link:active,
+		.footer-contact-link:active {
+			@apply scale-95 transition-transform duration-100;
+		}
+	}
+
+	/* FAQ items */
+	.faq-default,
+	.faq-tinted {
+		@apply transition-all duration-300;
+	}
+
+	/* FAQ click/active effects - works on all devices including mobile */
+	.faq-default:active,
+	.faq-tinted:active {
+		@apply scale-98 transition-transform duration-150;
+	}
+
+	/* Blog post cards */
+	.blog-card {
+		@apply rounded-lg border border-zinc-200 p-5 transition-colors duration-200;
+	}
+
+	/* FAQ hover effects - only on devices with hover capability */
+	@media (hover: hover) {
+		.faq-default:hover {
+			@apply border-zinc-300;
+		}
+		.faq-tinted:hover {
+			@apply border-brand-orange/30;
+		}
+
+		/* Blog card hover effects */
+		.blog-card:hover .blog-title {
+			@apply text-brand-orange;
+		}
 	}
 
 	/* FAQ Accordion animations */
@@ -207,8 +330,8 @@
 
 	/* Remove focus outline when menu opens but keep for keyboard nav */
 	.mobile-menu-overlay a:focus-visible {
-		outline: 2px solid #d75e02;
-		outline-offset: 2px;
+		outline: 0.125rem solid #d75e02;
+		outline-offset: 0.125rem;
 	}
 	.mobile-menu-overlay a:focus:not(:focus-visible) {
 		outline: none;
@@ -239,6 +362,7 @@
 	.marquee-wrapper {
 		display: flex;
 		will-change: transform;
+		width: max-content;
 	}
 
 	.marquee-content {
@@ -246,8 +370,9 @@
 		white-space: nowrap;
 		animation: marquee 20s linear infinite;
 		flex-shrink: 0;
-		min-width: 100%;
+		min-width: 100vw;
 		padding-right: 2rem;
+		width: max-content;
 	}
 
 	.marquee-container {
@@ -264,7 +389,7 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		width: 40px;
+		width: 2.5rem;
 		z-index: 10;
 		pointer-events: none;
 	}

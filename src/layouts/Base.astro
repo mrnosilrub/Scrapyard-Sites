@@ -18,6 +18,14 @@ const ogImageUrl =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Support for text size adjustment accessibility -->
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+      /* Ensure proper scaling at all zoom levels */
+      @media screen and (min-resolution: 2dppx) {
+        body { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      }
+    </style>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -25,6 +33,8 @@ const ogImageUrl =
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href={faviconUrl} type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
@@ -32,6 +42,9 @@ const ogImageUrl =
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#D75E02" />
     <meta name="msapplication-TileColor" content="#D75E02" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Scrapyard Sites" />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

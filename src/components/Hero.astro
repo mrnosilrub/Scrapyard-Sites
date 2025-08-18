@@ -32,16 +32,16 @@ const resolvedSecondary = secondaryHref ? withBase(secondaryHref) : undefined
 ---
 <section class="relative isolate">
   <div
-    class="relative h-[65vh] min-h-[420px] w-full bg-cover bg-center"
+    class="relative h-[65vh] min-h-[26.25rem] w-full bg-cover bg-center"
     style={bgStyle}
     aria-hidden="true"
   >
     <img src={bgSrc} alt="" class="absolute inset-0 h-full w-full object-cover" loading="eager" />
     <div class="absolute inset-0 bg-black/80"></div>
     <div class="relative z-10 container py-24 flex h-full items-center">
-      <div class="text-white">
-        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">{title}</h1>
-        {body && <p class="mt-4 max-w-3xl text-lg text-zinc-100">{body}</p>}
+      <div class="text-white max-w-4xl">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">{title}</h1>
+        {body && <p class="mt-4 text-base sm:text-lg text-zinc-100">{body}</p>}
         <div class="mt-8 flex flex-col sm:flex-row gap-3">
           <a href={resolvedPrimary} class="btn btn-primary" data-goal="CTA: Book Discovery (Hero)">
             {primaryLabel}
