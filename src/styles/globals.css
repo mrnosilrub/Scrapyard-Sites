@@ -194,7 +194,7 @@
 
 	/* Remove focus outline when menu opens but keep for keyboard nav */
 	.mobile-menu-overlay a:focus-visible {
-		outline: 2px solid theme("colors.brand-orange");
+		outline: 2px solid #d75e02;
 		outline-offset: 2px;
 	}
 	.mobile-menu-overlay a:focus:not(:focus-visible) {
