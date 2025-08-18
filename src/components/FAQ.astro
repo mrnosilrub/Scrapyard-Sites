@@ -47,8 +47,14 @@ const detailsClass = tinted
     transform-origin: center;
   }
   
-  .faq-details[open] .faq-chevron {
+  .faq-details[open] .faq-chevron,
+  .faq-details.faq-closing .faq-chevron {
     transform: rotate(180deg);
+  }
+  
+  /* Closing animation - rotate chevron back */
+  .faq-details.faq-closing .faq-chevron {
+    transform: rotate(0deg);
   }
 </style>
 
@@ -74,12 +80,13 @@ const detailsClass = tinted
           // Closing animation
           isAnimating = true;
           
-          // Start the closing animation by removing the open attribute
-          // The CSS transition will handle the smooth animation
-          detail.removeAttribute('open');
+          // Add closing class to trigger animation
+          detail.classList.add('faq-closing');
           
-          // Reset animation flag after transition completes
+          // Wait for animation to complete before removing open attribute
           setTimeout(function() {
+            detail.removeAttribute('open');
+            detail.classList.remove('faq-closing');
             isAnimating = false;
           }, 300); // Match CSS transition duration
         } else {

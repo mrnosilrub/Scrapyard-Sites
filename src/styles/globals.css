@@ -261,17 +261,30 @@
 		transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity
 			0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
-	.faq-details[open] .faq-content {
+	.faq-details[open] .faq-content,
+	.faq-details.faq-closing .faq-content {
 		grid-template-rows: 1fr;
 		opacity: 1;
+	}
+
+	/* Closing animation - override the open state during closing */
+	.faq-details.faq-closing .faq-content {
+		grid-template-rows: 0fr;
+		opacity: 0;
 	}
 	.faq-content > div {
 		overflow: hidden;
 		transform: translateY(-8px);
 		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
-	.faq-details[open] .faq-content > div {
+	.faq-details[open] .faq-content > div,
+	.faq-details.faq-closing .faq-content > div {
 		transform: translateY(0);
+	}
+
+	/* Closing animation - slide content back up */
+	.faq-details.faq-closing .faq-content > div {
+		transform: translateY(-8px);
 	}
 	/* Prevent layout shift during animation */
 	.faq-details {
