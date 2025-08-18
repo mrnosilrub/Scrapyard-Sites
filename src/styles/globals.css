@@ -19,25 +19,25 @@
 		@apply text-xs font-semibold uppercase tracking-wider text-zinc-700;
 	}
 	.container {
-		@apply mx-auto max-w-7xl px-6;
+		@apply mx-auto max-w-7xl px-9;
 	}
 	.container-narrow {
-		@apply mx-auto max-w-3xl px-6;
+		@apply mx-auto max-w-3xl px-9;
 	}
 	.section {
-		@apply mx-auto max-w-7xl px-6 py-12 md:py-16;
+		@apply mx-auto max-w-7xl px-9 py-12 md:py-16;
 	}
 	.section-narrow {
-		@apply mx-auto max-w-3xl px-6 py-8 md:py-12;
+		@apply mx-auto max-w-3xl px-9 py-8 md:py-12;
 	}
 	/* Container for centering content within a section that already has padding */
 	.content-narrow {
 		@apply mx-auto max-w-3xl;
 	}
-	/* Section padding - standardized 24px horizontal padding from viewport edges on all screen sizes */
+	/* Section padding - standardized 36px horizontal padding from viewport edges on all screen sizes */
 	/* Note: Do not use with .container class as it already includes padding */
 	.mobile-section-padding {
-		@apply px-6;
+		@apply px-9;
 	}
 	.anchor-target {
 		scroll-margin-top: 6rem;
@@ -67,6 +67,14 @@
 	/* Chips */
 	.chip {
 		@apply inline-flex items-center rounded-full border border-zinc-300 px-3 py-1 text-sm;
+	}
+
+	/* Component-specific padding overrides */
+	/* Hero, Header, Footer, and FAQ maintain 24px padding */
+	header .container,
+	footer .container,
+	.hero-container {
+		@apply px-6;
 	}
 
 	/* Buttons */
@@ -244,11 +252,12 @@
 	.faq-content {
 		display: grid;
 		grid-template-rows: 0fr;
+		transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 0;
 		transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity
 			0.35s cubic-bezier(0.4, 0, 0.2, 1);
-		opacity: 0;
 	}
-	.faq-details.faq-opening .faq-content {
+	.faq-details[open] .faq-content {
 		grid-template-rows: 1fr;
 		opacity: 1;
 	}
@@ -257,7 +266,7 @@
 		transform: translateY(-4px);
 		transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 	}
-	.faq-details.faq-opening .faq-content > div {
+	.faq-details[open] .faq-content > div {
 		transform: translateY(0);
 	}
 

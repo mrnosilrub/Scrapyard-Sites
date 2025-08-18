@@ -75,13 +75,20 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         document.body.style.top = '-' + scrollPosition + 'px';
         document.body.style.width = '100%';
       } else {
-        // Delay removing body styles until after menu animation completes
+        // Store the scroll position to restore later
+        var savedScrollPosition = scrollPosition;
+        
+        // Immediately restore body position to prevent visual jump
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        
+        // Restore scroll position before removing overflow
+        window.scrollTo(0, savedScrollPosition);
+        
+        // Delay removing overflow to let menu animation complete
         setTimeout(function() {
           document.body.style.overflow = '';
-          document.body.style.position = '';
-          document.body.style.top = '';
-          document.body.style.width = '';
-          window.scrollTo(0, scrollPosition);
         }, 300); // Match the menu animation duration
       }
       
