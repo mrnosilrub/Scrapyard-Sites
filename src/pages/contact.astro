@@ -11,10 +11,11 @@ import Base from "../layouts/Base.astro"
   <section class="band bg-brand-orange/5">
     <div class="section">
     <div class="reveal-immediate">
-      <div class="content-narrow text-center">
-        <h1 class="text-3xl font-bold tracking-tight">Schedule Your 15-Minute Call</h1>
+      <div class="content-narrow">
+        <div class="eyebrow">Contact</div>
+        <h1 class="mt-1 text-3xl font-bold tracking-tight">Schedule Your 15-Minute Call</h1>
         <p class="mt-3 text-zinc-700">Call <a href="tel:19493568762" class="link font-medium">949‑356‑8762</a> or use the form below.</p>
-        <ul class="mt-4 flex flex-col items-center gap-2 text-sm text-zinc-600">
+        <ul class="mt-4 flex flex-col items-start gap-2 text-sm text-zinc-600">
           <li class="inline-flex items-center gap-2"><Check class="h-4 w-4 text-brand-orange" /> <span>No spam</span></li>
           <li class="inline-flex items-center gap-2"><Shield class="h-4 w-4 text-brand-orange" /> <span>Confidential</span></li>
           <li class="inline-flex items-center gap-2"><Clock class="h-4 w-4 text-brand-orange" /> <span>15 minutes max</span></li>
@@ -28,8 +29,106 @@ import Base from "../layouts/Base.astro"
     </div>
   </section>
   <section class="band bg-white">
-    <FAQ items={DEFAULT_FAQ} tinted />
+    <div class="section">
+      <div class="reveal">
+        <div class="content-narrow">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="mt-1 text-2xl font-bold tracking-tight">Common Questions</h2>
+        </div>
+        <div class="content-narrow mt-4 space-y-2">
+          {DEFAULT_FAQ.map((it) => (
+            <div class="faq-details group rounded-md border border-brand-orange/20 bg-brand-orange/5 p-4 faq-tinted transition-all duration-300 cursor-pointer" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <div class="font-medium flex items-center justify-between text-left w-full faq-header" itemprop="name">
+                <span>{it.q}</span>
+                <svg class="faq-chevron h-5 w-5 flex-shrink-0 transition-transform duration-300 cubic-bezier(0.4, 0, 0.2, 1)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              <div class="faq-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <div class="pt-2 text-sm text-zinc-700">
+                  <p itemprop="text">{it.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   </section>
   
 </Base>
+
+<style>
+  /* FAQ chevron animation */
+  .faq-chevron {
+    transition: transform 0.3s ease-out;
+    transform-origin: center;
+  }
+  
+  .faq-details.faq-open .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* FAQ content smooth expansion/collapse animation */
+  .faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .faq-details.faq-open .faq-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  
+  .faq-content > div {
+    overflow: hidden;
+    transform: translateY(-8px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .faq-details.faq-open .faq-content > div {
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Enhance FAQ animations for smoother transitions
+  document.addEventListener('DOMContentLoaded', function() {
+    const details = document.querySelectorAll('.faq-details');
+    
+    details.forEach(detail => {
+      let isAnimating = false;
+      
+      // Make entire card clickable
+      detail.addEventListener('click', function(e) {
+        // Prevent multiple clicks during animation
+        if (isAnimating) return;
+        
+        const isOpen = detail.classList.contains('faq-open');
+        
+        if (isOpen) {
+          // Closing animation
+          isAnimating = true;
+          detail.classList.remove('faq-open');
+          
+          // Reset animation flag after transition completes
+          setTimeout(function() {
+            isAnimating = false;
+          }, 300); // Match CSS transition duration
+        } else {
+          // Opening animation
+          isAnimating = true;
+          detail.classList.add('faq-open');
+          
+          // Reset animation flag after transition completes
+          setTimeout(function() {
+            isAnimating = false;
+          }, 300); // Match CSS transition duration
+        }
+      });
+    });
+  });
+</script>
 
