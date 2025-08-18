@@ -11,11 +11,11 @@ const nextUrl = calendlyUrl
 ---
 <form class="grid gap-4" action="https://formsubmit.co/elias@scrapyardsites.com" method="POST" novalidate>
   <label class="text-sm font-medium text-zinc-700" for="c-name">Name</label>
-  <input id="c-name" name="name" class="form-input" placeholder="Name" required />
+  <input id="c-name" name="name" class="form-input" placeholder="Name" autocomplete="name" required />
   <label class="text-sm font-medium text-zinc-700" for="c-email">Email</label>
-  <input id="c-email" name="email" type="email" class="form-input" placeholder="Email" required />
+  <input id="c-email" name="email" type="email" class="form-input" placeholder="Email" autocomplete="email" required />
   <label class="text-sm font-medium text-zinc-700" for="c-company">Yard/Company</label>
-  <input id="c-company" name="company" class="form-input" placeholder="Yard/Company" required />
+  <input id="c-company" name="company" class="form-input" placeholder="Yard/Company" autocomplete="organization" required />
   <label class="text-sm font-medium text-zinc-700" for="c-message">Message</label>
   <textarea id="c-message" name="message" class="form-input" rows="4" placeholder="Message" required></textarea>
   <input type="hidden" name="_subject" value="New Reputation Scan request" />
