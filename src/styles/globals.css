@@ -19,7 +19,7 @@
 		@apply text-xs font-semibold uppercase tracking-wider text-zinc-700;
 	}
 	.container {
-		@apply mx-auto max-w-7xl;
+		@apply mx-auto max-w-7xl px-6;
 	}
 	.container-narrow {
 		@apply mx-auto max-w-3xl px-6;
