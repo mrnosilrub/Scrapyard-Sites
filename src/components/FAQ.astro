@@ -26,7 +26,7 @@ const detailsClass = tinted
       <details class={detailsClass} itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <summary class="font-medium flex items-center justify-between text-left w-full cursor-pointer" itemprop="name">
           <span>{it.q}</span>
-          <svg class="faq-chevron h-5 w-5 transition-transform duration-[350ms] cubic-bezier(0.4, 0, 0.2, 1)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="faq-chevron h-5 w-5 flex-shrink-0 transition-transform duration-[350ms] cubic-bezier(0.4, 0, 0.2, 1)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </summary>
@@ -46,23 +46,13 @@ const detailsClass = tinted
     
     faqDetails.forEach(details => {
       const chevron = details.querySelector('.faq-chevron');
-      const content = details.querySelector('.faq-content');
-      
-      // Set initial state
-      if (!details.open && content) {
-        content.style.display = 'grid';
-      }
       
       details.addEventListener('toggle', function(e) {
-        // Use requestAnimationFrame to ensure smooth animation
+        // Smooth chevron rotation
         if (details.open) {
           chevron.style.transform = 'rotate(180deg)';
         } else {
           chevron.style.transform = 'rotate(0deg)';
-          // Prevent snapping by keeping the content visible during animation
-          if (content) {
-            content.style.display = 'grid';
-          }
         }
       });
     });
