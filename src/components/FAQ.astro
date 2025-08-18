@@ -40,24 +40,14 @@ const detailsClass = tinted
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqDetails = document.querySelectorAll('.faq-details');
-    
-    faqDetails.forEach(details => {
-      const chevron = details.querySelector('.faq-chevron');
-      
-      details.addEventListener('toggle', function(e) {
-        // Smooth chevron rotation with proper timing
-        requestAnimationFrame(() => {
-          if (details.open) {
-            chevron.style.transform = 'rotate(180deg)';
-          } else {
-            chevron.style.transform = 'rotate(0deg)';
-          }
-        });
-      });
-    });
-  });
-</script>
+<style>
+  /* FAQ chevron animation */
+  .faq-chevron {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .faq-details[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+</style>
 
