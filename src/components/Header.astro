@@ -40,8 +40,8 @@ const ctaHref = calendlyUrl || withBase("/contact/")
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0 z-40" style="padding-top: 4rem;" role="dialog" aria-modal="true" aria-label="Site Navigation">
-  <div class="menu-content shadow-md h-full flex flex-col">
+<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0 z-40" style="padding-top: 4rem; z-index: 45;" role="dialog" aria-modal="true" aria-label="Site Navigation">
+  <div class="menu-content shadow-md h-full flex flex-col" style="position: relative; z-index: 46;">
     <nav class="flex-1 overflow-y-auto p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
       <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
       <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
@@ -78,18 +78,16 @@ const ctaHref = calendlyUrl || withBase("/contact/")
         // Store the scroll position to restore later
         var savedScrollPosition = scrollPosition;
         
-        // Immediately restore body position to prevent visual jump
+        // Reset body styles
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
+        document.body.style.overflow = '';
         
-        // Restore scroll position before removing overflow
-        window.scrollTo(0, savedScrollPosition);
-        
-        // Delay removing overflow to let menu animation complete
-        setTimeout(function() {
-          document.body.style.overflow = '';
-        }, 250); // Match the menu animation duration
+        // Restore scroll position after a small delay to prevent jump
+        requestAnimationFrame(function() {
+          window.scrollTo(0, savedScrollPosition);
+        });
       }
       
       // Handle menu-open class immediately for hamburger animation

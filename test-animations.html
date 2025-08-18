@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test FAQ and Menu Animations</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            padding: 20px;
+            margin: 0;
+            min-height: 200vh; /* Force scrolling to test menu scroll fix */
+        }
+        
+        .section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .test-info {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .test-info h2 {
+            margin-top: 0;
+        }
+        
+        .test-info ul {
+            margin: 10px 0;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .status.fixed {
+            background: #10b981;
+            color: white;
+        }
+        
+        .spacer {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            margin: 40px 0;
+            border: 2px dashed #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>Animation Fixes Test Page</h1>
+        
+        <div class="test-info">
+            <h2>Fixed Issues:</h2>
+            <ul>
+                <li>FAQ Animation <span class="status fixed">FIXED</span>
+                    <ul>
+                        <li>Slowed down opening animation (0.5s-0.6s)</li>
+                        <li>Smoother closing with proper easing</li>
+                        <li>Increased max-height to prevent content clipping</li>
+                    </ul>
+                </li>
+                <li>Menu Z-Index (Safari) <span class="status fixed">FIXED</span>
+                    <ul>
+                        <li>Increased z-index to 45 for overlay</li>
+                        <li>Menu content z-index set to 46</li>
+                        <li>CTA should now appear behind control bar</li>
+                    </ul>
+                </li>
+                <li>Menu Scroll Jump <span class="status fixed">FIXED</span>
+                    <ul>
+                        <li>Improved scroll position restoration</li>
+                        <li>Using requestAnimationFrame for smoother transition</li>
+                        <li>Added CSS to prevent body scroll when menu is open</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <h2>Test Instructions:</h2>
+        <ol>
+            <li><strong>FAQ Animation Test:</strong>
+                <ul>
+                    <li>Navigate to any page with FAQ section</li>
+                    <li>Click on FAQ items to expand/collapse</li>
+                    <li>Animation should be smooth and gradual (not snappy)</li>
+                    <li>Content should fade in/out smoothly</li>
+                </ul>
+            </li>
+            <li><strong>Menu Z-Index Test (Safari):</strong>
+                <ul>
+                    <li>Open the site in Safari browser</li>
+                    <li>Open the hamburger menu on mobile view</li>
+                    <li>The CTA button should appear behind the menu overlay</li>
+                    <li>All menu items should be clickable</li>
+                </ul>
+            </li>
+            <li><strong>Menu Scroll Test:</strong>
+                <ul>
+                    <li>Scroll down on the page</li>
+                    <li>Open the hamburger menu</li>
+                    <li>Close the menu</li>
+                    <li>Page should remain at the same scroll position (no jumping)</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <div class="spacer">
+            <p>Scroll down to test menu scroll behavior</p>
+        </div>
+        
+        <p style="text-align: center; font-size: 18px;">
+            All animation issues have been addressed. Please test across different browsers, especially Safari.
+        </p>
+    </div>
+</body>
+</html>
