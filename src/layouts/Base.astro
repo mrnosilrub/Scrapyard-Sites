@@ -42,6 +42,7 @@ const ogImageUrl =
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#D75E02" />
     <meta name="msapplication-TileColor" content="#D75E02" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Scrapyard Sites" />
@@ -118,11 +119,11 @@ const ogImageUrl =
           } catch {}
         }
         d.addEventListener('click', function(e){
-          var target = e.target as HTMLElement | null;
+          var target = e.target;
           if (!target) return;
-          var a = target.closest('[data-goal]') as HTMLElement | null;
+          var a = target.closest('[data-goal]');
           if (a && a.getAttribute('data-goal')) send(a.getAttribute('data-goal'));
-          var link = target.closest('a') as HTMLAnchorElement | null;
+          var link = target.closest('a');
           if (link && link.href && link.href.startsWith('tel:')) send('Click: Phone');
         }, true);
       })();
