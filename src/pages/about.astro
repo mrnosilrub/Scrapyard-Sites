@@ -14,9 +14,10 @@ import { withBase } from "../lib/paths"
 
   <section class="band bg-brand-orange/5">
     <div class="section">
-    <div class="mt-6 reveal-immediate">
-      <!-- Mobile: Title first, then image and content -->
-      <div class="lg:hidden">
+      <div class="mt-6 reveal-immediate">
+        <div class="container-narrow">
+          <!-- Mobile: Title first, then image and content -->
+          <div class="lg:hidden">
         <h2 class="text-2xl font-bold tracking-tight mb-6">My Insider Edge</h2>
         <div class="w-full max-w-sm mx-auto mb-6">
           <img src={founderAsset} alt="Founder" class="aspect-square w-full rounded-lg object-cover" loading="lazy" />
@@ -52,6 +53,7 @@ import { withBase } from "../lib/paths"
           <div>
             <a href={withBase('/contact/')} class="btn btn-primary">Book a 15-minute call</a>
           </div>
+        </div>
         </div>
       </div>
     </div>
