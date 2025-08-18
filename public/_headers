@@ -1,0 +1,46 @@
+# Security headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: frame-ancestors 'self'
+
+# Remove problematic headers and set proper content-type for HTML
+/*.html
+  Content-Type: text/html; charset=utf-8
+  ! X-XSS-Protection
+  ! X-Frame-Options
+  ! Expires
+
+# Cache optimization for static assets with versioning
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache optimization for other static resources
+/*.js
+  Cache-Control: public, max-age=31536000
+/*.css  
+  Cache-Control: public, max-age=31536000
+/*.png
+  Cache-Control: public, max-age=31536000
+/*.jpg
+  Cache-Control: public, max-age=31536000
+/*.jpeg
+  Cache-Control: public, max-age=31536000
+/*.webp
+  Cache-Control: public, max-age=31536000
+/*.svg
+  Cache-Control: public, max-age=31536000
+/*.ico
+  Cache-Control: public, max-age=31536000
+/*.woff2
+  Cache-Control: public, max-age=31536000
+/*.woff
+  Cache-Control: public, max-age=31536000
+
+# Manifest and service worker
+/site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+# HTML pages - shorter cache
+/*.html
+  Cache-Control: public, max-age=3600

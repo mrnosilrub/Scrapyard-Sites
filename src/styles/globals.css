@@ -259,8 +259,8 @@
 		/* Transparent overlay container */
 		background-color: transparent;
 		/* Ensure it covers everything including Safari bars */
-		min-height: 100vh;
 		min-height: -webkit-fill-available;
+		min-height: 100vh;
 		/* Hide any overflow during animation */
 		overflow: hidden;
 	}
