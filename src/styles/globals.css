@@ -134,7 +134,10 @@
 	.mobile-menu-overlay {
 		display: none;
 		opacity: 1;
-		overflow: hidden;
+		background-color: white;
+		/* Ensure it covers everything including Safari bars */
+		min-height: 100vh;
+		min-height: -webkit-fill-available;
 	}
 
 	.mobile-menu-overlay.menu-showing {

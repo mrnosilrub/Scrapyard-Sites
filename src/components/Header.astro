@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname
 const calendlyUrl = import.meta.env.PUBLIC_CALENDLY_URL
 const ctaHref = calendlyUrl || withBase("/contact/")
 ---
-<header class="sticky top-0 z-40 bg-white shadow-header">
+<header class="sticky top-0 z-50 bg-white shadow-header">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
   <div class="container">
     <div class="flex h-16 items-center justify-between">
@@ -40,7 +40,7 @@ const ctaHref = calendlyUrl || withBase("/contact/")
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-menu-overlay fixed left-0 right-0 z-30" style="top: 4rem; bottom: 0;" role="dialog" aria-modal="true" aria-label="Site Navigation">
+<div id="mobile-nav" class="mobile-menu-overlay fixed inset-0 z-40" style="padding-top: 4rem;" role="dialog" aria-modal="true" aria-label="Site Navigation">
   <div class="menu-content bg-white shadow-md h-full flex flex-col">
     <nav class="flex-1 overflow-y-auto p-8 text-lg font-medium space-y-6" aria-label="Mobile Navigation">
       <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`mobile-nav-item block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
@@ -61,12 +61,27 @@ const ctaHref = calendlyUrl || withBase("/contact/")
     var checkbox = document.getElementById('nav-toggle');
     var overlay = document.getElementById('mobile-nav');
     var toggles = document.querySelectorAll("label[for='nav-toggle']");
+    var scrollPosition = 0;
 
     function setState(e) {
       var open = !!(checkbox && checkbox.checked);
       toggles.forEach(function(el){ el.setAttribute('aria-expanded', open ? 'true' : 'false'); });
-      document.documentElement.classList.toggle('overflow-hidden', open);
-      document.body.classList.toggle('overflow-hidden', open);
+      
+      // Handle scroll locking for iOS
+      if (open) {
+        scrollPosition = window.pageYOffset;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + scrollPosition + 'px';
+        document.body.style.width = '100%';
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollPosition);
+      }
+      
       document.body.classList.toggle('menu-open', open);
       
       if (overlay) {
