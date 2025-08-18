@@ -8,7 +8,7 @@ import { withBase } from "../lib/paths"
 ---
 <footer class={"border-t border-zinc-200 " + (tinted ? "bg-brand-orange/5" : "bg-white")}>
   <div class="container py-12">
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="flex flex-col gap-8 text-left">
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-700">Pages</h3>
         <ul class="mt-4 space-y-2 text-sm">
@@ -18,7 +18,7 @@ import { withBase } from "../lib/paths"
           <li><a href={withBase('/contact/')} class="footer-link">Contact</a></li>
         </ul>
       </div>
-      <div class="lg:col-span-2">
+      <div>
         <p class="text-sm text-zinc-600">© {year} Scrapyard Sites — All rights reserved.</p>
         <div class="mt-2 flex flex-col gap-3 text-sm">
           <a href="mailto:hello@scrapyardsites.com" class="inline-flex items-center gap-2 text-brand-orange footer-contact-link">hello@scrapyardsites.com</a>
