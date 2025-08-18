@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname
 const calendlyUrl = import.meta.env.PUBLIC_CALENDLY_URL
 const ctaHref = calendlyUrl || withBase("/contact/")
 ---
-<header class="sticky top-0 z-50 bg-white shadow-header">
+<header class="sticky top-0 z-50 bg-white shadow-header px-6">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
   <div class="container">
     <div class="flex h-16 items-center justify-between">

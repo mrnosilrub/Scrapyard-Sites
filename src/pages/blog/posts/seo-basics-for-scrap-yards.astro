@@ -14,12 +14,14 @@ import { withBase } from "../../../lib/paths"
       mainEntityOfPage: { '@type': 'WebPage', '@id': Astro.url.href }
     })}</script>
   </Fragment>
-  <main class="container-narrow py-16">
+  <main class="px-6">
+    <div class="container-narrow py-16">
     <a href={withBase('/blog/')} class="link">← Back to blog</a>
     <div class="mt-6 text-xs font-semibold uppercase text-zinc-500">Visibility</div>
     <h1 class="mt-1 text-3xl font-bold tracking-tight">SEO Basics for Scrap Yards</h1>
     <div class="mt-1 text-sm text-zinc-600">By Scrapyard Sites | January 1, 2024</div>
     <p class="mt-6">Effective SEO begins with optimizing your local listings and using structured data so search engines understand your business.</p>
+    </div>
   </main>
 </Base>
 
