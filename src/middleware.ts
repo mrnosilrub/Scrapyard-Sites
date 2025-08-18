@@ -28,10 +28,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
 	// Set proper content-type with charset for HTML responses
 	const contentType = response.headers.get("Content-Type")
-	if (
-		contentType?.includes("text/html") &&
-		!contentType.includes("charset")
-	) {
+	if (contentType?.includes("text/html") && !contentType.includes("charset")) {
 		response.headers.set("Content-Type", "text/html; charset=utf-8")
 	}
 
