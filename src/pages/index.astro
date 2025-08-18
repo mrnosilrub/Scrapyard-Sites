@@ -1,4 +1,5 @@
 ---
+import Card from "../components/Card.astro"
 import ContactForm from "../components/ContactForm.astro"
 import FAQ from "../components/FAQ.astro"
 import Hero from "../components/Hero.astro"
@@ -36,24 +37,24 @@ import { withBase } from "../lib/paths"
 
   <section class="band bg-brand-orange/5">
     <div class="section">
-    <div class="container reveal">
+    <div class="container reveal-immediate">
       <div class="eyebrow">Reputation</div>
       <h2 class="mt-1 text-3xl font-bold tracking-tight">Your Website Is Your Digital Reputation</h2>
       <p class="mt-3 text-zinc-600">Before a single load hits your scale, sellers decide if they trust you—based in large part on what they see online.</p>
 
       <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div class="card p-5">
+        <Card>
           <div class="flex items-center justify-center gap-2 text-2xl font-bold"><span>7 Days</span></div>
           <div class="mt-1 text-center text-sm text-zinc-600">to launch a high‑converting yard site</div>
-        </div>
-        <div class="card p-5">
+        </Card>
+        <Card>
           <div class="flex items-center justify-center gap-2 text-2xl font-bold"><span>24/7</span></div>
           <div class="mt-1 text-center text-sm text-zinc-600">quote form captures every lead</div>
-        </div>
-        <div class="card p-5">
+        </Card>
+        <Card>
           <div class="flex items-center justify-center gap-2 text-2xl font-bold"><span>100%</span></div>
           <div class="mt-1 text-center text-sm text-zinc-600">tailored to your yard & customers</div>
-        </div>
+        </Card>
       </div>
 
       <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -91,27 +92,27 @@ import { withBase } from "../lib/paths"
     <div class="eyebrow">How it works</div>
     <h2 class="mt-1 text-2xl font-bold tracking-tight">Three Simple Steps</h2>
     <div class="mt-6 grid gap-6 sm:grid-cols-3">
-      <div class="card p-5">
+      <Card tinted>
         <div class="flex items-center gap-2">
           <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">1</span>
           <h3 class="font-semibold">Discovery (15 min)</h3>
         </div>
         <p class="mt-2 text-sm text-zinc-600">We pick pages, materials, and brand basics.</p>
-      </div>
-      <div class="card p-5">
+      </Card>
+      <Card tinted>
         <div class="flex items-center gap-2">
           <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">2</span>
           <h3 class="font-semibold">Build (7–10 days)</h3>
         </div>
         <p class="mt-2 text-sm text-zinc-600">I draft copy, configure forms, and wire your phone.</p>
-      </div>
-      <div class="card p-5">
+      </Card>
+      <Card tinted>
         <div class="flex items-center gap-2">
           <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">3</span>
           <h3 class="font-semibold">Launch & tune</h3>
         </div>
         <p class="mt-2 text-sm text-zinc-600">We go live, check call/form flow, and adjust in week 1.</p>
-      </div>
+      </Card>
     </div>
     </div>
   </section>
@@ -138,7 +139,9 @@ import { withBase } from "../lib/paths"
   </section>
 
   <section class="band">
-    <FAQ items={DEFAULT_FAQ} />
+    <div class="reveal">
+      <FAQ items={DEFAULT_FAQ} tinted />
+    </div>
   </section>
 
   

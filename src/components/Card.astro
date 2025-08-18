@@ -2,15 +2,17 @@
 interface Props {
 	href?: string
 	class?: string
+	tinted?: boolean
 }
-const { href, class: className = "" } = Astro.props as Props
+const { href, class: className = "", tinted = false } = Astro.props as Props
+const cardClass = tinted ? "card-tinted" : "card"
 ---
 {href ? (
-  <a href={href} class={`card ${className}`}>
+  <a href={href} class={`${cardClass} ${className}`}>
     <slot />
   </a>
 ) : (
-  <div class={`card ${className}`}>
+  <div class={`${cardClass} ${className}`}>
     <slot />
   </div>
 )}

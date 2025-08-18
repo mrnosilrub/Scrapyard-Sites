@@ -8,15 +8,11 @@ const {
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import "../styles/globals.css"
-import heroUrl from "../assets/hero.jpg?url"
+import faviconUrl from "../assets/favicon.svg?url"
 import { withBase } from "../lib/paths"
 const canonical = new URL(withBase(Astro.url.pathname), Astro.site).toString()
-const ogImageUrl = ogImage
-	? typeof ogImage === "string"
-		? ogImage
-		: ogImage.src
-	: new URL("/og-default.jpg", Astro.site).toString()
-const absoluteLogoUrl = new URL("/apple-touch-icon.png", Astro.site).toString()
+const ogImageUrl =
+	typeof ogImage === "string" ? ogImage : (ogImage?.src ?? "/og-image.png")
 ---
 <html lang="en">
   <head>
@@ -27,25 +23,20 @@ const absoluteLogoUrl = new URL("/apple-touch-icon.png", Astro.site).toString()
     <link rel="canonical" href={canonical} />
     
     <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f97316" />
-    
-    <!-- Theme -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="color-scheme" content="light" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="icon" href={faviconUrl} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Scrapyard Sites" />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -57,8 +48,10 @@ const absoluteLogoUrl = new URL("/apple-touch-icon.png", Astro.site).toString()
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Scrapyard Sites',
+      description: 'Professional website development for scrap yards and metal recycling businesses',
       url: Astro.site,
-      logo: absoluteLogoUrl,
+      logo: '/icon-512.png',
+      image: '/og-image.png',
       sameAs: [
         'https://www.linkedin.com/company/scrapyardsites',
         'https://x.com/scrapyardsites'
@@ -68,7 +61,15 @@ const absoluteLogoUrl = new URL("/apple-touch-icon.png", Astro.site).toString()
         email: 'hello@scrapyardsites.com',
         telephone: '+1-949-356-8762',
         contactType: 'customer support'
-      }]
+      }],
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'US'
+      },
+      founder: {
+        '@type': 'Person',
+        name: 'Elias Burlison'
+      }
     })}</script>
   </head>
   <body class="min-h-screen antialiased bg-white text-zinc-900 font-sans">
@@ -84,7 +85,7 @@ const absoluteLogoUrl = new URL("/apple-touch-icon.png", Astro.site).toString()
         var observer = new IntersectionObserver(function(entries){
           entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
         }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+        document.querySelectorAll('.reveal:not(.reveal-immediate)').forEach(function(el){ observer.observe(el); });
       })();
     </script>
     <script is:inline>

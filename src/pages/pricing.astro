@@ -16,13 +16,16 @@ import { withBase } from "../lib/paths"
 
   <section class="band bg-brand-orange/5" id="packages">
     <div class="section pt-0 pb-0">
-      <PricingTable heading="Service Pricing" showDepositCta={true} depositGoal="CTA: Pay Deposit (Pricing)" />
+      <div class="reveal-immediate">
+        <PricingTable heading="Service Pricing" showDepositCta={true} depositGoal="CTA: Pay Deposit (Pricing)" />
+      </div>
     </div>
   </section>
 
   <section class="band">
     <div class="section">
-    <div class="eyebrow">Details</div>
+    <div class="reveal">
+      <div class="eyebrow">Details</div>
     <h2 class="mt-1 text-2xl font-bold tracking-tight">How It Works & Extras</h2>
     <div class="mt-4 grid gap-6 lg:grid-cols-2">
       <div>
@@ -45,10 +48,13 @@ import { withBase } from "../lib/paths"
       </div>
     </div>
     </div>
+    </div>
   </section>
 
   <section class="band bg-brand-orange/5">
-    <FAQ items={DEFAULT_FAQ} />
+    <div class="reveal">
+      <FAQ items={DEFAULT_FAQ} />
+    </div>
   </section>
 </Base>
 

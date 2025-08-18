@@ -2,13 +2,14 @@
 import logoUrl from "../assets/logo.svg?url"
 import { withBase } from "../lib/paths"
 const currentPath = Astro.url.pathname
-const ctaHref = "https://calendly.com/elias-scrapyardsites/30min"
+const calendlyUrl = import.meta.env.PUBLIC_CALENDLY_URL
+const ctaHref = calendlyUrl || withBase("/contact/")
 ---
 <header class="sticky top-0 z-40 bg-white shadow-header">
   <input id="nav-toggle" type="checkbox" class="peer sr-only" />
   <div class="container">
     <div class="flex h-16 items-center justify-between">
-      <a href={withBase('/')} class="flex items-center gap-3">
+      <a href={withBase('/')} class="flex items-center gap-2">
         <img src={logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
         <span class="text-lg font-semibold tracking-tight">
           <span class="text-brand-orange">Scrapyard</span> Sites
@@ -16,10 +17,10 @@ const ctaHref = "https://calendly.com/elias-scrapyardsites/30min"
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium" role="navigation" aria-label="Primary">
-        <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
-        <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
-        <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
-        <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-sm ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
+        <a href={withBase('/')} aria-current={currentPath === withBase('/')} class={`nav-link ${currentPath === withBase('/') ? 'text-brand-orange' : ''}`}>Home</a>
+        <a href={withBase('/pricing/')} aria-current={currentPath.startsWith(withBase('/pricing/')) ? 'page' : undefined} class={`nav-link ${currentPath.startsWith(withBase('/pricing/')) ? 'text-brand-orange' : ''}`}>Pricing</a>
+        <a href={withBase('/about/')} aria-current={currentPath.startsWith(withBase('/about/')) ? 'page' : undefined} class={`nav-link ${currentPath.startsWith(withBase('/about/')) ? 'text-brand-orange' : ''}`}>About</a>
+        <a href={withBase('/contact/')} aria-current={currentPath.startsWith(withBase('/contact/')) ? 'page' : undefined} class={`nav-link ${currentPath.startsWith(withBase('/contact/')) ? 'text-brand-orange' : ''}`}>Contact</a>
       </nav>
 
       <div class="hidden md:flex">
@@ -37,7 +38,7 @@ const ctaHref = "https://calendly.com/elias-scrapyardsites/30min"
       <div id="mobile-nav" class="fixed inset-0 z-50 hidden bg-white peer-checked:block" role="dialog" aria-modal="true" aria-label="Site Navigation">
     <div class="flex h-full flex-col">
       <div class="container h-16 flex items-center justify-between shadow-header">
-        <a href={withBase('/')} class="flex items-center gap-3">
+        <a href={withBase('/')} class="flex items-center gap-2">
           <img src={logoUrl} alt="Scrapyard Sites" class="h-8 w-8" />
           <span class="text-lg font-semibold tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
         </a>

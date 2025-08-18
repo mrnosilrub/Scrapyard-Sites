@@ -10,24 +10,27 @@ import Base from "../layouts/Base.astro"
 <Base title="Contact — Scrapyard Sites" description="Launch a scrapyard website in 7–10 days. Materials pages, tap-to-call, quote forms, and a 90-day warm-lead guarantee." footerTinted={true}>
   <section class="band bg-brand-orange/5">
     <div class="section">
-    <div class="container-narrow text-center">
-      <h1 class="text-3xl font-bold tracking-tight">Schedule Your 15-Minute Call</h1>
-      <p class="mt-3 text-zinc-700">Call <a href="tel:19493568762" class="link font-medium">949‑356‑8762</a> or use the form below.</p>
-      <ul class="mt-4 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-600">
-        <li class="inline-flex items-center gap-2"><Check class="h-4 w-4 text-brand-orange" /> <span>No spam</span></li>
-        <li class="inline-flex items-center gap-2"><Shield class="h-4 w-4 text-brand-orange" /> <span>Confidential</span></li>
-        <li class="inline-flex items-center gap-2"><Clock class="h-4 w-4 text-brand-orange" /> <span>15 minutes max</span></li>
-      </ul>
+    <div class="reveal-immediate">
+      <div class="container-narrow text-center">
+        <h1 class="text-3xl font-bold tracking-tight">Schedule Your 15-Minute Call</h1>
+        <p class="mt-3 text-zinc-700">Call <a href="tel:19493568762" class="link font-medium">949‑356‑8762</a> or use the form below.</p>
+        <ul class="mt-4 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-600">
+          <li class="inline-flex items-center gap-2"><Check class="h-4 w-4 text-brand-orange" /> <span>No spam</span></li>
+          <li class="inline-flex items-center gap-2"><Shield class="h-4 w-4 text-brand-orange" /> <span>Confidential</span></li>
+          <li class="inline-flex items-center gap-2"><Clock class="h-4 w-4 text-brand-orange" /> <span>15 minutes max</span></li>
+        </ul>
+      </div>
+      <div class="container-narrow mt-8">
+        <ContactForm submitLabel="Schedule my 15-minute call" goal="Form: Submit (Contact)" />
+        
+      </div>
     </div>
-    <div class="container-narrow mt-8">
-      <ContactForm submitLabel="Schedule my 15-minute call" goal="Form: Submit (Contact)" />
-      
-    </div>
-
     </div>
   </section>
   <section class="band bg-white">
-    <FAQ items={DEFAULT_FAQ} />
+    <div class="reveal">
+      <FAQ items={DEFAULT_FAQ} tinted />
+    </div>
   </section>
   
 </Base>
