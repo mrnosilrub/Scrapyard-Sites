@@ -13,8 +13,7 @@
 		"docs:update": "node scripts/update-docs.mjs",
 		"docs:watch": "node scripts/update-docs.mjs --watch",
 		"changelog:normalize": "node scripts/update-docs.mjs --normalize",
-		"prepare": "husky",
-		
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "^4.3.3",
