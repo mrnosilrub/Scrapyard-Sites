@@ -14,7 +14,9 @@
 		"docs:watch": "node scripts/update-docs.mjs --watch",
 		"changelog:normalize": "node scripts/update-docs.mjs --normalize",
 		"prepare": "husky",
-		"concepts:generate": "node scripts/concepts/generate.mjs"
+		"concepts:generate": "node scripts/concepts/generate.mjs",
+		"screenshot:portrait": "node scripts/screenshot-portrait.mjs",
+		"screenshot:portrait:anon": "node scripts/screenshot-portrait-anonymized.mjs"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "^4.3.3",
