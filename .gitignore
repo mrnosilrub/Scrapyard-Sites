@@ -6,5 +6,5 @@ dist
 coverage
 pnpm-debug.log
 .vscode
-
+marketing/
 
