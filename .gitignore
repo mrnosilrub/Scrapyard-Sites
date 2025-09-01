@@ -8,3 +8,28 @@ pnpm-debug.log
 .vscode
 marketing/
 
+ReMA/
+chrome/
+docs/presentations/**
+data/**
+scripts/audit/**
+ 
+# Generated audit data (large, volatile)
+data/audits/**
+!data/audits/
+
+# Screenshots (binary, regenerated)
+data/screenshots/**
+!data/screenshots/
+
+# Local launchers (macOS Finder apps)
+*.command
+
+# Logs and scratch
+*.log
+*.tmp
+*.cache
+
+# Large exports
+data/audits/*.xlsx
+data/audits/*.jsonl
